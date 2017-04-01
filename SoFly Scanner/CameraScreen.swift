@@ -11,10 +11,16 @@ import UIKit
 
 class CameraScreen: UIViewController {
     
+    @IBOutlet weak var testImageView: UIImageView!
+    
     override func viewDidLoad() {
         print("Camera screen loaded")
-        
-        if let testImg = UIImage(named: "sample-poster") {
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let testImg = UIImage(named: Images.testPosterSimpleDoubleSpaced) {
+            testImageView.image = ImageProcessing.scaleImage(image: testImg, maxDimension: 640)
+            print("Testing image")
             let str = ImageProcessing.performImageRecognition(image: testImg)
             print(str)
         }

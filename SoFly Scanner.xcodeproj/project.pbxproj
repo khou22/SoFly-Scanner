@@ -27,6 +27,7 @@
 		2762B0FC1E8F4DC600203F90 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */; };
 		2762B0FD1E8F4DCB00203F90 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0EE1E8F4B0C00203F90 /* tessdata */; };
 		2762B0FE1E8F4DCC00203F90 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0EE1E8F4B0C00203F90 /* tessdata */; };
+		27AA8CC91E8F506700EE73EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA8CC81E8F506700EE73EA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		2762B0F11E8F4B3300203F90 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		2762B0F31E8F4B3A00203F90 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		2762B0FA1E8F4DA500203F90 /* SoFly Scanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoFly Scanner-Bridging-Header.h"; sourceTree = "<group>"; };
+		27AA8CC81E8F506700EE73EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,14 +129,15 @@
 			isa = PBXGroup;
 			children = (
 				2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */,
+				27AA8CC81E8F506700EE73EA /* Constants.swift */,
 				2762B0AD1E8F3DBC00203F90 /* Main.storyboard */,
+				2762B0B21E8F3DBC00203F90 /* LaunchScreen.storyboard */,
+				27AA8CCA1E8F506F00EE73EA /* Libraries */,
+				2762B0F91E8F4C8700203F90 /* Supporting Files */,
 				2762B0E51E8F444300203F90 /* Classes */,
 				2762B0E41E8F430100203F90 /* Backend */,
 				2762B0DD1E8F3F1400203F90 /* Screens */,
-				2762B0F91E8F4C8700203F90 /* Supporting Files */,
-				2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */,
 				2762B0B01E8F3DBC00203F90 /* Assets.xcassets */,
-				2762B0B21E8F3DBC00203F90 /* LaunchScreen.storyboard */,
 				2762B0B51E8F3DBC00203F90 /* Info.plist */,
 				2762B0FA1E8F4DA500203F90 /* SoFly Scanner-Bridging-Header.h */,
 			);
@@ -201,6 +204,14 @@
 				2762B0EE1E8F4B0C00203F90 /* tessdata */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27AA8CCA1E8F506F00EE73EA /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +362,7 @@
 				2762B0DC1E8F3F0800203F90 /* CompletionScreen.swift in Sources */,
 				2762B0DA1E8F3EF800203F90 /* ProcessingScreen.swift in Sources */,
 				2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */,
+				27AA8CC91E8F506700EE73EA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
