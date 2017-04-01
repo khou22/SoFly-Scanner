@@ -11,6 +11,8 @@ import UIKit
 
 class CompletionScreen: UIViewController {
     
+    var image: UIImage = UIImage() // Store image
+    
     override func viewDidLoad() {
         print("Completion screen loaded")
     }

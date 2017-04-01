@@ -57,7 +57,17 @@ class ProcessingScreen: UIViewController {
             
         }, completion: { completion in
             print("Processing complete")
+            self.performSegue(withIdentifier: Segues.processingToCompletion, sender: nil)
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // If going to completion screen
+        if (segue.identifier == Segues.processingToCompletion) {
+            let completionScreen = segue.destination as! CompletionScreen // Get VC
+            completionScreen.image = self.image // Pass on image
+        }
     }
     
 }
