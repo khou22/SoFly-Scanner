@@ -18,6 +18,9 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     // Camera UI Elements
     @IBOutlet weak var captureImageButton: UIButton!
     
+    // Other UI elements
+    var fadeIn: UIView = UIView()
+    
     // Data
     var finalImage = UIImage()
     
@@ -27,11 +30,24 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     var previewLayer = AVCaptureVideoPreviewLayer()
     
     override func viewWillAppear(_ animated: Bool) {
+        // Fade the camera view in
+        self.fadeIn = UIView(frame: view.frame) // Fill entire screen
+        fadeIn.backgroundColor = UIColor.white // Start as white
+        view.insertSubview(fadeIn, aboveSubview: cameraPreview) // Insert above everything
+        
         styling() // Add UI styling
         startCameraSession() // Start camera session
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        // Fade the screen in
+        UIView.animate(withDuration: 1.0, animations: {
+            self.fadeIn.backgroundColor = UIColor.clear // Make transparent
+        }, completion: { (_) in
+            self.fadeIn.removeFromSuperview() // Remove view
+        })
+        
         if let testImg = UIImage(named: Images.testPosterPhotoiPhone) {
 //            ImageProcessing.testing(image: testImg) // Testing
         }

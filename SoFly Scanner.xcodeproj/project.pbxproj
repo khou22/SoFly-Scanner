@@ -173,8 +173,8 @@
 		2762B0DD1E8F3F1400203F90 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				2762B0D71E8F3EEA00203F90 /* CameraScreen.swift */,
 				2723D1FF1E90510800193C4E /* LandingScreen.swift */,
+				2762B0D71E8F3EEA00203F90 /* CameraScreen.swift */,
 				2723D1FB1E9039D000193C4E /* ProcessingScreen.swift */,
 				2762B0D91E8F3EF800203F90 /* DebugScreen.swift */,
 				2762B0DB1E8F3F0800203F90 /* CompletionScreen.swift */,
