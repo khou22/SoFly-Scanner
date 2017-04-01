@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,22 +21,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bjq-iK-ty3">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="CMo-4n-nOO"/>
-                                    <constraint firstAttribute="height" constant="128" id="ITd-SC-S2z"/>
-                                </constraints>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAH-EU-L1L">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bjq-iK-ty3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KlE-fU-F8J"/>
-                            <constraint firstItem="bjq-iK-ty3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ahg-E8-Ld8"/>
+                            <constraint firstAttribute="trailing" secondItem="HAH-EU-L1L" secondAttribute="trailing" id="B0a-a8-zMh"/>
+                            <constraint firstItem="HAH-EU-L1L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W6B-LI-G1B"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HAH-EU-L1L" secondAttribute="bottom" id="hwq-Wo-rts"/>
+                            <constraint firstItem="HAH-EU-L1L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w0g-qT-z13"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="testImageView" destination="bjq-iK-ty3" id="mAV-wL-Csw"/>
+                        <outlet property="cameraPreview" destination="HAH-EU-L1L" id="TnR-VC-UB1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

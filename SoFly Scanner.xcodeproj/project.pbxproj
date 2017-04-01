@@ -527,7 +527,7 @@
 					"$(PROJECT_DIR)/SoFly\\ Scanner",
 				);
 				INFOPLIST_FILE = "SoFly Scanner/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-Scanner";
@@ -553,7 +553,7 @@
 					"$(PROJECT_DIR)/SoFly\\ Scanner",
 				);
 				INFOPLIST_FILE = "SoFly Scanner/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-Scanner";
