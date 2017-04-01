@@ -36,6 +36,7 @@ struct Images {
 }
 
 struct Segues {
+    static let landingToCamera                  = "LandingToCamera"
     static let cameraToLoading                  = "SegueToLoading"
     static let cameraToDebug                    = "SegueToDebug"
     static let processingToCompletion           = "SegueProcessingToCompletion"

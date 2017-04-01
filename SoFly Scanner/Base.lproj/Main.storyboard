@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Dt-M7-d2o">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Landing Screen-->
+        <scene sceneID="1Ln-by-SQh">
+            <objects>
+                <viewController id="5Dt-M7-d2o" customClass="LandingScreen" customModule="SoFly_Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hLJ-9D-Qbx"/>
+                        <viewControllerLayoutGuide type="bottom" id="3G0-6j-MtY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A4c-tL-WlK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="aNu-SS-8aN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="E8d-nM-GOo">
+                                <rect key="frame" x="86" y="150" width="203" height="154"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="E8d-nM-GOo" secondAttribute="height" multiplier="29:22" id="S9i-wT-DeS"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-red-light" translatesAutoresizingMaskIntoConstraints="NO" id="bvV-h8-FIe">
+                                <rect key="frame" x="86" y="150" width="203" height="154"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bvV-h8-FIe" firstAttribute="width" secondItem="bvV-h8-FIe" secondAttribute="height" multiplier="29:22" id="783-k5-328"/>
+                            <constraint firstItem="E8d-nM-GOo" firstAttribute="top" secondItem="hLJ-9D-Qbx" secondAttribute="bottom" constant="130" id="BCB-dX-UaO"/>
+                            <constraint firstAttribute="trailing" secondItem="aNu-SS-8aN" secondAttribute="trailing" id="IJn-Aa-uhN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E8d-nM-GOo" secondAttribute="trailing" constant="70" id="KYr-Eh-zzs"/>
+                            <constraint firstItem="3G0-6j-MtY" firstAttribute="top" secondItem="aNu-SS-8aN" secondAttribute="bottom" id="N3s-mV-Xfb"/>
+                            <constraint firstItem="bvV-h8-FIe" firstAttribute="top" secondItem="hLJ-9D-Qbx" secondAttribute="bottom" constant="130" id="Nza-bL-SZy"/>
+                            <constraint firstItem="aNu-SS-8aN" firstAttribute="leading" secondItem="A4c-tL-WlK" secondAttribute="leading" id="PQD-E6-09m"/>
+                            <constraint firstItem="aNu-SS-8aN" firstAttribute="top" secondItem="A4c-tL-WlK" secondAttribute="top" id="bXj-CZ-O7k"/>
+                            <constraint firstItem="bvV-h8-FIe" firstAttribute="leading" secondItem="A4c-tL-WlK" secondAttribute="leadingMargin" constant="70" id="boe-1Q-yU1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bvV-h8-FIe" secondAttribute="trailing" constant="70" id="iLI-36-8Sl"/>
+                            <constraint firstItem="E8d-nM-GOo" firstAttribute="leading" secondItem="A4c-tL-WlK" secondAttribute="leadingMargin" constant="70" id="sfO-PY-iPd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logo" destination="E8d-nM-GOo" id="ZR7-xB-rAS"/>
+                        <outlet property="logoWithRed" destination="bvV-h8-FIe" id="eQM-i3-bA6"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LandingToCamera" customClass="FadeSegue" customModule="SoFly_Scanner" customModuleProvider="target" animates="NO" id="wLV-Q4-IDd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZj-Hv-ebU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-654" y="36"/>
+        </scene>
         <!--Camera Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -207,6 +257,9 @@
         <image name="flyer-bounds" width="324" height="484"/>
         <image name="iphone-full" width="185" height="380"/>
         <image name="iphone-with-document" width="185" height="380"/>
+        <image name="launch-background" width="375" height="667"/>
+        <image name="logo" width="248" height="154"/>
+        <image name="logo-red-light" width="248" height="154"/>
         <image name="scanner-bar" width="231" height="1"/>
     </resources>
 </document>
