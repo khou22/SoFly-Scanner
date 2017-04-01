@@ -83,6 +83,8 @@ class ProcessingScreen: UIViewController {
                 self.view.layoutIfNeeded() // Update frontend
             }, completion: nil )
         })
+        
+        ImageProcessing.testing(image: self.image) // Testing
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

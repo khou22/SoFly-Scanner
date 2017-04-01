@@ -47,10 +47,6 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
         }, completion: { (_) in
             self.fadeIn.removeFromSuperview() // Remove view
         })
-        
-        if let testImg = UIImage(named: Images.testPosterPhotoiPhone) {
-//            ImageProcessing.testing(image: testImg) // Testing
-        }
     }
     
     override func viewDidLayoutSubviews() {

@@ -74,7 +74,12 @@ class NaturalLangProcessing {
         if (!f.isEmpty) {
             return f[0]
         }
-        return l[0]
+        
+        if (!l.isEmpty) {
+            return l[0]
+        }
+        
+        return "{Unknown}"
     }
     
     static func Month(text: String) -> String {
@@ -96,12 +101,15 @@ class NaturalLangProcessing {
         else if(!l.isEmpty) {
             return l[0]
         }
-        else {
+        else if (!m.isEmpty) {
             return m[0]
+        }
+        else {
+            return "{Unknown}"
         }
     }
     
-    static func Year(text: String) -> [String] {
+    static func Day(text: String) -> [String] {
         let myString = text as NSString
         let regex1: NSRegularExpression = try! NSRegularExpression(pattern: "0[1-9]|[1-31](\\.|-|\\\\| )", options: .caseInsensitive)
         let range: NSRange = NSMakeRange(0, myString.length)

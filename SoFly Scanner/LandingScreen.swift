@@ -15,7 +15,10 @@ class LandingScreen: UIViewController {
     @IBOutlet weak var logoWithRed: UIImageView!
     
     override func viewDidLoad() {
-        print("Splash screen")
+        // Unit testing
+        if let testImg = UIImage(named: Images.testPosterPhotoiPhone) {
+            ImageProcessing.testing(image: testImg) // Testing
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

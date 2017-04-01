@@ -66,5 +66,11 @@ class ImageProcessing {
             output += key + ": " + value + "     "
         }
         print(output)
+        
+        // Test the NLP
+        let year: String = NaturalLangProcessing.Year(text: preprocessed)
+        let month: String = NaturalLangProcessing.Month(text: preprocessed)
+        print("Year: " + year)
+        print("Nonth: " + month)
     }
 }
