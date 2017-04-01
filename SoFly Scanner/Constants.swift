@@ -29,3 +29,7 @@ struct Images {
     static let testSamplePicture                = "sample-picture-1"
     static let testPosterHPF2016                = "sample-poster-hp-f2016"
 }
+
+struct Segues {
+    static let cameraToLoading                  = "SegueToLoading"
+}

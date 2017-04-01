@@ -46,10 +46,19 @@ class ImageProcessing {
         tesseract.engineMode = .tesseractCubeCombined
         tesseract.pageSegmentationMode = .auto
         tesseract.maximumRecognitionTime = 120.0
-        tesseract.image = scaleImage(image: image, maxDimension: 500).g8_blackAndWhite()
+        tesseract.image = scaleImage(image: image, maxDimension: 640).g8_blackAndWhite()
         tesseract.image = image
         tesseract.recognize()
     
         return tesseract.recognizedText // Return text
+    }
+    
+    static func testing(image: UIImage) {
+        let str = ImageProcessing.performImageRecognition(image: image)
+        print(str) // Print raw text
+        
+        let preprocessed: String = NaturalLangProcessing.preprocess(text: str)
+        
+        print(NaturalLangProcessing.lemmatize(text: preprocessed)) // Print preprocessed text
     }
 }

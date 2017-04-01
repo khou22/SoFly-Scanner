@@ -11,8 +11,19 @@ import UIKit
 
 class ProcessingScreen: UIViewController {
     
+    var image: UIImage = UIImage()
+    @IBOutlet weak var testUIImage: UIImageView!
+    
     override func viewDidLoad() {
         print("Processing screen loaded")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        testUIImage.image = image // Set image
+    }
+    
+    override func viewDidLayoutSubviews() {
+        ImageProcessing.testing(image: image)
     }
     
 }

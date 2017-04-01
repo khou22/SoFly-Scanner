@@ -10,13 +10,16 @@ import Foundation
 import UIKit
 import AVFoundation // Camera control
 
-class CameraScreen: UIViewController {
+class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     
     // Live camera view
     @IBOutlet weak var cameraPreview: UIView!
     
     // Camera UI Elements
     @IBOutlet weak var captureImageButton: UIButton!
+    
+    // Data
+    var finalImage = UIImage()
     
     var captureSession = AVCaptureSession()
     var sessionOutput = AVCapturePhotoOutput()
@@ -29,7 +32,9 @@ class CameraScreen: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        testing() // Testing
+        if let testImg = UIImage(named: Images.testPosterHackPrinceton) {
+            ImageProcessing.testing(image: testImg) // Testing
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,6 +58,8 @@ class CameraScreen: UIViewController {
     // User presses button to take picture
     @IBAction func captureImage(_ sender: Any) {
         print("Capturing image")
+        
+        captureImage() // Capture image
     }
     
     // Start camera session
@@ -89,16 +96,49 @@ class CameraScreen: UIViewController {
         }
     }
     
-    func testing() {
-        if let testImg = UIImage(named: Images.testPosterHackPrinceton) {
-            print("Testing image")
-            let str = ImageProcessing.performImageRecognition(image: testImg)
-            print(str)
+    func captureImage() {
+        // Make sure image output is still live
+        if let _ = self.sessionOutput.connection(withMediaType: AVMediaTypeVideo) {
             
-            let preprocessed: String = NaturalLangProcessing.preprocess(text: str)
-            print(preprocessed)
+            // Photo settings
+            let photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG]) // Capture as JPEG
             
-            print(NaturalLangProcessing.lemmatize(text: preprocessed))
+            // Capture the image
+            sessionOutput.capturePhoto(with: photoSettings, delegate: self) // Callback below
+            print("Captured")
+        }
+    }
+    
+    // Called when photo is captured
+    func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+        
+        // Show errors if any
+        if let error = error {
+            print(error.localizedDescription)
+        }
+        
+        if let image = UIImage(data: AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer!, previewPhotoSampleBuffer: previewPhotoSampleBuffer)!) {
+            
+            // MARK - have UIImage from camera
+            processImage(image: image) // Process
+            
+        } else { // Image can't be created from data
+            print("Error in constructing image")
+        }
+    }
+    
+    // Called when image is grabbed from camera
+    func processImage(image: UIImage) {
+        finalImage = image // Set as global
+        performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // If going to loading screen
+        if (segue.identifier == Segues.cameraToLoading) {
+            let loadingScreen = segue.destination as! ProcessingScreen // Get VC
+            loadingScreen.image = finalImage // Pass on image
         }
     }
 }

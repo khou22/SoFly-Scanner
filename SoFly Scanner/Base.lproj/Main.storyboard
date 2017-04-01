@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,6 +26,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flyer-bounds" translatesAutoresizingMaskIntoConstraints="NO" id="Wkw-4Z-wa0">
+                                <rect key="frame" x="26" y="40" width="323" height="497"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-Vh-z8A">
                                 <rect key="frame" x="122" y="557" width="130" height="70"/>
                                 <constraints>
@@ -39,7 +43,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Wkw-4Z-wa0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="64T-vO-7sf"/>
+                            <constraint firstItem="aOh-Vh-z8A" firstAttribute="top" secondItem="Wkw-4Z-wa0" secondAttribute="bottom" constant="20" id="7jb-SR-l3t"/>
                             <constraint firstAttribute="trailing" secondItem="HAH-EU-L1L" secondAttribute="trailing" id="B0a-a8-zMh"/>
+                            <constraint firstItem="Wkw-4Z-wa0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="J2b-cK-IlI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wkw-4Z-wa0" secondAttribute="trailing" constant="10" id="ULy-Jn-apd"/>
                             <constraint firstItem="HAH-EU-L1L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W6B-LI-G1B"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HAH-EU-L1L" secondAttribute="bottom" id="hwq-Wo-rts"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aOh-Vh-z8A" secondAttribute="bottom" constant="40" id="m5a-Ud-unB"/>
@@ -50,6 +58,7 @@
                     <connections>
                         <outlet property="cameraPreview" destination="HAH-EU-L1L" id="TnR-VC-UB1"/>
                         <outlet property="captureImageButton" destination="aOh-Vh-z8A" id="TJy-Y0-Q09"/>
+                        <segue destination="FFg-eh-a37" kind="show" identifier="SegueToLoading" id="OdN-to-A6r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -67,8 +76,22 @@
                     <view key="view" contentMode="scaleToFill" id="syO-Ac-Rms">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s3Z-Ex-Iqa">
+                                <rect key="frame" x="26" y="40" width="323" height="607"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s3Z-Ex-Iqa" firstAttribute="top" secondItem="LqW-hO-qXz" secondAttribute="bottom" constant="20" id="8kC-Qq-npR"/>
+                            <constraint firstItem="8gB-5o-VY1" firstAttribute="top" secondItem="s3Z-Ex-Iqa" secondAttribute="bottom" constant="20" id="CoD-pV-aPT"/>
+                            <constraint firstItem="s3Z-Ex-Iqa" firstAttribute="leading" secondItem="syO-Ac-Rms" secondAttribute="leadingMargin" constant="10" id="ERE-Pt-Gyr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s3Z-Ex-Iqa" secondAttribute="trailing" constant="10" id="veS-p4-TQm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="testUIImage" destination="s3Z-Ex-Iqa" id="mtu-u0-Abh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1z-Sc-92I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,5 +118,6 @@
     </scenes>
     <resources>
         <image name="capture-image-button" width="100" height="50"/>
+        <image name="flyer-bounds" width="324" height="484"/>
     </resources>
 </document>
