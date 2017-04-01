@@ -17,8 +17,8 @@
 		2762B0DA1E8F3EF800203F90 /* ProcessingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0D91E8F3EF800203F90 /* ProcessingScreen.swift */; };
 		2762B0DC1E8F3F0800203F90 /* CompletionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0DB1E8F3F0800203F90 /* CompletionScreen.swift */; };
 		2762B0DF1E8F3F4200203F90 /* ScannedEventClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */; };
-		2762B0E11E8F42F600203F90 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0E01E8F42F600203F90 /* ImageProcessing.swift */; };
-		2762B0E31E8F42FD00203F90 /* TextProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0E21E8F42FD00203F90 /* TextProcessing.swift */; };
+		2762B0E81E8F45E200203F90 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0E61E8F45E200203F90 /* ImageProcessing.swift */; };
+		2762B0E91E8F45E200203F90 /* TextProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0E71E8F45E200203F90 /* TextProcessing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		2762B0D91E8F3EF800203F90 /* ProcessingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingScreen.swift; sourceTree = "<group>"; };
 		2762B0DB1E8F3F0800203F90 /* CompletionScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionScreen.swift; sourceTree = "<group>"; };
 		2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedEventClass.swift; sourceTree = "<group>"; };
-		2762B0E01E8F42F600203F90 /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
-		2762B0E21E8F42FD00203F90 /* TextProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextProcessing.swift; sourceTree = "<group>"; };
+		2762B0E61E8F45E200203F90 /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageProcessing.swift; path = Backend/ImageProcessing.swift; sourceTree = "<group>"; };
+		2762B0E71E8F45E200203F90 /* TextProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextProcessing.swift; path = Backend/TextProcessing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +150,8 @@
 		2762B0E41E8F430100203F90 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
-				2762B0E01E8F42F600203F90 /* ImageProcessing.swift */,
-				2762B0E21E8F42FD00203F90 /* TextProcessing.swift */,
+				2762B0E61E8F45E200203F90 /* ImageProcessing.swift */,
+				2762B0E71E8F45E200203F90 /* TextProcessing.swift */,
 			);
 			name = Backend;
 			sourceTree = "<group>";
@@ -301,10 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2762B0E31E8F42FD00203F90 /* TextProcessing.swift in Sources */,
 				2762B0D81E8F3EEA00203F90 /* CameraScreen.swift in Sources */,
 				2762B0DF1E8F3F4200203F90 /* ScannedEventClass.swift in Sources */,
-				2762B0E11E8F42F600203F90 /* ImageProcessing.swift in Sources */,
+				2762B0E81E8F45E200203F90 /* ImageProcessing.swift in Sources */,
+				2762B0E91E8F45E200203F90 /* TextProcessing.swift in Sources */,
 				2762B0DC1E8F3F0800203F90 /* CompletionScreen.swift in Sources */,
 				2762B0DA1E8F3EF800203F90 /* ProcessingScreen.swift in Sources */,
 				2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */,
