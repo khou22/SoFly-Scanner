@@ -51,10 +51,11 @@ class ImageProcessing {
         // Tesseract OCR
         let tesseract = G8Tesseract()
         tesseract.language = "eng"
-        tesseract.engineMode = .cubeOnly
+        tesseract.engineMode = .tesseractCubeCombined
         tesseract.pageSegmentationMode = .auto
         tesseract.maximumRecognitionTime = 120.0
-        tesseract.image = scaleImage(image: image, maxDimension: 640).g8_blackAndWhite()
+        tesseract.image = scaleImage(image: image, maxDimension: 300).g8_blackAndWhite()
+        tesseract.image = image
         tesseract.recognize()
     
         return tesseract.recognizedText // Return text
