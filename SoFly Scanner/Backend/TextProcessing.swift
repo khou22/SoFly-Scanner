@@ -7,30 +7,30 @@
 //
 import Foundation
 
-typealias TaggedToken = (String, String?)
+let TaggedToken: [String : String] = [:]
 
 // Natural language processing class
 class NaturalLangProcessing {
     // SEMANTIC OPERATIONS - THESE IDENTIFY PARTS OF SPEECH AND AND SEMANTIC RELATIONS
     // OPEN SOURCE NFP
-    static func tag(text: String, scheme: String) -> [TaggedToken] {
+    static func tag(text: String, scheme: String) -> [String : String] {
         let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation]
         let tagger = NSLinguisticTagger(tagSchemes: NSLinguisticTagger.availableTagSchemes(forLanguage: "en"),
             options: Int(options.rawValue))
         tagger.string = text
-        var tokens: [TaggedToken] = []
+        var tokens: [String : String] = [:]
         tagger.enumerateTags(in: NSMakeRange(0, text.characters.count), scheme: scheme, options: options, using: { tag, tokenRange, _, _ in
             let token = (text as NSString).substring(with: tokenRange)
-            tokens.append((token, tag))
+            tokens.updateValue(tag, forKey: token)
         })
-        return tag(text: text, scheme: NSLinguisticTagSchemeLexicalClass)
+        return tokens
     }
 
-    static func lemmatize(text: String) -> [TaggedToken] {
+    static func lemmatize(text: String) -> [String : String] {
         return tag(text: text, scheme: NSLinguisticTagSchemeLemma)
     }
 
-    static func language(text: String) -> [TaggedToken] {
+    static func language(text: String) -> [String : String] {
         return tag(text: text, scheme: NSLinguisticTagSchemeLanguage)
     }
 

@@ -60,6 +60,8 @@ class CameraScreen: UIViewController {
             
             let preprocessed: String = NaturalLangProcessing.preprocess(text: str)
             print(preprocessed)
+            
+            print(NaturalLangProcessing.lemmatize(text: preprocessed))
         }
     }
     
