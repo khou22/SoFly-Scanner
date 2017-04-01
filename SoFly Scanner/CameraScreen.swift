@@ -130,9 +130,14 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     func processImage(image: UIImage) {
         finalImage = image // Set as global
         
-        // Segue to next screen
-        performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
-//        performSegue(withIdentifier: Segues.cameraToDebug, sender: nil)
+        // Segue to next screen after delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            // Go to loading screen
+            self.performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
+            
+            // If debugging image processing
+//            self.performSegue(withIdentifier: Segues.cameraToDebug, sender: nil)
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
