@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class ProcessingScreen: UIViewController {
+    
+    override func viewDidLoad() {
+        print("Processing screen loaded")
+    }
+    
+}

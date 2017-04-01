@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class CameraScreen: UIViewController {
+    
+    override func viewDidLoad() {
+        print("Camera screen loaded")
+    }
+    
+}

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */; };
-		2762B0AC1E8F3DBC00203F90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0AB1E8F3DBC00203F90 /* ViewController.swift */; };
 		2762B0AF1E8F3DBC00203F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0AD1E8F3DBC00203F90 /* Main.storyboard */; };
 		2762B0B11E8F3DBC00203F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0B01E8F3DBC00203F90 /* Assets.xcassets */; };
 		2762B0B41E8F3DBC00203F90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0B21E8F3DBC00203F90 /* LaunchScreen.storyboard */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		2762B0A61E8F3DBC00203F90 /* SoFly Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoFly Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2762B0AB1E8F3DBC00203F90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2762B0AE1E8F3DBC00203F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2762B0B01E8F3DBC00203F90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2762B0B31E8F3DBC00203F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,9 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */,
-				2762B0AB1E8F3DBC00203F90 /* ViewController.swift */,
 				2762B0AD1E8F3DBC00203F90 /* Main.storyboard */,
-				2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */,
+				2762B0E51E8F444300203F90 /* Classes */,
 				2762B0E41E8F430100203F90 /* Backend */,
 				2762B0DD1E8F3F1400203F90 /* Screens */,
 				2762B0B01E8F3DBC00203F90 /* Assets.xcassets */,
@@ -157,6 +154,14 @@
 				2762B0E21E8F42FD00203F90 /* TextProcessing.swift */,
 			);
 			name = Backend;
+			sourceTree = "<group>";
+		};
+		2762B0E51E8F444300203F90 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +301,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2762B0AC1E8F3DBC00203F90 /* ViewController.swift in Sources */,
 				2762B0E31E8F42FD00203F90 /* TextProcessing.swift in Sources */,
 				2762B0D81E8F3EEA00203F90 /* CameraScreen.swift in Sources */,
 				2762B0DF1E8F3F4200203F90 /* ScannedEventClass.swift in Sources */,

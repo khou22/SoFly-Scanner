@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class CompletionScreen: UIViewController {
+    
+    override func viewDidLoad() {
+        print("Completion screen loaded")
+    }
+    
+}
