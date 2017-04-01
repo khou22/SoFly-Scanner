@@ -60,7 +60,7 @@
                         <outlet property="cameraPreview" destination="HAH-EU-L1L" id="TnR-VC-UB1"/>
                         <outlet property="captureImageButton" destination="aOh-Vh-z8A" id="TJy-Y0-Q09"/>
                         <segue destination="FFg-eh-a37" kind="show" identifier="SegueToDebug" id="OdN-to-A6r"/>
-                        <segue destination="gab-O1-s6a" kind="presentation" identifier="SegueToLoading" id="XYM-sX-lph"/>
+                        <segue destination="gab-O1-s6a" kind="presentation" identifier="SegueToLoading" customClass="SegueSlideLeftToRight" customModule="SoFly_Scanner" customModuleProvider="target" id="XYM-sX-lph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,6 +97,13 @@
                                 <color key="textColor" red="0.42352941176470588" green="0.37254901960784315" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wy-Uf-jia">
+                                <rect key="frame" x="157" y="557" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1c7-AB-eJi"/>
+                                    <constraint firstAttribute="width" constant="60" id="Jat-DS-qyO"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" image="iphone-with-document" translatesAutoresizingMaskIntoConstraints="NO" id="E0N-Dm-sH7" userLabel="iPhone Cropped">
                                 <rect key="frame" x="94" y="60" width="190" height="380"/>
                             </imageView>
@@ -106,6 +113,7 @@
                             <constraint firstItem="gR3-xe-rSD" firstAttribute="leading" secondItem="XuA-8W-3wc" secondAttribute="leadingMargin" constant="10" id="0or-iF-kWg"/>
                             <constraint firstItem="VV0-jg-JMO" firstAttribute="leading" secondItem="XuA-8W-3wc" secondAttribute="leadingMargin" constant="80" id="3di-4x-3fy"/>
                             <constraint firstItem="gR3-xe-rSD" firstAttribute="bottom" secondItem="E0N-Dm-sH7" secondAttribute="bottom" id="5tv-gv-gmH"/>
+                            <constraint firstItem="Ff1-Hr-gKQ" firstAttribute="top" secondItem="7wy-Uf-jia" secondAttribute="bottom" constant="50" id="8U3-Dz-jrU"/>
                             <constraint firstItem="VV0-jg-JMO" firstAttribute="top" secondItem="ZV9-2m-j5E" secondAttribute="bottom" constant="133" id="IF2-FK-pXZ"/>
                             <constraint firstItem="ZV9-2m-j5E" firstAttribute="leading" secondItem="E0N-Dm-sH7" secondAttribute="trailing" constant="-191.5" id="YOL-UF-aJD"/>
                             <constraint firstItem="Ff1-Hr-gKQ" firstAttribute="top" secondItem="VV0-jg-JMO" secondAttribute="bottom" constant="60" id="c47-N0-Wuv"/>
@@ -113,6 +121,7 @@
                             <constraint firstItem="ZV9-2m-j5E" firstAttribute="top" secondItem="oCa-by-Yp2" secondAttribute="bottom" constant="40" id="iyK-cA-uo7"/>
                             <constraint firstItem="E0N-Dm-sH7" firstAttribute="height" secondItem="ZV9-2m-j5E" secondAttribute="height" id="jBV-tX-Wug"/>
                             <constraint firstItem="E0N-Dm-sH7" firstAttribute="width" secondItem="ZV9-2m-j5E" secondAttribute="width" id="ljy-QV-cAP"/>
+                            <constraint firstItem="7wy-Uf-jia" firstAttribute="centerX" secondItem="XuA-8W-3wc" secondAttribute="centerX" id="mka-rC-tzg"/>
                             <constraint firstItem="E0N-Dm-sH7" firstAttribute="top" secondItem="ZV9-2m-j5E" secondAttribute="top" id="p98-Zw-haZ"/>
                             <constraint firstItem="ZV9-2m-j5E" firstAttribute="centerX" secondItem="XuA-8W-3wc" secondAttribute="centerX" id="vBc-Nl-X1u"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VV0-jg-JMO" secondAttribute="trailing" constant="80" id="x3X-Pl-HxV"/>
@@ -122,7 +131,7 @@
                         <outlet property="iPhoneCropped" destination="E0N-Dm-sH7" id="Lab-HT-PUm"/>
                         <outlet property="iPhoneFull" destination="ZV9-2m-j5E" id="qFk-a2-xax"/>
                         <outlet property="scannerBar" destination="gR3-xe-rSD" id="2eB-gJ-3c9"/>
-                        <segue destination="iuw-dr-GKq" kind="show" identifier="SegueProcessingToCompletion" id="FC5-N9-0c3"/>
+                        <segue destination="iuw-dr-GKq" kind="show" identifier="SegueProcessingToCompletion" customClass="SegueSlideLeftToRight" customModule="SoFly_Scanner" customModuleProvider="target" id="FC5-N9-0c3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsP-Ee-QoF" userLabel="First Responder" sceneMemberID="firstResponder"/>

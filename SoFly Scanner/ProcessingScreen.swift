@@ -26,9 +26,6 @@ class ProcessingScreen: UIViewController {
     // Modify page layout
     override func viewDidLayoutSubviews() {
         setupAnimations() // Setup loading animations
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         startAnimations() // Start animation
     }
     
@@ -36,6 +33,7 @@ class ProcessingScreen: UIViewController {
     func setupAnimations() {
         // Calculate frames
         let targetFrame: CGRect = iPhoneFull.frame // Target frame
+        print(targetFrame.maxY)
         let startingFrame: CGRect = CGRect(x: targetFrame.minX, y: targetFrame.maxY, width: targetFrame.width, height: 0) // Start with 0 height
         
         // Hide iPhone
@@ -46,11 +44,12 @@ class ProcessingScreen: UIViewController {
     func startAnimations() {
         // Setup frames for animations
         let targetFrame: CGRect = iPhoneFull.frame // Target frame
+        print(targetFrame.maxY)
         
         let originalBarcodeFrame: CGRect = scannerBar.frame // Original frame
         let targetBarcodeFrame: CGRect = CGRect(x: originalBarcodeFrame.minX, y: targetFrame.minY, width: originalBarcodeFrame.width, height: originalBarcodeFrame.height)
         
-        UIView.animate(withDuration: 2.0, delay: 0.2, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 2.0, delay: 0.5, options: [.curveEaseInOut], animations: {
             // Set to new frames
             self.iPhoneCropped.frame = targetFrame
             self.scannerBar.frame = targetBarcodeFrame
