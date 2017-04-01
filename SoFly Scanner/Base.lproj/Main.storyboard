@@ -60,7 +60,7 @@
                         <outlet property="cameraPreview" destination="HAH-EU-L1L" id="TnR-VC-UB1"/>
                         <outlet property="captureImageButton" destination="aOh-Vh-z8A" id="TJy-Y0-Q09"/>
                         <segue destination="FFg-eh-a37" kind="show" identifier="SegueToDebug" id="OdN-to-A6r"/>
-                        <segue destination="gab-O1-s6a" kind="presentation" identifier="SegueToLoading" customClass="SegueSlideLeftToRight" customModule="SoFly_Scanner" customModuleProvider="target" id="XYM-sX-lph"/>
+                        <segue destination="gab-O1-s6a" kind="presentation" identifier="SegueToLoading" id="XYM-sX-lph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,7 +97,7 @@
                                 <color key="textColor" red="0.42352941176470588" green="0.37254901960784315" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wy-Uf-jia">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="complete-confirmation" translatesAutoresizingMaskIntoConstraints="NO" id="7wy-Uf-jia">
                                 <rect key="frame" x="157" y="557" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="1c7-AB-eJi"/>
@@ -128,9 +128,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkmarkHeightConstraint" destination="1c7-AB-eJi" id="Rp0-pH-d2V"/>
+                        <outlet property="completeScan" destination="7wy-Uf-jia" id="mBh-ea-lnc"/>
                         <outlet property="iPhoneCropped" destination="E0N-Dm-sH7" id="Lab-HT-PUm"/>
                         <outlet property="iPhoneFull" destination="ZV9-2m-j5E" id="qFk-a2-xax"/>
                         <outlet property="scannerBar" destination="gR3-xe-rSD" id="2eB-gJ-3c9"/>
+                        <outlet property="scanningLabel" destination="VV0-jg-JMO" id="wIM-5p-5UG"/>
                         <segue destination="iuw-dr-GKq" kind="show" identifier="SegueProcessingToCompletion" customClass="SegueSlideLeftToRight" customModule="SoFly_Scanner" customModuleProvider="target" id="FC5-N9-0c3"/>
                     </connections>
                 </viewController>
@@ -200,6 +203,7 @@
     </scenes>
     <resources>
         <image name="capture-image-button" width="100" height="50"/>
+        <image name="complete-confirmation" width="45" height="45"/>
         <image name="flyer-bounds" width="324" height="484"/>
         <image name="iphone-full" width="185" height="380"/>
         <image name="iphone-with-document" width="185" height="380"/>
