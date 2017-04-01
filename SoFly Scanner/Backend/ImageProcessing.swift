@@ -61,8 +61,10 @@ class ImageProcessing {
         let lemmatizedText = NaturalLangProcessing.lemmatize(text: preprocessed)
         
         // Print lematized
+        var output = ""
         for (key, value) in lemmatizedText {
-            print(key + ": " + value)
+            output += key + ": " + value + "     "
         }
+        print(output)
     }
 }

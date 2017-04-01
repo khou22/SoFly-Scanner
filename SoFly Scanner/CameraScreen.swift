@@ -130,19 +130,25 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     // Called when image is grabbed from camera
     func processImage(image: UIImage) {
         finalImage = image // Set as global
-        performSegue(withIdentifier: Segues.cameraToDebug, sender: nil)
+        
+        // Segue to next screen
+        performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
+//        performSegue(withIdentifier: Segues.cameraToDebug, sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // If going to loading screen
         if (segue.identifier == Segues.cameraToLoading) {
-            // Segue to the loading page
             
-        } else if (segue.identifier == Segues.cameraToDebug) {
-            // Segue to the debugger page
-            let loadingScreen = segue.destination as! DebugScreen // Get VC
+            // Segue to the loading page
+            let loadingScreen = segue.destination as! ProcessingScreen // Get VC
             loadingScreen.image = finalImage // Pass on image
+            
+        } else if (segue.identifier == Segues.cameraToDebug) { // Debugging
+            // Segue to the debugger page
+            let debugScreen = segue.destination as! DebugScreen // Get VC
+            debugScreen.image = finalImage // Pass on image
         }
     }
 }

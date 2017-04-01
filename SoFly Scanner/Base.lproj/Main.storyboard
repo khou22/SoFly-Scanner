@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="104.8" y="35.532233883058474"/>
         </scene>
-        <!--View Controller-->
+        <!--Processing Screen-->
         <scene sceneID="0Zg-i7-rqv">
             <objects>
-                <viewController id="gab-O1-s6a" sceneMemberID="viewController">
+                <viewController id="gab-O1-s6a" customClass="ProcessingScreen" customModule="SoFly_Scanner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oCa-by-Yp2"/>
                         <viewControllerLayoutGuide type="bottom" id="Ff1-Hr-gKQ"/>
