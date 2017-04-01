@@ -17,4 +17,6 @@ struct Images {
     static let testPosterHackPrinceton          = "sample-poster-1"
     static let testPosterSimple                 = "sample-poster-2"
     static let testPosterSimpleDoubleSpaced     = "sample-poster-3"
+    static let testPosterFrench                 = "sample-poster-french"
+    static let testPosterCarWash                = "sample-poster-car-wash"
 }
