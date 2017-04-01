@@ -32,7 +32,7 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let testImg = UIImage(named: Images.testPosterHackPrinceton) {
+        if let testImg = UIImage(named: Images.testPosterPhotoiPhone) {
             ImageProcessing.testing(image: testImg) // Testing
         }
     }

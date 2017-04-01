@@ -28,6 +28,8 @@ struct Images {
     static let testPosterHelloWorld             = "sample-hello-world"
     static let testSamplePicture                = "sample-picture-1"
     static let testPosterHPF2016                = "sample-poster-hp-f2016"
+    static let testPosterPhoto1                 = "sample-poster-photo-1"
+    static let testPosterPhotoiPhone            = "sample-poster-photo-iphone"
 }
 
 struct Segues {

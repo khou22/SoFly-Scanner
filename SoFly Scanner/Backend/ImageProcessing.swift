@@ -13,7 +13,7 @@ class ImageProcessing {
     
     // Scale the image
     static func scaleImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
-        print("Old dimensions: \(image.size.width), \(image.size.height)")
+//        print("Old dimensions: \(image.size.width), \(image.size.height)")
         
         var scaledSize = CGSize(width: maxDimension, height: maxDimension)
         var scaleFactor: CGFloat
@@ -33,7 +33,7 @@ class ImageProcessing {
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        print("New dimensions: \(scaledImage?.size.width), \(scaledImage?.size.height)")
+//        print("New dimensions: \(scaledImage?.size.width), \(scaledImage?.size.height)")
     
         return scaledImage!
     }
@@ -47,7 +47,6 @@ class ImageProcessing {
         tesseract.pageSegmentationMode = .auto
         tesseract.maximumRecognitionTime = 120.0
         tesseract.image = scaleImage(image: image, maxDimension: 640).g8_blackAndWhite()
-        tesseract.image = image
         tesseract.recognize()
     
         return tesseract.recognizedText // Return text
@@ -59,6 +58,6 @@ class ImageProcessing {
         
         let preprocessed: String = NaturalLangProcessing.preprocess(text: str)
         
-        print(NaturalLangProcessing.lemmatize(text: preprocessed)) // Print preprocessed text
+//        print(NaturalLangProcessing.lemmatize(text: preprocessed)) // Print preprocessed text
     }
 }
