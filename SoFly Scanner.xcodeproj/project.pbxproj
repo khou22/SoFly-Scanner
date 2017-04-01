@@ -14,6 +14,12 @@
 		2762B0B41E8F3DBC00203F90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0B21E8F3DBC00203F90 /* LaunchScreen.storyboard */; };
 		2762B0BF1E8F3DBC00203F90 /* SoFly_ScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0BE1E8F3DBC00203F90 /* SoFly_ScannerTests.swift */; };
 		2762B0CA1E8F3DBC00203F90 /* SoFly_ScannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0C91E8F3DBC00203F90 /* SoFly_ScannerUITests.swift */; };
+		2762B0D81E8F3EEA00203F90 /* CameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0D71E8F3EEA00203F90 /* CameraScreen.swift */; };
+		2762B0DA1E8F3EF800203F90 /* ProcessingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0D91E8F3EF800203F90 /* ProcessingScreen.swift */; };
+		2762B0DC1E8F3F0800203F90 /* CompletionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0DB1E8F3F0800203F90 /* CompletionScreen.swift */; };
+		2762B0DF1E8F3F4200203F90 /* ScannedEventClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */; };
+		2762B0E11E8F42F600203F90 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0E01E8F42F600203F90 /* ImageProcessing.swift */; };
+		2762B0E31E8F42FD00203F90 /* TextProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0E21E8F42FD00203F90 /* TextProcessing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		2762B0C51E8F3DBC00203F90 /* SoFly ScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SoFly ScannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2762B0C91E8F3DBC00203F90 /* SoFly_ScannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoFly_ScannerUITests.swift; sourceTree = "<group>"; };
 		2762B0CB1E8F3DBC00203F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2762B0D71E8F3EEA00203F90 /* CameraScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraScreen.swift; sourceTree = "<group>"; };
+		2762B0D91E8F3EF800203F90 /* ProcessingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingScreen.swift; sourceTree = "<group>"; };
+		2762B0DB1E8F3F0800203F90 /* CompletionScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionScreen.swift; sourceTree = "<group>"; };
+		2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedEventClass.swift; sourceTree = "<group>"; };
+		2762B0E01E8F42F600203F90 /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		2762B0E21E8F42FD00203F90 /* TextProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextProcessing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,9 @@
 				2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */,
 				2762B0AB1E8F3DBC00203F90 /* ViewController.swift */,
 				2762B0AD1E8F3DBC00203F90 /* Main.storyboard */,
+				2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */,
+				2762B0E41E8F430100203F90 /* Backend */,
+				2762B0DD1E8F3F1400203F90 /* Screens */,
 				2762B0B01E8F3DBC00203F90 /* Assets.xcassets */,
 				2762B0B21E8F3DBC00203F90 /* LaunchScreen.storyboard */,
 				2762B0B51E8F3DBC00203F90 /* Info.plist */,
@@ -123,6 +138,25 @@
 				2762B0CB1E8F3DBC00203F90 /* Info.plist */,
 			);
 			path = "SoFly ScannerUITests";
+			sourceTree = "<group>";
+		};
+		2762B0DD1E8F3F1400203F90 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0D71E8F3EEA00203F90 /* CameraScreen.swift */,
+				2762B0D91E8F3EF800203F90 /* ProcessingScreen.swift */,
+				2762B0DB1E8F3F0800203F90 /* CompletionScreen.swift */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		2762B0E41E8F430100203F90 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0E01E8F42F600203F90 /* ImageProcessing.swift */,
+				2762B0E21E8F42FD00203F90 /* TextProcessing.swift */,
+			);
+			name = Backend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +297,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2762B0AC1E8F3DBC00203F90 /* ViewController.swift in Sources */,
+				2762B0E31E8F42FD00203F90 /* TextProcessing.swift in Sources */,
+				2762B0D81E8F3EEA00203F90 /* CameraScreen.swift in Sources */,
+				2762B0DF1E8F3F4200203F90 /* ScannedEventClass.swift in Sources */,
+				2762B0E11E8F42F600203F90 /* ImageProcessing.swift in Sources */,
+				2762B0DC1E8F3F0800203F90 /* CompletionScreen.swift in Sources */,
+				2762B0DA1E8F3EF800203F90 /* ProcessingScreen.swift in Sources */,
 				2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2C266GZ596;
 				INFOPLIST_FILE = "SoFly Scanner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-Scanner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2C266GZ596;
 				INFOPLIST_FILE = "SoFly Scanner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-Scanner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +558,7 @@
 				2762B0D01E8F3DBC00203F90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2762B0D11E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly ScannerTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +567,7 @@
 				2762B0D31E8F3DBC00203F90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2762B0D41E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly ScannerUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +576,7 @@
 				2762B0D61E8F3DBC00203F90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
