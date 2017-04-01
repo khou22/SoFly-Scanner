@@ -16,6 +16,7 @@ class ProcessingScreen: UIViewController {
     
     // Options
     var loadingTime = 6.0 // Number of seconds on loading screen
+    var pauseTime = 1.0 // Time paused after checkmark is shown
     
     // UI Elements
     @IBOutlet weak var iPhoneFull: UIImageView! // Faded iPhone
@@ -62,7 +63,7 @@ class ProcessingScreen: UIViewController {
         let originalBarcodeFrame: CGRect = scannerBar.frame // Original frame
         let targetBarcodeFrame: CGRect = CGRect(x: originalBarcodeFrame.minX, y: targetFrame.minY, width: originalBarcodeFrame.width, height: originalBarcodeFrame.height)
         
-        UIView.animate(withDuration: 2.0, delay: 1.0, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: loadingTime - 1.0 - 0.2 - 0.25 - pauseTime, delay: 1.0, options: [.curveEaseInOut], animations: {
             // Set to new frames
             self.iPhoneCropped.frame = targetFrame
             self.scannerBar.frame = targetBarcodeFrame
@@ -74,9 +75,10 @@ class ProcessingScreen: UIViewController {
             self.scanningLabel.isHidden = true
             self.checkmarkHeightConstraint.constant = 30 // Smaller than normal
             
-            UIView.animate(withDuration: 0.3, delay: 0.25, options: [.curveEaseInOut], animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.25, options: [.curveEaseInOut], animations: {
                 // Show checkmark
-                self.completeScan.layer.opacity = 1.0
+                self.completeScan.layer.opacity = 1.0 // Make checkmark visible
+                self.scannerBar.layer.opacity = 0.0 // Fade the scanner bar
                 self.checkmarkHeightConstraint.constant = 60 // Original
                 self.view.layoutIfNeeded() // Update frontend
             }, completion: nil )
