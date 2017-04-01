@@ -13,6 +13,7 @@ class ProcessingScreen: UIViewController {
     
     // Data
     var image: UIImage = UIImage()
+    var preprocessedText: String = ""
     
     // Options
     var loadingTime = 6.0 // Number of seconds on loading screen
@@ -84,7 +85,7 @@ class ProcessingScreen: UIViewController {
             }, completion: nil )
         })
         
-        ImageProcessing.testing(image: self.image) // Testing
+        self.preprocessedText = ImageProcessing.testing(image: self.image) // Testing
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -93,6 +94,7 @@ class ProcessingScreen: UIViewController {
         if (segue.identifier == Segues.processingToCompletion) {
             let completionScreen = segue.destination as! CompletionScreen // Get VC
             completionScreen.image = self.image // Pass on image
+            completionScreen.randomText = self.preprocessedText
         }
     }
     

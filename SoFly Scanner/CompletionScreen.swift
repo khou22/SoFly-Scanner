@@ -12,9 +12,15 @@ import UIKit
 class CompletionScreen: UIViewController {
     
     var image: UIImage = UIImage() // Store image
+    var randomText: String = ""
+    @IBOutlet weak var randomLabel: UILabel!
     
     override func viewDidLoad() {
         print("Completion screen loaded")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        randomLabel.text = randomText
     }
     
 }

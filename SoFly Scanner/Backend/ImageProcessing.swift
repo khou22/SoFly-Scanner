@@ -52,12 +52,11 @@ class ImageProcessing {
         return tesseract.recognizedText // Return text
     }
     
-    static func testing(image: UIImage) {
+    static func testing(image: UIImage) -> String {
         let str = ImageProcessing.performImageRecognition(image: image)
         print(str) // Print raw text
         
         let preprocessed: String = NaturalLangProcessing.preprocess(text: str)
-        
         let lemmatizedText = NaturalLangProcessing.lemmatize(text: preprocessed)
         
         // Print lematized
@@ -70,7 +69,13 @@ class ImageProcessing {
         // Test the NLP
         let year: String = NaturalLangProcessing.Year(text: preprocessed)
         let month: String = NaturalLangProcessing.Month(text: preprocessed)
+        let time: String = NaturalLangProcessing.Time(text: preprocessed)
+
         print("Year: " + year)
-        print("Nonth: " + month)
+        print("Month: " + month)
+        print("Time: " + time)
+        print(NaturalLangProcessing.getDate(text: preprocessed)) // Print the concatinated date
+        
+        return preprocessed
     }
 }

@@ -243,12 +243,29 @@
                     <view key="view" contentMode="scaleToFill" id="ctX-SF-fjD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o6e-9t-QYK">
+                                <rect key="frame" x="10" y="50" width="355" height="587"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o6e-9t-QYK" firstAttribute="top" secondItem="DEG-UK-6LC" secondAttribute="bottom" constant="30" id="7TO-ha-UJK"/>
+                            <constraint firstAttribute="trailing" secondItem="o6e-9t-QYK" secondAttribute="trailing" constant="10" id="aFn-VO-8PK"/>
+                            <constraint firstItem="W93-Lk-xWu" firstAttribute="top" secondItem="o6e-9t-QYK" secondAttribute="bottom" constant="30" id="axi-6Y-njq"/>
+                            <constraint firstItem="o6e-9t-QYK" firstAttribute="leading" secondItem="ctX-SF-fjD" secondAttribute="leading" constant="10" id="h1K-09-UEl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="randomLabel" destination="o6e-9t-QYK" id="dRx-Kx-72T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Djy-3R-35e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1487" y="36"/>
+            <point key="canvasLocation" x="1485.5999999999999" y="35.532233883058474"/>
         </scene>
     </scenes>
     <resources>
