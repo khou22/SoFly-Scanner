@@ -109,6 +109,8 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     // Called when photo is captured
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         
+        self.captureSession.stopRunning() // Freeze the frame
+        
         // Show errors if any
         if let error = error {
             print(error.localizedDescription)
