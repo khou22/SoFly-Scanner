@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */; };
+		2762B0AC1E8F3DBC00203F90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0AB1E8F3DBC00203F90 /* ViewController.swift */; };
+		2762B0AF1E8F3DBC00203F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0AD1E8F3DBC00203F90 /* Main.storyboard */; };
+		2762B0B11E8F3DBC00203F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0B01E8F3DBC00203F90 /* Assets.xcassets */; };
+		2762B0B41E8F3DBC00203F90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0B21E8F3DBC00203F90 /* LaunchScreen.storyboard */; };
+		2762B0BF1E8F3DBC00203F90 /* SoFly_ScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0BE1E8F3DBC00203F90 /* SoFly_ScannerTests.swift */; };
+		2762B0CA1E8F3DBC00203F90 /* SoFly_ScannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0C91E8F3DBC00203F90 /* SoFly_ScannerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2762B0BB1E8F3DBC00203F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2762B09E1E8F3DBC00203F90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2762B0A51E8F3DBC00203F90;
+			remoteInfo = "SoFly Scanner";
+		};
+		2762B0C61E8F3DBC00203F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2762B09E1E8F3DBC00203F90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2762B0A51E8F3DBC00203F90;
+			remoteInfo = "SoFly Scanner";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2762B0A61E8F3DBC00203F90 /* SoFly Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoFly Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2762B0AB1E8F3DBC00203F90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2762B0AE1E8F3DBC00203F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2762B0B01E8F3DBC00203F90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2762B0B31E8F3DBC00203F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2762B0B51E8F3DBC00203F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2762B0BA1E8F3DBC00203F90 /* SoFly ScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SoFly ScannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2762B0BE1E8F3DBC00203F90 /* SoFly_ScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoFly_ScannerTests.swift; sourceTree = "<group>"; };
+		2762B0C01E8F3DBC00203F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2762B0C51E8F3DBC00203F90 /* SoFly ScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SoFly ScannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2762B0C91E8F3DBC00203F90 /* SoFly_ScannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoFly_ScannerUITests.swift; sourceTree = "<group>"; };
+		2762B0CB1E8F3DBC00203F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2762B0A31E8F3DBC00203F90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2762B0B71E8F3DBC00203F90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2762B0C21E8F3DBC00203F90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2762B09D1E8F3DBC00203F90 = {
+			isa = PBXGroup;
+			children = (
+				2762B0A81E8F3DBC00203F90 /* SoFly Scanner */,
+				2762B0BD1E8F3DBC00203F90 /* SoFly ScannerTests */,
+				2762B0C81E8F3DBC00203F90 /* SoFly ScannerUITests */,
+				2762B0A71E8F3DBC00203F90 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2762B0A71E8F3DBC00203F90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0A61E8F3DBC00203F90 /* SoFly Scanner.app */,
+				2762B0BA1E8F3DBC00203F90 /* SoFly ScannerTests.xctest */,
+				2762B0C51E8F3DBC00203F90 /* SoFly ScannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2762B0A81E8F3DBC00203F90 /* SoFly Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */,
+				2762B0AB1E8F3DBC00203F90 /* ViewController.swift */,
+				2762B0AD1E8F3DBC00203F90 /* Main.storyboard */,
+				2762B0B01E8F3DBC00203F90 /* Assets.xcassets */,
+				2762B0B21E8F3DBC00203F90 /* LaunchScreen.storyboard */,
+				2762B0B51E8F3DBC00203F90 /* Info.plist */,
+			);
+			path = "SoFly Scanner";
+			sourceTree = "<group>";
+		};
+		2762B0BD1E8F3DBC00203F90 /* SoFly ScannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0BE1E8F3DBC00203F90 /* SoFly_ScannerTests.swift */,
+				2762B0C01E8F3DBC00203F90 /* Info.plist */,
+			);
+			path = "SoFly ScannerTests";
+			sourceTree = "<group>";
+		};
+		2762B0C81E8F3DBC00203F90 /* SoFly ScannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0C91E8F3DBC00203F90 /* SoFly_ScannerUITests.swift */,
+				2762B0CB1E8F3DBC00203F90 /* Info.plist */,
+			);
+			path = "SoFly ScannerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2762B0A51E8F3DBC00203F90 /* SoFly Scanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2762B0CE1E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly Scanner" */;
+			buildPhases = (
+				2762B0A21E8F3DBC00203F90 /* Sources */,
+				2762B0A31E8F3DBC00203F90 /* Frameworks */,
+				2762B0A41E8F3DBC00203F90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SoFly Scanner";
+			productName = "SoFly Scanner";
+			productReference = 2762B0A61E8F3DBC00203F90 /* SoFly Scanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2762B0B91E8F3DBC00203F90 /* SoFly ScannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2762B0D11E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly ScannerTests" */;
+			buildPhases = (
+				2762B0B61E8F3DBC00203F90 /* Sources */,
+				2762B0B71E8F3DBC00203F90 /* Frameworks */,
+				2762B0B81E8F3DBC00203F90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2762B0BC1E8F3DBC00203F90 /* PBXTargetDependency */,
+			);
+			name = "SoFly ScannerTests";
+			productName = "SoFly ScannerTests";
+			productReference = 2762B0BA1E8F3DBC00203F90 /* SoFly ScannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2762B0C41E8F3DBC00203F90 /* SoFly ScannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2762B0D41E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly ScannerUITests" */;
+			buildPhases = (
+				2762B0C11E8F3DBC00203F90 /* Sources */,
+				2762B0C21E8F3DBC00203F90 /* Frameworks */,
+				2762B0C31E8F3DBC00203F90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2762B0C71E8F3DBC00203F90 /* PBXTargetDependency */,
+			);
+			name = "SoFly ScannerUITests";
+			productName = "SoFly ScannerUITests";
+			productReference = 2762B0C51E8F3DBC00203F90 /* SoFly ScannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2762B09E1E8F3DBC00203F90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Kevin Hou";
+				TargetAttributes = {
+					2762B0A51E8F3DBC00203F90 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 2C266GZ596;
+						ProvisioningStyle = Automatic;
+					};
+					2762B0B91E8F3DBC00203F90 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 2C266GZ596;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2762B0A51E8F3DBC00203F90;
+					};
+					2762B0C41E8F3DBC00203F90 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 2C266GZ596;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2762B0A51E8F3DBC00203F90;
+					};
+				};
+			};
+			buildConfigurationList = 2762B0A11E8F3DBC00203F90 /* Build configuration list for PBXProject "SoFly Scanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2762B09D1E8F3DBC00203F90;
+			productRefGroup = 2762B0A71E8F3DBC00203F90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2762B0A51E8F3DBC00203F90 /* SoFly Scanner */,
+				2762B0B91E8F3DBC00203F90 /* SoFly ScannerTests */,
+				2762B0C41E8F3DBC00203F90 /* SoFly ScannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2762B0A41E8F3DBC00203F90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2762B0B41E8F3DBC00203F90 /* LaunchScreen.storyboard in Resources */,
+				2762B0B11E8F3DBC00203F90 /* Assets.xcassets in Resources */,
+				2762B0AF1E8F3DBC00203F90 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2762B0B81E8F3DBC00203F90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2762B0C31E8F3DBC00203F90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2762B0A21E8F3DBC00203F90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2762B0AC1E8F3DBC00203F90 /* ViewController.swift in Sources */,
+				2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2762B0B61E8F3DBC00203F90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2762B0BF1E8F3DBC00203F90 /* SoFly_ScannerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2762B0C11E8F3DBC00203F90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2762B0CA1E8F3DBC00203F90 /* SoFly_ScannerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2762B0BC1E8F3DBC00203F90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2762B0A51E8F3DBC00203F90 /* SoFly Scanner */;
+			targetProxy = 2762B0BB1E8F3DBC00203F90 /* PBXContainerItemProxy */;
+		};
+		2762B0C71E8F3DBC00203F90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2762B0A51E8F3DBC00203F90 /* SoFly Scanner */;
+			targetProxy = 2762B0C61E8F3DBC00203F90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2762B0AD1E8F3DBC00203F90 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2762B0AE1E8F3DBC00203F90 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2762B0B21E8F3DBC00203F90 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2762B0B31E8F3DBC00203F90 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2762B0CC1E8F3DBC00203F90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2762B0CD1E8F3DBC00203F90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2762B0CF1E8F3DBC00203F90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2C266GZ596;
+				INFOPLIST_FILE = "SoFly Scanner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-Scanner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2762B0D01E8F3DBC00203F90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2C266GZ596;
+				INFOPLIST_FILE = "SoFly Scanner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-Scanner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2762B0D21E8F3DBC00203F90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2C266GZ596;
+				INFOPLIST_FILE = "SoFly ScannerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-ScannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoFly Scanner.app/SoFly Scanner";
+			};
+			name = Debug;
+		};
+		2762B0D31E8F3DBC00203F90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2C266GZ596;
+				INFOPLIST_FILE = "SoFly ScannerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-ScannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoFly Scanner.app/SoFly Scanner";
+			};
+			name = Release;
+		};
+		2762B0D51E8F3DBC00203F90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 2C266GZ596;
+				INFOPLIST_FILE = "SoFly ScannerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-ScannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "SoFly Scanner";
+			};
+			name = Debug;
+		};
+		2762B0D61E8F3DBC00203F90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 2C266GZ596;
+				INFOPLIST_FILE = "SoFly ScannerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-ScannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "SoFly Scanner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2762B0A11E8F3DBC00203F90 /* Build configuration list for PBXProject "SoFly Scanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2762B0CC1E8F3DBC00203F90 /* Debug */,
+				2762B0CD1E8F3DBC00203F90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2762B0CE1E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly Scanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2762B0CF1E8F3DBC00203F90 /* Debug */,
+				2762B0D01E8F3DBC00203F90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2762B0D11E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly ScannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2762B0D21E8F3DBC00203F90 /* Debug */,
+				2762B0D31E8F3DBC00203F90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2762B0D41E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly ScannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2762B0D51E8F3DBC00203F90 /* Debug */,
+				2762B0D61E8F3DBC00203F90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2762B09E1E8F3DBC00203F90 /* Project object */;
+}
