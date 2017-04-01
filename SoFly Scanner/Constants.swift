@@ -19,4 +19,9 @@ struct Images {
     static let testPosterSimpleDoubleSpaced     = "sample-poster-3"
     static let testPosterFrench                 = "sample-poster-french"
     static let testPosterCarWash                = "sample-poster-car-wash"
+    static let testPosterEngHin                 = "sample-poster-eng+hin"
+    static let testPosterGoogle                 = "sample-google-logo"
+    static let testPosterHelloWorld             = "sample-hello-world"
+    static let testSamplePicture                = "sample-picture-1"
+    static let testPosterHPF2016                = "sample-poster-hp-f2016"
 }

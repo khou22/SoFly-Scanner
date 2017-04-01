@@ -7,12 +7,14 @@
 //
 
 import Foundation
-import  UIKit
+import UIKit
 
 class ImageProcessing {
     
     // Scale the image
     static func scaleImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
+        print("Old dimensions: \(image.size.width), \(image.size.height)")
+        
         var scaledSize = CGSize(width: maxDimension, height: maxDimension)
         var scaleFactor: CGFloat
         
@@ -30,18 +32,22 @@ class ImageProcessing {
         image.draw(in: CGRect(x: 0, y: 0, width: scaledSize.width, height: scaledSize.height))
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
+        print("New dimensions: \(scaledImage?.size.width), \(scaledImage?.size.height)")
     
         return scaledImage!
     }
 
     // Execute Tesseract API
     static func performImageRecognition(image: UIImage) -> String {
+        // Tesseract OCR
         let tesseract = G8Tesseract()
         tesseract.language = "eng"
         tesseract.engineMode = .tesseractCubeCombined
         tesseract.pageSegmentationMode = .auto
         tesseract.maximumRecognitionTime = 120.0
-        tesseract.image = scaleImage(image: image, maxDimension: 640).g8_blackAndWhite()
+        tesseract.image = scaleImage(image: image, maxDimension: 500).g8_blackAndWhite()
+        tesseract.image = image
         tesseract.recognize()
     
         return tesseract.recognizedText // Return text
