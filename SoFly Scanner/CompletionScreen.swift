@@ -21,6 +21,7 @@ class CompletionScreen: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         randomLabel.text = randomText
+        print(randomText)
     }
     
 }

@@ -43,7 +43,6 @@ class ProcessingScreen: UIViewController {
     func setupAnimations() {
         // Calculate frames
         let targetFrame: CGRect = iPhoneFull.frame // Target frame
-        print(targetFrame.maxY)
         let startingFrame: CGRect = CGRect(x: targetFrame.minX, y: targetFrame.maxY, width: targetFrame.width, height: 0) // Start with 0 height
         
         // Hide iPhone
@@ -59,7 +58,6 @@ class ProcessingScreen: UIViewController {
         
         // Setup frames for animations
         let targetFrame: CGRect = iPhoneFull.frame // Target frame
-        print(targetFrame.maxY)
         
         let originalBarcodeFrame: CGRect = scannerBar.frame // Original frame
         let targetBarcodeFrame: CGRect = CGRect(x: originalBarcodeFrame.minX, y: targetFrame.minY, width: originalBarcodeFrame.width, height: originalBarcodeFrame.height)
@@ -85,7 +83,14 @@ class ProcessingScreen: UIViewController {
             }, completion: nil )
         })
         
-        self.preprocessedText = ImageProcessing.testing(image: self.image) // Testing
+        // Background thread
+        DispatchQueue.global(qos: .background).async {
+            let preprocessed = ImageProcessing.testing(image: self.image) // Testing
+            
+            DispatchQueue.main.async { // Back on the main thread
+                self.preprocessedText = preprocessed
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -153,7 +153,7 @@ class NaturalLangProcessing {
 
     }
     
-    static func getDate(text: String) -> Date {
+    static func getDate(text: String) -> String {
         let year = Year(text: text)
         let month = Month(text: text)
         let time = Time(text: text)
@@ -163,8 +163,9 @@ class NaturalLangProcessing {
         print(dateStr)
         
         let formatter = DateFormatter()
+        formatter.dateFormat = "yyy-MM-dd HH:mm:ss" // Input format
         let date = formatter.date(from: dateStr)
         
-        return date!
+        return dateStr
     }
 }
