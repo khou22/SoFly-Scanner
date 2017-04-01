@@ -18,7 +18,7 @@ class CameraScreen: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let testImg = UIImage(named: Images.testPosterCarWash) {
+        if let testImg = UIImage(named: Images.testPosterSimple) {
             testImageView.image = ImageProcessing.scaleImage(image: testImg, maxDimension: 640)
             print("Testing image")
             let str = ImageProcessing.performImageRecognition(image: testImg)

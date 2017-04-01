@@ -28,6 +28,9 @@
 		2762B0FD1E8F4DCB00203F90 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0EE1E8F4B0C00203F90 /* tessdata */; };
 		2762B0FE1E8F4DCC00203F90 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0EE1E8F4B0C00203F90 /* tessdata */; };
 		27AA8CC91E8F506700EE73EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA8CC81E8F506700EE73EA /* Constants.swift */; };
+		2C867D926EBF539930539512 /* Pods_SoFly_ScannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54519ADE2DAF873944D5FC7B /* Pods_SoFly_ScannerUITests.framework */; };
+		38F7D1595E9012A70EDB4A07 /* Pods_SoFly_Scanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 437A7E712B305A18144A014B /* Pods_SoFly_Scanner.framework */; };
+		B68CBEF8F765C8E649506682 /* Pods_SoFly_ScannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87755420C1933700436F8E07 /* Pods_SoFly_ScannerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1262678E8E498658FAC9C414 /* Pods-SoFly Scanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoFly Scanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoFly Scanner/Pods-SoFly Scanner.release.xcconfig"; sourceTree = "<group>"; };
+		211CCE3A163A2A2FD4C7D36F /* Pods-SoFly ScannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoFly ScannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoFly ScannerUITests/Pods-SoFly ScannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2762B0A61E8F3DBC00203F90 /* SoFly Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoFly Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2762B0AE1E8F3DBC00203F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +77,13 @@
 		2762B0F31E8F4B3A00203F90 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		2762B0FA1E8F4DA500203F90 /* SoFly Scanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoFly Scanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		27AA8CC81E8F506700EE73EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		29CF13B0466B4622DD861C57 /* Pods-SoFly Scanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoFly Scanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoFly Scanner/Pods-SoFly Scanner.debug.xcconfig"; sourceTree = "<group>"; };
+		2EBD535FCFEE9B0F7CD85E04 /* Pods-SoFly ScannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoFly ScannerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoFly ScannerTests/Pods-SoFly ScannerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		437A7E712B305A18144A014B /* Pods_SoFly_Scanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoFly_Scanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54519ADE2DAF873944D5FC7B /* Pods_SoFly_ScannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoFly_ScannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63BA2566CFB15E36D0D203F2 /* Pods-SoFly ScannerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoFly ScannerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoFly ScannerUITests/Pods-SoFly ScannerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		87755420C1933700436F8E07 /* Pods_SoFly_ScannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoFly_ScannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1DB25244867015472EF67D2 /* Pods-SoFly ScannerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoFly ScannerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoFly ScannerTests/Pods-SoFly ScannerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,7 @@
 				2762B0F21E8F4B3300203F90 /* libstdc++.6.0.9.tbd in Frameworks */,
 				2762B0F41E8F4B3A00203F90 /* CoreImage.framework in Frameworks */,
 				2762B0ED1E8F4AF000203F90 /* TesseractOCR.framework in Frameworks */,
+				38F7D1595E9012A70EDB4A07 /* Pods_SoFly_Scanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2762B0FB1E8F4DC500203F90 /* TesseractOCR.framework in Frameworks */,
+				B68CBEF8F765C8E649506682 /* Pods_SoFly_ScannerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +112,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				2762B0FC1E8F4DC600203F90 /* TesseractOCR.framework in Frameworks */,
+				2C867D926EBF539930539512 /* Pods_SoFly_ScannerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00AF351C2EBD728F59806F53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29CF13B0466B4622DD861C57 /* Pods-SoFly Scanner.debug.xcconfig */,
+				1262678E8E498658FAC9C414 /* Pods-SoFly Scanner.release.xcconfig */,
+				2EBD535FCFEE9B0F7CD85E04 /* Pods-SoFly ScannerTests.debug.xcconfig */,
+				A1DB25244867015472EF67D2 /* Pods-SoFly ScannerTests.release.xcconfig */,
+				211CCE3A163A2A2FD4C7D36F /* Pods-SoFly ScannerUITests.debug.xcconfig */,
+				63BA2566CFB15E36D0D203F2 /* Pods-SoFly ScannerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2762B09D1E8F3DBC00203F90 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +140,7 @@
 				2762B0C81E8F3DBC00203F90 /* SoFly ScannerUITests */,
 				2762B0A71E8F3DBC00203F90 /* Products */,
 				2762B0F01E8F4B3300203F90 /* Frameworks */,
+				00AF351C2EBD728F59806F53 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +223,9 @@
 			children = (
 				2762B0F31E8F4B3A00203F90 /* CoreImage.framework */,
 				2762B0F11E8F4B3300203F90 /* libstdc++.6.0.9.tbd */,
+				437A7E712B305A18144A014B /* Pods_SoFly_Scanner.framework */,
+				87755420C1933700436F8E07 /* Pods_SoFly_ScannerTests.framework */,
+				54519ADE2DAF873944D5FC7B /* Pods_SoFly_ScannerUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2762B0CE1E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly Scanner" */;
 			buildPhases = (
+				E44AB36E2F285F511E3126CB /* [CP] Check Pods Manifest.lock */,
 				2762B0A21E8F3DBC00203F90 /* Sources */,
 				2762B0A31E8F3DBC00203F90 /* Frameworks */,
 				2762B0A41E8F3DBC00203F90 /* Resources */,
+				93A02902AAA74A6DD1E5F048 /* [CP] Embed Pods Frameworks */,
+				CA805FADDDE50DCBABF870D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,9 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2762B0D11E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly ScannerTests" */;
 			buildPhases = (
+				E95335E63B5D391B1140D9B9 /* [CP] Check Pods Manifest.lock */,
 				2762B0B61E8F3DBC00203F90 /* Sources */,
 				2762B0B71E8F3DBC00203F90 /* Frameworks */,
 				2762B0B81E8F3DBC00203F90 /* Resources */,
+				4A62E55C341C92F24727BFB2 /* [CP] Embed Pods Frameworks */,
+				3B3C61087C74331390ACEC08 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,9 +294,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2762B0D41E8F3DBC00203F90 /* Build configuration list for PBXNativeTarget "SoFly ScannerUITests" */;
 			buildPhases = (
+				63E885AC328CF9F7FFF98F88 /* [CP] Check Pods Manifest.lock */,
 				2762B0C11E8F3DBC00203F90 /* Sources */,
 				2762B0C21E8F3DBC00203F90 /* Frameworks */,
 				2762B0C31E8F3DBC00203F90 /* Resources */,
+				ED54424BC12E2FD9FFF09ECF /* [CP] Embed Pods Frameworks */,
+				1D5D0A6F2336ECA06306FFDF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -349,6 +390,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D5D0A6F2336ECA06306FFDF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoFly ScannerUITests/Pods-SoFly ScannerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B3C61087C74331390ACEC08 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoFly ScannerTests/Pods-SoFly ScannerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A62E55C341C92F24727BFB2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoFly ScannerTests/Pods-SoFly ScannerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63E885AC328CF9F7FFF98F88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		93A02902AAA74A6DD1E5F048 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoFly Scanner/Pods-SoFly Scanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA805FADDDE50DCBABF870D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoFly Scanner/Pods-SoFly Scanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E44AB36E2F285F511E3126CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E95335E63B5D391B1140D9B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED54424BC12E2FD9FFF09ECF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoFly ScannerUITests/Pods-SoFly ScannerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2762B0A21E8F3DBC00203F90 /* Sources */ = {
@@ -514,6 +693,7 @@
 		};
 		2762B0CF1E8F3DBC00203F90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29CF13B0466B4622DD861C57 /* Pods-SoFly Scanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
@@ -540,6 +720,7 @@
 		};
 		2762B0D01E8F3DBC00203F90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1262678E8E498658FAC9C414 /* Pods-SoFly Scanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
@@ -565,6 +746,7 @@
 		};
 		2762B0D21E8F3DBC00203F90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EBD535FCFEE9B0F7CD85E04 /* Pods-SoFly ScannerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -584,6 +766,7 @@
 		};
 		2762B0D31E8F3DBC00203F90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1DB25244867015472EF67D2 /* Pods-SoFly ScannerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -603,6 +786,7 @@
 		};
 		2762B0D51E8F3DBC00203F90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 211CCE3A163A2A2FD4C7D36F /* Pods-SoFly ScannerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2C266GZ596;
@@ -621,6 +805,7 @@
 		};
 		2762B0D61E8F3DBC00203F90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63BA2566CFB15E36D0D203F2 /* Pods-SoFly ScannerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2C266GZ596;
