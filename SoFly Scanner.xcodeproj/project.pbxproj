@@ -19,6 +19,14 @@
 		2762B0DF1E8F3F4200203F90 /* ScannedEventClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */; };
 		2762B0E81E8F45E200203F90 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0E61E8F45E200203F90 /* ImageProcessing.swift */; };
 		2762B0E91E8F45E200203F90 /* TextProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0E71E8F45E200203F90 /* TextProcessing.swift */; };
+		2762B0ED1E8F4AF000203F90 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */; };
+		2762B0EF1E8F4B0C00203F90 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0EE1E8F4B0C00203F90 /* tessdata */; };
+		2762B0F21E8F4B3300203F90 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2762B0F11E8F4B3300203F90 /* libstdc++.6.0.9.tbd */; };
+		2762B0F41E8F4B3A00203F90 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2762B0F31E8F4B3A00203F90 /* CoreImage.framework */; };
+		2762B0FB1E8F4DC500203F90 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */; };
+		2762B0FC1E8F4DC600203F90 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */; };
+		2762B0FD1E8F4DCB00203F90 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0EE1E8F4B0C00203F90 /* tessdata */; };
+		2762B0FE1E8F4DCC00203F90 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0EE1E8F4B0C00203F90 /* tessdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +65,11 @@
 		2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedEventClass.swift; sourceTree = "<group>"; };
 		2762B0E61E8F45E200203F90 /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageProcessing.swift; path = Backend/ImageProcessing.swift; sourceTree = "<group>"; };
 		2762B0E71E8F45E200203F90 /* TextProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextProcessing.swift; path = Backend/TextProcessing.swift; sourceTree = "<group>"; };
+		2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		2762B0EE1E8F4B0C00203F90 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		2762B0F11E8F4B3300203F90 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		2762B0F31E8F4B3A00203F90 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		2762B0FA1E8F4DA500203F90 /* SoFly Scanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoFly Scanner-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2762B0F21E8F4B3300203F90 /* libstdc++.6.0.9.tbd in Frameworks */,
+				2762B0F41E8F4B3A00203F90 /* CoreImage.framework in Frameworks */,
+				2762B0ED1E8F4AF000203F90 /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2762B0FB1E8F4DC500203F90 /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2762B0FC1E8F4DC600203F90 /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +109,7 @@
 				2762B0BD1E8F3DBC00203F90 /* SoFly ScannerTests */,
 				2762B0C81E8F3DBC00203F90 /* SoFly ScannerUITests */,
 				2762B0A71E8F3DBC00203F90 /* Products */,
+				2762B0F01E8F4B3300203F90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,9 +131,12 @@
 				2762B0E51E8F444300203F90 /* Classes */,
 				2762B0E41E8F430100203F90 /* Backend */,
 				2762B0DD1E8F3F1400203F90 /* Screens */,
+				2762B0F91E8F4C8700203F90 /* Supporting Files */,
+				2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */,
 				2762B0B01E8F3DBC00203F90 /* Assets.xcassets */,
 				2762B0B21E8F3DBC00203F90 /* LaunchScreen.storyboard */,
 				2762B0B51E8F3DBC00203F90 /* Info.plist */,
+				2762B0FA1E8F4DA500203F90 /* SoFly Scanner-Bridging-Header.h */,
 			);
 			path = "SoFly Scanner";
 			sourceTree = "<group>";
@@ -162,6 +184,23 @@
 				2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		2762B0F01E8F4B3300203F90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0F31E8F4B3A00203F90 /* CoreImage.framework */,
+				2762B0F11E8F4B3300203F90 /* libstdc++.6.0.9.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2762B0F91E8F4C8700203F90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2762B0EE1E8F4B0C00203F90 /* tessdata */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +272,7 @@
 					2762B0A51E8F3DBC00203F90 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 2C266GZ596;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					2762B0B91E8F3DBC00203F90 = {
@@ -275,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2762B0B41E8F3DBC00203F90 /* LaunchScreen.storyboard in Resources */,
+				2762B0EF1E8F4B0C00203F90 /* tessdata in Resources */,
 				2762B0B11E8F3DBC00203F90 /* Assets.xcassets in Resources */,
 				2762B0AF1E8F3DBC00203F90 /* Main.storyboard in Resources */,
 			);
@@ -284,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2762B0FD1E8F4DCB00203F90 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2762B0FE1E8F4DCC00203F90 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,12 +504,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2C266GZ596;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoFly\\ Scanner",
+					"$(SRCROOT)/../Products/",
+					"$(PROJECT_DIR)/SoFly\\ Scanner",
+				);
 				INFOPLIST_FILE = "SoFly Scanner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-Scanner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoFly Scanner/SoFly Scanner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -475,12 +530,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2C266GZ596;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoFly\\ Scanner",
+					"$(SRCROOT)/../Products/",
+					"$(PROJECT_DIR)/SoFly\\ Scanner",
+				);
 				INFOPLIST_FILE = "SoFly Scanner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-Scanner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoFly Scanner/SoFly Scanner-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -491,6 +557,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2C266GZ596;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoFly\\ Scanner",
+				);
 				INFOPLIST_FILE = "SoFly ScannerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-ScannerTests";
@@ -506,6 +576,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2C266GZ596;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoFly\\ Scanner",
+				);
 				INFOPLIST_FILE = "SoFly ScannerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-ScannerTests";
@@ -520,6 +594,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2C266GZ596;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoFly\\ Scanner",
+				);
 				INFOPLIST_FILE = "SoFly ScannerUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-ScannerUITests";
@@ -534,6 +612,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2C266GZ596;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoFly\\ Scanner",
+				);
 				INFOPLIST_FILE = "SoFly ScannerUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.SoFly-ScannerUITests";

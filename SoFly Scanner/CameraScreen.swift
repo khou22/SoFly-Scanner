@@ -13,6 +13,11 @@ class CameraScreen: UIViewController {
     
     override func viewDidLoad() {
         print("Camera screen loaded")
+        
+        if let testImg = UIImage(named: "sample-poster") {
+            let str = ImageProcessing.performImageRecognition(image: testImg)
+            print(str)
+        }
     }
     
 }
