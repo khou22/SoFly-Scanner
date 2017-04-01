@@ -16,6 +16,9 @@ struct Images {
     // Image names
     static let captureImageButton               = "capture-image-button"
     static let captureImageButtonPressed        = "capture-image-button-pressed"
+    static let iPhoneFull                       = "iphone-full"
+    static let iPhoneWithDocument               = "iphone-with-document"
+    static let scannerBar                       = "scanner-bar"
     
     // Test posters
     static let testPosterHackPrinceton          = "sample-poster-1"

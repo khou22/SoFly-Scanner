@@ -57,8 +57,6 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     
     // User presses button to take picture
     @IBAction func captureImage(_ sender: Any) {
-        print("Capturing image")
-        
         captureImage() // Capture image
     }
     
@@ -90,7 +88,7 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
                     }
                 }
                 catch {
-                    print("exception!")
+                    print("Exception!")
                 }
             }
         }
@@ -105,7 +103,6 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
             
             // Capture the image
             sessionOutput.capturePhoto(with: photoSettings, delegate: self) // Callback below
-            print("Captured")
         }
     }
     

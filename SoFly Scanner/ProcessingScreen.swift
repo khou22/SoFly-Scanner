@@ -11,10 +11,53 @@ import UIKit
 
 class ProcessingScreen: UIViewController {
     
+    // Data
     var image: UIImage = UIImage()
+    
+    // UI Elements
+    @IBOutlet weak var iPhoneFull: UIImageView! // Faded iPhone
+    @IBOutlet weak var iPhoneCropped: UIImageView! // iPhone to animate
+    @IBOutlet weak var scannerBar: UIImageView! // Scanner bar
     
     override func viewDidLoad() {
         print("Processing...")
+    }
+    
+    // Modify page layout
+    override func viewDidLayoutSubviews() {
+        setupAnimations() // Setup loading animations
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        startAnimations() // Start animation
+    }
+    
+    // Setup loading animations
+    func setupAnimations() {
+        // Calculate frames
+        let targetFrame: CGRect = iPhoneFull.frame // Target frame
+        let startingFrame: CGRect = CGRect(x: targetFrame.minX, y: targetFrame.maxY, width: targetFrame.width, height: 0) // Start with 0 height
+        
+        // Hide iPhone
+        self.iPhoneCropped.frame = startingFrame // Starting frame
+    }
+    
+    // Start the loading animations
+    func startAnimations() {
+        // Setup frames for animations
+        let targetFrame: CGRect = iPhoneFull.frame // Target frame
+        
+        let originalBarcodeFrame: CGRect = scannerBar.frame // Original frame
+        let targetBarcodeFrame: CGRect = CGRect(x: originalBarcodeFrame.minX, y: targetFrame.minY, width: originalBarcodeFrame.width, height: originalBarcodeFrame.height)
+        
+        UIView.animate(withDuration: 2.0, delay: 0.2, options: [.curveEaseInOut], animations: {
+            // Set to new frames
+            self.iPhoneCropped.frame = targetFrame
+            self.scannerBar.frame = targetBarcodeFrame
+            
+        }, completion: { completion in
+            print("Processing complete")
+        })
     }
     
 }
