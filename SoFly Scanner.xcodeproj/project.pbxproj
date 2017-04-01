@@ -14,7 +14,7 @@
 		2762B0BF1E8F3DBC00203F90 /* SoFly_ScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0BE1E8F3DBC00203F90 /* SoFly_ScannerTests.swift */; };
 		2762B0CA1E8F3DBC00203F90 /* SoFly_ScannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0C91E8F3DBC00203F90 /* SoFly_ScannerUITests.swift */; };
 		2762B0D81E8F3EEA00203F90 /* CameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0D71E8F3EEA00203F90 /* CameraScreen.swift */; };
-		2762B0DA1E8F3EF800203F90 /* ProcessingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0D91E8F3EF800203F90 /* ProcessingScreen.swift */; };
+		2762B0DA1E8F3EF800203F90 /* DebugScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0D91E8F3EF800203F90 /* DebugScreen.swift */; };
 		2762B0DC1E8F3F0800203F90 /* CompletionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0DB1E8F3F0800203F90 /* CompletionScreen.swift */; };
 		2762B0DF1E8F3F4200203F90 /* ScannedEventClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */; };
 		2762B0E81E8F45E200203F90 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0E61E8F45E200203F90 /* ImageProcessing.swift */; };
@@ -61,7 +61,7 @@
 		2762B0C91E8F3DBC00203F90 /* SoFly_ScannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoFly_ScannerUITests.swift; sourceTree = "<group>"; };
 		2762B0CB1E8F3DBC00203F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2762B0D71E8F3EEA00203F90 /* CameraScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraScreen.swift; sourceTree = "<group>"; };
-		2762B0D91E8F3EF800203F90 /* ProcessingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingScreen.swift; sourceTree = "<group>"; };
+		2762B0D91E8F3EF800203F90 /* DebugScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugScreen.swift; sourceTree = "<group>"; };
 		2762B0DB1E8F3F0800203F90 /* CompletionScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionScreen.swift; sourceTree = "<group>"; };
 		2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedEventClass.swift; sourceTree = "<group>"; };
 		2762B0E61E8F45E200203F90 /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageProcessing.swift; path = Backend/ImageProcessing.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				2762B0D71E8F3EEA00203F90 /* CameraScreen.swift */,
-				2762B0D91E8F3EF800203F90 /* ProcessingScreen.swift */,
+				2762B0D91E8F3EF800203F90 /* DebugScreen.swift */,
 				2762B0DB1E8F3F0800203F90 /* CompletionScreen.swift */,
 			);
 			name = Screens;
@@ -360,7 +360,7 @@
 				2762B0E81E8F45E200203F90 /* ImageProcessing.swift in Sources */,
 				2762B0E91E8F45E200203F90 /* TextProcessing.swift in Sources */,
 				2762B0DC1E8F3F0800203F90 /* CompletionScreen.swift in Sources */,
-				2762B0DA1E8F3EF800203F90 /* ProcessingScreen.swift in Sources */,
+				2762B0DA1E8F3EF800203F90 /* DebugScreen.swift in Sources */,
 				2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */,
 				27AA8CC91E8F506700EE73EA /* Constants.swift in Sources */,
 			);

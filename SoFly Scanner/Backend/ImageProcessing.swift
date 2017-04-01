@@ -58,6 +58,11 @@ class ImageProcessing {
         
         let preprocessed: String = NaturalLangProcessing.preprocess(text: str)
         
-//        print(NaturalLangProcessing.lemmatize(text: preprocessed)) // Print preprocessed text
+        let lemmatizedText = NaturalLangProcessing.lemmatize(text: preprocessed)
+        
+        // Print lematized
+        for (key, value) in lemmatizedText {
+            print(key + ": " + value)
+        }
     }
 }

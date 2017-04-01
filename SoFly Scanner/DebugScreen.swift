@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProcessingScreen: UIViewController {
+class DebugScreen: UIViewController {
     
     var image: UIImage = UIImage()
     @IBOutlet weak var testUIImage: UIImageView!
@@ -22,8 +22,7 @@ class ProcessingScreen: UIViewController {
         testUIImage.image = image // Set image
     }
     
-    override func viewDidLayoutSubviews() {
+    @IBAction func processData(_ sender: Any) {
         ImageProcessing.testing(image: image)
     }
-    
 }

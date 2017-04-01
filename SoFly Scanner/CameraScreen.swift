@@ -33,7 +33,7 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         if let testImg = UIImage(named: Images.testPosterPhotoiPhone) {
-            ImageProcessing.testing(image: testImg) // Testing
+//            ImageProcessing.testing(image: testImg) // Testing
         }
     }
     
@@ -130,14 +130,18 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     // Called when image is grabbed from camera
     func processImage(image: UIImage) {
         finalImage = image // Set as global
-        performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
+        performSegue(withIdentifier: Segues.cameraToDebug, sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // If going to loading screen
         if (segue.identifier == Segues.cameraToLoading) {
-            let loadingScreen = segue.destination as! ProcessingScreen // Get VC
+            // Segue to the loading page
+            
+        } else if (segue.identifier == Segues.cameraToDebug) {
+            // Segue to the debugger page
+            let loadingScreen = segue.destination as! DebugScreen // Get VC
             loadingScreen.image = finalImage // Pass on image
         }
     }
