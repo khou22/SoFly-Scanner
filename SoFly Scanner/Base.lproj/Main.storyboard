@@ -25,17 +25,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-Vh-z8A">
+                                <rect key="frame" x="122" y="557" width="130" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="NhL-Dg-8lJ"/>
+                                    <constraint firstAttribute="width" constant="130" id="wQj-Mq-kp8"/>
+                                </constraints>
+                                <state key="normal" image="capture-image-button"/>
+                                <connections>
+                                    <action selector="captureImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0wN-ds-O3i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="HAH-EU-L1L" secondAttribute="trailing" id="B0a-a8-zMh"/>
                             <constraint firstItem="HAH-EU-L1L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W6B-LI-G1B"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HAH-EU-L1L" secondAttribute="bottom" id="hwq-Wo-rts"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aOh-Vh-z8A" secondAttribute="bottom" constant="40" id="m5a-Ud-unB"/>
                             <constraint firstItem="HAH-EU-L1L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w0g-qT-z13"/>
+                            <constraint firstItem="aOh-Vh-z8A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yk3-uu-jrU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cameraPreview" destination="HAH-EU-L1L" id="TnR-VC-UB1"/>
+                        <outlet property="captureImageButton" destination="aOh-Vh-z8A" id="TJy-Y0-Q09"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -79,4 +93,7 @@
             <point key="canvasLocation" x="1487" y="36"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="capture-image-button" width="100" height="50"/>
+    </resources>
 </document>

@@ -14,6 +14,10 @@ struct Colors {
 
 struct Images {
     // Image names
+    static let captureImageButton               = "capture-image-button"
+    static let captureImageButtonPressed        = "capture-image-button-pressed"
+    
+    // Test posters
     static let testPosterHackPrinceton          = "sample-poster-1"
     static let testPosterSimple                 = "sample-poster-2"
     static let testPosterSimpleDoubleSpaced     = "sample-poster-3"
