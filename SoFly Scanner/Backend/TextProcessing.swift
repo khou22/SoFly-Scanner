@@ -54,9 +54,20 @@ class NaturalLangProcessing {
         return modString
     }
 
-    static func dateFinder(text: String) -> String {
-        let myString = text
+    static func Year(text: String) -> String {
+        let myString = text as NSString
+        let regex1: NSRegularExpression = try! NSRegularExpression(pattern: "201.", options: .caseInsensitive)
+        let regex2: NSRegularExpression = try! NSRegularExpression(pattern: "1.", options: .caseInsensitive)
 
-        return myString
+        let range: NSRange = NSMakeRange(0, myString.characters.count)
+        let modString1 = regex1.matches(myString, options:[], range:range)
+		let modString2 = regex2.matches(myString, options:[], range:range)
+		let f: [String] = modString1.map{mySting.substring($0.range)}
+		let l: [String] = modString2.map{myString.substring($0.range)}
+        var temp: String
+		if (!f.isEmpty) {
+			return f[0]
+		}
+		return l[0]
     }
 }
