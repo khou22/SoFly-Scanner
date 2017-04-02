@@ -13,7 +13,7 @@ class ProcessingScreen: UIViewController {
     
     // Data
     var image: UIImage = UIImage()
-    var preprocessedText: String = "NA"
+    var event: ScannedEvent = ScannedEvent(with: "Event name...", location: "Location...", startDate: Date(), endDate: Date(), preprocessed: "Preprocessed text...") // Empty
     
     // Options
     var loadingTime = 30.0 // Number of seconds on loading screen
@@ -83,14 +83,10 @@ class ProcessingScreen: UIViewController {
         
         // Background thread
         DispatchQueue.global(qos: .background).async {
-            let preprocessed = ImageProcessing.testing(image: self.image) // Testing
+            self.event = ImageProcessing.process(image: self.image) // Process image
             
             DispatchQueue.main.async { // Back on the main thread
                 print("Fast forwarding")
-                
-                if (!preprocessed.characters.isEmpty) {
-                    self.preprocessedText = preprocessed
-                }
                 
                 self.performSegue(withIdentifier: Segues.processingToCompletion, sender: nil)
             }
@@ -103,8 +99,7 @@ class ProcessingScreen: UIViewController {
         if (segue.identifier == Segues.processingToCompletion) {
             let completionScreen = segue.destination as! CompletionScreen // Get VC
             completionScreen.image = self.image // Pass on image
-            
-            completionScreen.randomText = preprocessedText
+            completionScreen.event = self.event
         }
     }
     

@@ -12,9 +12,8 @@ import UIKit
 class CompletionScreen: UIViewController {
     
     var image: UIImage = UIImage() // Store image
-    var randomText: String = ""
+    var event: ScannedEvent = ScannedEvent(with: "Event name...", location: "Location...", startDate: Date(), endDate: Date(), preprocessed: "Preprocessed text...") // Empty
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var randomLabel: UILabel!
     
     // UI Elements
     @IBOutlet weak var posterImage: UIImageView!
@@ -27,8 +26,14 @@ class CompletionScreen: UIViewController {
     @IBOutlet weak var locationInput: AutocompleteTextField!
     
     override func viewDidLayoutSubviews() {
-        label.text = self.randomText
         posterImage.image = self.image // Add poster image
+        
+        // Fill in UI
+        label.text = event.preprocessed // Add summary
+        eventNameLabel.text = event.name
+        eventNameLabel.text = event.name
+        locationInput.text = event.location
+        refreshTimeLabel() // Update time labels
         
         // Add border
         posterImage.layer.borderColor = Colors.lightPurple.cgColor
@@ -53,5 +58,19 @@ class CompletionScreen: UIViewController {
     
     @IBAction func restartProcess(_ sender: Any) {
         performSegue(withIdentifier: Segues.completeToCamera, sender: nil)
+    }
+    
+    func refreshTimeLabel() {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        
+        let timeFormatter: DateFormatter = DateFormatter()
+        timeFormatter.dateFormat = "h:mm a"
+        
+        let date: String = dateFormatter.string(from: event.startDate)
+        let time: String = timeFormatter.string(from: event.startDate)
+        
+        eventDateLabel.text = date
+        eventTimeLabel.text = time
     }
 }

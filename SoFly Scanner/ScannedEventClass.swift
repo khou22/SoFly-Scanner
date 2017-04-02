@@ -19,15 +19,18 @@ class ScannedEvent {
     
     // Not as important
     var summary: String
+    var preprocessed: String
     var facebookLink: String
     
     // Initializer
-    init(with name: String, location: String, startDate: Date, endDate: Date) {
+    init(with name: String, location: String, startDate: Date, endDate: Date, preprocessed: String) {
         // Set instance variables
         self.name = name
         self.location = location
         self.startDate = startDate
         self.endDate = endDate
+        
+        self.preprocessed = preprocessed
         
         let formatter: DateFormatter = DateFormatter()
         formatter.dateStyle = .long

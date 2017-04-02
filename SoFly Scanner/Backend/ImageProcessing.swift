@@ -13,6 +13,27 @@ import MobileCoreServices
 
 class ImageProcessing: NSObject {
     
+    static let monthDict = ["JANUARY": 01, "JAN": 01, "01" : 01, "1" :01,
+                            "FEBRUARY": 02, "FEB": 02, "02" : 02, "2" :02,
+                            "MARCH" : 03, "MAR": 03, "03": 03, "3":03,
+                            "APRIL" : 04, "APR": 04, "04": 04, "4":04,
+                            "MAY" : 05, "MAY": 05, "05": 05, "5":05,
+                            "JUNE" : 06, "JUN": 06, "03": 06, "3":06,
+                            "JULY" : 07, "JUL": 07, "07": 07, "3":07,
+                            "AUGUST" : 08, "AUG":08, "08":08, "8":08,
+                            "SEPTEMBER" : 09, "SEP": 09,"SEPT": 09, "09": 09, "9":09,
+                            "OCTOBER" : 10, "OCT": 10,  "10":10,
+                            "NOVEMBER" : 11, "NOV": 11, "11": 11,
+                            "DECEMBER" : 12, "DEC": 12, "12": 12]
+    
+    static let dayDict = ["MONDAY": 01, "MON" : 01,
+                          "TUESDAY": 02, "TUES" : 02,
+                          "WEDNESDAY": 03, "WED" : 03,
+                          "THURSDAY": 04, "THURS" : 04,
+                          "FRIDAY": 05, "FRIDAY": 05,
+                          "SATURDAY": 06, "SATURDAY" : 06,
+                          "SUNDAY" : 07, "SUNDAY": 07]
+    
     /*
     // URL: http://stackoverflow.com/questions/13511102/ios-tesseract-ocr-image-preperation
     static func prepareCameraImage(image: UIImage) -> UIImage {
@@ -162,13 +183,40 @@ class ImageProcessing: NSObject {
         let month: String = NaturalLangProcessing.Month(text: preprocessed)
         let time: String = NaturalLangProcessing.Time(text: preprocessed)
 
-//        print("Year: " + year)
-//        print("Month: " + month)
-//        print("Time: " + time)
+        print("Year: " + year)
+        print("Month: " + month)
+        print("Time: " + time)
 //        print(NaturalLangProcessing.getDate(text: preprocessed)) // Print the concatinated date
         
         print("Processing complete")
         
         return preprocessed
+    }
+    
+    static func process(image: UIImage) -> ScannedEvent {
+        let rawText: String = ImageProcessing.performImageRecognition(image: image)
+        let preprocessed: String = NaturalLangProcessing.preprocess(text: rawText)
+        let lemmatizedText = NaturalLangProcessing.lemmatize(text: preprocessed)
+        
+        // Get date components
+        let year: String = NaturalLangProcessing.Year(text: preprocessed)
+        let time: String = NaturalLangProcessing.Time(text: preprocessed) // Returns: 00:00, 00 AM
+        let dayMonthDate: [String] = NaturalLangProcessing.getDate(text: preprocessed).characters.split{$0 == "/"}.map(String.init) // Seperrated by '/'
+        
+        let dayOfWeek: Int = self.dayDict[dayMonthDate[0]]!
+        let monthValue: Int = self.monthDict[dayMonthDate[1]]!
+        let dayValue: Int = Int(dayMonthDate[2])! // Get integer from string
+        
+        var format = "MM/DD/yy H:mm"
+        if ((time.range(of: "AM")) != nil) { // If there's an AM
+            format = "MM/DD/yy H a"
+        }
+        
+        let standardString: String = monthValue + "/" + dayValue + "/" + year + " " + time
+        
+        // Put into a date object
+        let eventObj: ScannedEvent = ScannedEvent(with: "Event Name...", location: "Location...", startDate: Date(), endDate: Date(), preprocessed: preprocessed)
+        
+        return eventObj // Return object
     }
 }
