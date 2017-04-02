@@ -241,8 +241,11 @@ class ImageProcessing: NSObject {
             endDate = dates[1]
         }
         
+        let eventName: String = NaturalLangProcessing.getTitleEstimate(text: rawText)
+        let location: String = NaturalLangProcessing.Location(lemmas: lemmatizedText)
+        
         // Put into a date object
-        let eventObj: ScannedEvent = ScannedEvent(with: "Event Name...", location: "Location...", startDate: dates[0], endDate: endDate, preprocessed: preprocessed)
+        let eventObj: ScannedEvent = ScannedEvent(with: eventName, location: location, startDate: dates[0], endDate: endDate, preprocessed: preprocessed)
         
         return eventObj // Return object
     }

@@ -27,7 +27,7 @@ class CompletionScreen: UIViewController {
     @IBOutlet weak var eventNameInput: AutocompleteTextField!
     @IBOutlet weak var locationInput: AutocompleteTextField!
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidAppear(_ animated: Bool) {
         posterImage.image = self.image // Add poster image
         
         // Fill in UI
@@ -36,8 +36,8 @@ class CompletionScreen: UIViewController {
         eventNameLabel.text = event.name
         locationInput.text = event.location
         
-        startTimeButton.titleLabel?.text = stringFrom(date: event.startDate)
-        endTimeButton.titleLabel?.text = stringFrom(date: event.endDate)
+        startTimeButton.setTitle(stringFrom(date: event.startDate), for: .normal)
+        endTimeButton.setTitle(stringFrom(date: event.endDate), for: .normal)
         
         refreshTimeLabel() // Update time labels
         
@@ -79,7 +79,7 @@ class CompletionScreen: UIViewController {
     func stringFrom(date: Date) -> String {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .medium
+        dateFormatter.timeStyle = .short
         print(dateFormatter.string(from: date))
         return dateFormatter.string(from: date)
     }

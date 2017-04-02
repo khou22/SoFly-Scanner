@@ -53,6 +53,23 @@ class NaturalLangProcessing {
 
         return modString
     }
+    
+    static func getTitleEstimate(text: String) -> String {
+        var first = text.characters.split{$0 == "\n"}.map(String.init)
+        return first[0]
+    }
+    
+    static func Location(lemmas: [String: String]) -> String {
+        let geography = ["Sherrard", "Friend", "Whitman", "Rocky", "Fine", "Frick", "Mathey", "Nassau", "Frist", "Butler", "Wilson", "McCosh"]
+        for item in geography {
+            for key in lemmas.keys {
+                if(key.caseInsensitiveCompare(item) == ComparisonResult.orderedSame) {
+                    return item
+                }
+            }
+        }
+        return "Princeton University"
+    }
 
     static func Year(text: String) -> String {
         let myString = text as NSString
@@ -72,10 +89,16 @@ class NaturalLangProcessing {
         }
         
         if (!f.isEmpty) {
+            if (!f[0].contains("201")) {
+                return "2017"
+            }
             return f[0]
         }
         
         if (!l.isEmpty) {
+            if (!l[0].contains("201")) {
+                return "2017"
+            }
             return l[0]
         }
         
