@@ -74,6 +74,13 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePick
     
     // User presses button to take picture
     @IBAction func captureImage(_ sender: Any) {
+        captureImageButton.isEnabled = false // Make sure won't be pressed again
+        
+        // Animate button fade
+        UIView.animate(withDuration: 0.4, animations: {
+            self.captureImageButton.alpha = 0.0 // Make transparent
+        })
+        
         captureImage() // Capture image
     }
     

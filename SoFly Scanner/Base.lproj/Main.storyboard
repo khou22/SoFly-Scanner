@@ -432,7 +432,7 @@
                         <outlet property="eventNameLabel" destination="wbX-7Z-ec4" id="qDK-E8-fCx"/>
                         <outlet property="eventTimeLabel" destination="EcU-x8-M34" id="GPm-iM-rY1"/>
                         <outlet property="label" destination="emw-Ga-hiZ" id="Hh0-iB-rBP"/>
-                        <outlet property="locationInput" destination="8ay-Mw-fg4" id="tj1-a4-LpZ"/>
+                        <outlet property="locationInput" destination="8ay-Mw-fg4" id="FbU-0S-ajc"/>
                         <outlet property="posterImage" destination="3at-AB-FLC" id="CHL-sA-aXs"/>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="CompletionToCamera" customClass="SegueSlideRightToLeft" customModule="SoFly_Scanner" customModuleProvider="target" id="wcF-nu-YrM"/>
                     </connections>
