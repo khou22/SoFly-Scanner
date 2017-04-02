@@ -86,7 +86,10 @@ class NaturalLangProcessing {
     // consistent values. JAN, January, JaNuAry all map to 01, this is a [String: Int] dictionary that i will fb chat u
     static func PullDate(text: String) -> String {
         let myString = text as NSString
-        let regexFullMonths: NSRegularExpression = try! NSRegularExpression(pattern: "(Mon(|\\.|day) |Tues(|\\.|day) |Wed(|\\.|nesday) |Thu(|rs)(|\\.|day) |Fri(|\\.|day) |Sat(|\\.|urday) |Sun(|\\.|day)|)(|\\s+)(Jan(\\.| |uary)|Feb(\\.| |ruary)|Mar(\\.| |ch)|Apr(\\.| |il)|May|Jun(\\.| |e)|Jul(\\.|y| )|Aug(\\.| |ust)|Sep(|t)(\\.|ember| )|Oct(\\.| |ober)|Nov(\\.|ember| )|Dec(\\.| |ember|)(|\\s+)(|on |on the |in )((|0)[1-9]|[1-2][0-9]|30|31)(\\.|-|\\\\| |st|th|nd)", options: .caseInsensitive)
+//        let regexFullMonths: NSRegularExpression = try! NSRegularExpression(pattern: "?(Mon(\\.|day) |Tues?(\\.|day) |Wed?(\\.|nesday) |Thu?(rs)?(\\.|day) |Fri?(\\.|day) |Sat?(\\.|urday) |Sun?(\\.|day) )?(\\s+)?(Jan(\\.| |uary)|Feb(\\.| |ruary)|Mar(\\.| |ch)|Apr(\\.| |il)|May|Jun(\\.| |e)|Jul(\\.|y| )|Aug(\\.| |ust)|Sep?(t)(\\.|ember| )|Oct(\\.| |ober)|Nov(\\.|ember|)|Dec(\\.| |ember|)?(\\s+)?(on |on the |in )?(?(0)[1-9]|[1-2][0-9]|30|31)?(\\.|-|\\\\| |st|th|nd)", options: .caseInsensitive)
+        
+        let regexFullMonths: NSRegularExpression = try! NSRegularExpression(pattern: "(Mon?(\\.|day) |Tues?(\\.|day) |Wed?(\\.|nesday) |Thu?(rs)?(\\.|day) |Fri?(\\.|day) |Sat?(\\.|urday)|Sun?(\\.|day) | )(\\s+)(Jan(\\.| |uary)|Feb(\\.| |ruary)|Mar(\\.| |ch)|Apr(\\.| |il)|May|Jun(\\.| |e)|Jul(\\.|y| )|Aug(\\.| |ust)|Sep?(t)(\\.|ember| )|Oct(\\.| |ober)|Nov(\\.|ember|)|Dec(\\.| |ember|))(\\s+)?([1-9]|(0)[1-9]|[1-2][0-9]|30|31)?(\\.|-|\\\\| |st|th|nd)", options: .caseInsensitive)
+
         
         let range: NSRange = NSMakeRange(0, myString.length)
         let modString1 = regexFullMonths.matches(in: myString as String, options:[], range:range)
@@ -122,7 +125,7 @@ class NaturalLangProcessing {
             return m[0]
         }
         else {
-            return "{Unknown}"
+            return "JAN"
         }
     }
     
@@ -169,23 +172,6 @@ class NaturalLangProcessing {
         }
 
     }
-    
-    static func getDate(text: String) -> String {
-        let year = Year(text: text)
-        let month = Month(text: text)
-        let time = Time(text: text)
-        let day = "1"
-        
-        let dateStr = month + " " + day + ", " + year + " " + time
-//        print(dateStr)
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyy-MM-dd HH:mm:ss" // Input format
-        let date = formatter.date(from: dateStr)
-        
-        return dateStr
-    }
-    
     
     
     

@@ -30,9 +30,9 @@ class ImageProcessing: NSObject {
                           "TUESDAY": 02, "TUES" : 02,
                           "WEDNESDAY": 03, "WED" : 03,
                           "THURSDAY": 04, "THURS" : 04,
-                          "FRIDAY": 05, "FRIDAY": 05,
-                          "SATURDAY": 06, "SATURDAY" : 06,
-                          "SUNDAY" : 07, "SUNDAY": 07]
+                          "FRIDAY": 05, "FRI": 05,
+                          "SATURDAY": 06, "SAT" : 06,
+                          "SUNDAY" : 07, "SUN": 07]
     
     /*
     // URL: http://stackoverflow.com/questions/13511102/ios-tesseract-ocr-image-preperation
@@ -201,7 +201,9 @@ class ImageProcessing: NSObject {
         // Get date components
         let year: String = NaturalLangProcessing.Year(text: preprocessed)
         let time: String = NaturalLangProcessing.Time(text: preprocessed) // Returns: 00:00, 00 AM
-        let dayMonthDate: [String] = NaturalLangProcessing.getDate(text: preprocessed).characters.split{$0 == "/"}.map(String.init) // Seperrated by '/'
+        let dayMonthDate: [String] = NaturalLangProcessing.PullDate(text: preprocessed).characters.split{$0 == " "}.map(String.init) // Seperrated by ' '
+        
+        print(dayMonthDate)
         
         let dayOfWeek: Int = self.dayDict[dayMonthDate[0]]!
         let monthValue: Int = self.monthDict[dayMonthDate[1]]!
@@ -212,12 +214,13 @@ class ImageProcessing: NSObject {
             format = "MM/DD/yy H a"
         }
         
-        let standardString: String = monthValue + "/" + dayValue + "/" + year + " " + time
+        var standardString: String = String(monthValue) + "/"
+        standardString += String(dayValue) + "/" + String(year) + " " + String(time)
         
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         
-        let startDate: Date = dateFormatter.date(from: standardString) // Get date object
+        let startDate: Date = dateFormatter.date(from: standardString)! // Get date object
         
         // Put into a date object
         let eventObj: ScannedEvent = ScannedEvent(with: "Event Name...", location: "Location...", startDate: startDate, endDate: Date(), preprocessed: preprocessed)

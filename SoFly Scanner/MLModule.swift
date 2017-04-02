@@ -1,4 +1,4 @@
-//Algorithm borrowed from Ayaka Nonaka 
+//Algorithm borrowed from Ayaka Nonaka
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -15,52 +15,55 @@ import Foundation
 private let sp = 1.0
 
 public class MLModule {
-public typealias Word = String
+    public typealias Word = String
     public typealias Category = String
-
-    private let tokenizer: Tokenizer
 
     private var categoryOccurrences: [Category: Int] = [:]
     private var wordOccurrences: [Word: [Category: Int]] = [:]
     private var trainingCount = 0
     private var wordCount = 0
 
-    public init(tokenizer: Tokenizer = Tokenizer()) {
-        self.tokenizer = tokenizer
-    }
-
-  
     public func trainWithText(text: String, category: Category) {
-        let tokens = tokenizer.tokenize(text)
-        trainWithTokens(tokens, category: category)
+        let tokens = NaturalLangProcessing.tag(text: text, scheme: NSLinguisticTagSchemeLemma).keys as! [Word]
+        trainWithTokens(tokens: tokens, category: category)
     }
 
     
     public func trainWithTokens(tokens: [Word], category: Category) {
         let words = Set(tokens)
         for word in words {
-            incrementWord(word, category: category)
+            incrementWord(word: word, category: category)
         }
-        incrementCategory(category)
-        trainingCount++
+        incrementCategory(category: category)
+        trainingCount += 1
     }
 
  
     public func classify(text: String) -> Category? {
-        let tokens = tokenizer.tokenize(text)
-        return classifyTokens(tokens)
+        let tokens = NaturalLangProcessing.tag(text: text, scheme: NSLinguisticTagSchemeLemma).keys as! [Word]
+        return classifyTokens(tokens: tokens)
     }
 
     
     public func classifyTokens(tokens: [Word]) -> Category? {
-    
-        return argmax(categoryOccurrences.map { (category, count) -> (Category, Double) in
-            let pCategory = self.P(category)
+        var champion: Category = Category()
+        var maxScore: Double = 0
+        
+        for (_, category1) in categoryOccurrences.enumerated() {
+            let category: Category = category1.key
+            let pCategory = self.P(category: category)
             let score = tokens.reduce(log(pCategory)) { (total, token) in
-                total + log((self.P(category, token) + sp) / (pCategory + sp + Double(self.wordCount)))
+                total + log((self.P(category: category, token) + sp) / (pCategory + sp + Double(self.wordCount)))
             }
-            return (category, score)
-        })
+            
+            if score > maxScore {
+                // Update champions
+                champion = category
+                maxScore = score
+            }
+        }
+        
+        return champion // Return champion
     }
 
   
@@ -73,13 +76,13 @@ public typealias Word = String
     }
 
     private func P(category: Category) -> Double {
-        return Double(totalOccurrencesOfCategory(category)) / Double(trainingCount)
+        return Double(totalOccurrencesOfCategory(category: category)) / Double(trainingCount)
     }
 
   
     private func incrementWord(word: Word, category: Category) {
         if wordOccurrences[word] == nil {
-            wordCount++
+            wordCount += 1
             wordOccurrences[word] = [:]
         }
 
@@ -88,12 +91,12 @@ public typealias Word = String
     }
 
     private func incrementCategory(category: Category) {
-        categoryOccurrences[category] = totalOccurrencesOfCategory(category) + 1
+        categoryOccurrences[category] = totalOccurrencesOfCategory(category: category) + 1
     }
 
     private func totalOccurrencesOfWord(word: Word) -> Int {
         if let occurrences = wordOccurrences[word] {
-            return Array(occurrences.values).reduce(0, combine: +)
+            return Array(occurrences.values).reduce(0, +)
         }
         return 0
     }
