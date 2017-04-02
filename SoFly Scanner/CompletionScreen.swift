@@ -118,6 +118,19 @@ class CompletionScreen: UIViewController, UITextFieldDelegate {
     
     // Share
     @IBAction func shareWithFriends(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        let dateStr: String = dateFormatter.string(from: event.startDate)
+        let textToShare: String = "Come to " + eventNameInput.text! + " with me on " + dateStr + " at " + locationInput.text! + "!"
+        
+        var objectsToShare = [AnyObject]()
+        objectsToShare.append(textToShare as AnyObject)
+        objectsToShare.append(image)
+        
+        let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+            
+        present(activityViewController, animated: true, completion: nil)
     }
     
     func stringFrom(date: Date) -> String {
