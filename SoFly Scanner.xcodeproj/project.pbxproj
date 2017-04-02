@@ -17,6 +17,8 @@
 		2723D2161E90B4C100193C4E /* AutocompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */; };
 		2723D2181E90B50000193C4E /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2171E90B50000193C4E /* TextFieldExtension.swift */; };
 		273955C01E90FE3E00D09426 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273955BF1E90FE3E00D09426 /* HideKeyboardExtension.swift */; };
+		273955C41E91053300D09426 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273955C31E91053300D09426 /* CalendarManager.swift */; };
+		273955C61E91062A00D09426 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273955C51E91062A00D09426 /* DateExtension.swift */; };
 		2743A52F1E90CFA800C09F6B /* MLModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2743A52E1E90CFA800C09F6B /* MLModule.swift */; };
 		2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */; };
 		2762B0AF1E8F3DBC00203F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0AD1E8F3DBC00203F90 /* Main.storyboard */; };
@@ -102,6 +104,8 @@
 		2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutocompleteTextField.swift; sourceTree = "<group>"; };
 		2723D2171E90B50000193C4E /* TextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		273955BF1E90FE3E00D09426 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
+		273955C31E91053300D09426 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		273955C51E91062A00D09426 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		2743A52E1E90CFA800C09F6B /* MLModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLModule.swift; sourceTree = "<group>"; };
 		2762B0A61E8F3DBC00203F90 /* SoFly Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoFly Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				2723D2121E909EB100193C4E /* ImageHelper.swift */,
 				2723D2171E90B50000193C4E /* TextFieldExtension.swift */,
 				273955BF1E90FE3E00D09426 /* HideKeyboardExtension.swift */,
+				273955C51E91062A00D09426 /* DateExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				2723D1FD1E9047D600193C4E /* HorizontalSegue.swift */,
 				2723D2011E9052C400193C4E /* FadeSegue.swift */,
 				2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */,
+				273955C31E91053300D09426 /* CalendarManager.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -466,7 +472,9 @@
 				2762B0D81E8F3EEA00203F90 /* CameraScreen.swift in Sources */,
 				2762B0DF1E8F3F4200203F90 /* ScannedEventClass.swift in Sources */,
 				2723D2001E90510800193C4E /* LandingScreen.swift in Sources */,
+				273955C41E91053300D09426 /* CalendarManager.swift in Sources */,
 				2723D2181E90B50000193C4E /* TextFieldExtension.swift in Sources */,
+				273955C61E91062A00D09426 /* DateExtension.swift in Sources */,
 				2762B0E81E8F45E200203F90 /* ImageProcessing.swift in Sources */,
 				2762B0E91E8F45E200203F90 /* TextProcessing.swift in Sources */,
 				273955C01E90FE3E00D09426 /* HideKeyboardExtension.swift in Sources */,

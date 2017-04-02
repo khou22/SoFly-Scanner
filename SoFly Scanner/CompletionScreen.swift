@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EventKit
 
 class CompletionScreen: UIViewController, UITextFieldDelegate {
     
@@ -33,6 +34,9 @@ class CompletionScreen: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         posterImage.image = self.image // Add poster image
+        
+        eventNameInput.delegate = self
+        locationInput.delegate = self
         
         // Fill in UI
         label.text = event.preprocessed // Add summary
@@ -83,6 +87,37 @@ class CompletionScreen: UIViewController, UITextFieldDelegate {
     // Pressed end date
     @IBAction func endDatePressed(_ sender: Any) {
         
+    }
+    
+    // Add to calendar
+    @IBAction func addToCalendar(_ sender: Any) {
+        let calendarManager: CalendarManager = CalendarManager()
+        
+        let calEvent: EKEvent = EKEvent(eventStore: calendarManager.eventStore)
+        
+        calEvent.title = eventNameInput.text!
+        calEvent.location = locationInput.text
+        
+        // Set the calendar
+        calEvent.calendar = calendarManager.eventStore.defaultCalendarForNewEvents // Default calendar
+        
+        calEvent.startDate = event.startDate
+        calEvent.endDate = event.endDate
+        calEvent.isAllDay = false // Not all day
+        
+        let defaultAlert: EKAlarm = EKAlarm(relativeOffset: -15 * 60) // Set alert before event time
+        calEvent.addAlarm(defaultAlert) // Add default alert
+        
+        calendarManager.requestAccess(completion: { completion in
+            if (completion == true) {
+                calendarManager.saveEvent(event: calEvent) // Save event
+                return
+            }
+        })
+    }
+    
+    // Share
+    @IBAction func shareWithFriends(_ sender: Any) {
     }
     
     func stringFrom(date: Date) -> String {
