@@ -207,7 +207,6 @@ class ImageProcessing: NSObject {
         
         let allDates: [String] = NaturalLangProcessing.PullDate(text: preprocessed) // Get all dates
         var dates: [Date] = [] // Empty
-        print(allDates.count)
         for index in 0..<allDates.count { // Cycle through
             let date: String = allDates[index] // Get current date string
             
@@ -229,14 +228,9 @@ class ImageProcessing: NSObject {
             let dateFormatter: DateFormatter = DateFormatter()
             dateFormatter.dateFormat = format
             
-            let time: Date = dateFormatter.date(from: time)! // Get time
+            let timeDate: Date = dateFormatter.date(from: time)! // Get time
             
-            var components = DateComponents()
-            components.day = dayValue
-            components.month = monthValue
-            components.year = Int(year)
-            components.hour = Calendar.current.component(.hour, from: time)
-            components.minute = Calendar.current.component(.minute, from: time)
+            let components = DateComponents(calendar: Calendar.current, timeZone: nil, era: nil, year: Int(year), month: monthValue, day: dayValue, hour: Calendar.current.component(.hour, from: timeDate), minute: Calendar.current.component(.minute, from: timeDate), second: 0, nanosecond: 0, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
             
             dates.append(components.date!) // Get and add date object
         }
