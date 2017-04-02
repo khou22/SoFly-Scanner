@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import GPUImage
+import MobileCoreServices
 
-class ImageProcessing: NSObject, G8TesseractDelegate {
+class ImageProcessing: NSObject {
     
     /*
     // URL: http://stackoverflow.com/questions/13511102/ios-tesseract-ocr-image-preperation
@@ -46,12 +47,16 @@ class ImageProcessing: NSObject, G8TesseractDelegate {
     
     // Scale the image
     static func prepareImage(image: UIImage) -> UIImage {
+        
         let resetImage: UIImage = ImageHelper.resetImageData(image: image) // Remove extra data
         let preppedImage: UIImage = adaptiveThreshold(image: scaleImage(image: resetImage, maxDimension: 640.0))
         
         let data = UIImagePNGRepresentation(preppedImage)
         let finalImage = UIImage(data: data!)!
         
+        let returnImage: UIImage = finalImage.rotateImageByDegrees(90.0)
+
+        /*
         // Create path.
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let filePath = paths[0] + "/Image.png"
@@ -69,7 +74,8 @@ class ImageProcessing: NSObject, G8TesseractDelegate {
         
         let returnImage: UIImage = UIImage(data: data2!)!
         
-        print(returnImage.size)
+        UIImageWriteToSavedPhotosAlbum(returnImage, nil, nil, nil) // Save to camera roll
+ */
         
         return returnImage
     }
@@ -120,19 +126,13 @@ class ImageProcessing: NSObject, G8TesseractDelegate {
         // Tesseract OCR
         let tesseract = G8Tesseract()
         tesseract.language = "eng"
-        tesseract.delegate = self as! G8TesseractDelegate
         tesseract.engineMode = .tesseractCubeCombined
         tesseract.pageSegmentationMode = .auto
         tesseract.maximumRecognitionTime = 120.0
-        tesseract.image = image
+        tesseract.image = ImageProcessing.prepareImage(image: image).g8_blackAndWhite() // Return processed
         tesseract.recognize()
     
         return tesseract.recognizedText // Return text
-    }
-    
-    func preprocessedImage(for tesseract: G8Tesseract!, sourceImage: UIImage!) -> UIImage! {
-//        return ImageProcessing.prepareImage(image: sourceImage, maxDimension: 640) // Return processed
-        return ImageProcessing.prepareImage(image: sourceImage).g8_blackAndWhite() // Return processed
     }
     
     func progressImageRecognition(for tesseract: G8Tesseract!) {

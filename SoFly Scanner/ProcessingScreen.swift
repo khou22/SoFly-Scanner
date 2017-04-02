@@ -16,7 +16,7 @@ class ProcessingScreen: UIViewController {
     var preprocessedText: String = "NA"
     
     // Options
-    var loadingTime = 11.0 // Number of seconds on loading screen
+    var loadingTime = 30.0 // Number of seconds on loading screen
     var pauseTime = 0.5 // Time paused after checkmark is shown
     
     // UI Elements
@@ -62,7 +62,7 @@ class ProcessingScreen: UIViewController {
         let originalBarcodeFrame: CGRect = scannerBar.frame // Original frame
         let targetBarcodeFrame: CGRect = CGRect(x: originalBarcodeFrame.minX, y: targetFrame.minY, width: originalBarcodeFrame.width, height: originalBarcodeFrame.height)
         
-        UIView.animate(withDuration: loadingTime - 1.0 - 0.2 - 0.25 - pauseTime, delay: 1.0, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: loadingTime - 1.0 - 0.2 - 0.25 - pauseTime, delay: 1.0, options: [.curveEaseOut], animations: {
             // Set to new frames
             self.iPhoneCropped.frame = targetFrame
             self.scannerBar.frame = targetBarcodeFrame
@@ -86,9 +86,13 @@ class ProcessingScreen: UIViewController {
             let preprocessed = ImageProcessing.testing(image: self.image) // Testing
             
             DispatchQueue.main.async { // Back on the main thread
+                print("Fast forwarding")
+                
                 if (!preprocessed.characters.isEmpty) {
                     self.preprocessedText = preprocessed
                 }
+                
+                self.performSegue(withIdentifier: Segues.processingToCompletion, sender: nil)
             }
         }
     }

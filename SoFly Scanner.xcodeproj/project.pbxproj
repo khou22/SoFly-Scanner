@@ -14,6 +14,7 @@
 		2723D20F1E907B3C00193C4E /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2723D20C1E90799800193C4E /* GPUImage.framework */; };
 		2723D2111E907BE300193C4E /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2723D20C1E90799800193C4E /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2723D2131E909EB100193C4E /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2121E909EB100193C4E /* ImageHelper.swift */; };
+		2723D2161E90B4C100193C4E /* AutocompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */; };
 		2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */; };
 		2762B0AF1E8F3DBC00203F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0AD1E8F3DBC00203F90 /* Main.storyboard */; };
 		2762B0B11E8F3DBC00203F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0B01E8F3DBC00203F90 /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		2723D2011E9052C400193C4E /* FadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
 		2723D2031E90799800193C4E /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../Downloads/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		2723D2121E909EB100193C4E /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutocompleteTextField.swift; sourceTree = "<group>"; };
 		2762B0A61E8F3DBC00203F90 /* SoFly Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoFly Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2762B0AE1E8F3DBC00203F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				2762B0DE1E8F3F4200203F90 /* ScannedEventClass.swift */,
 				2723D1FD1E9047D600193C4E /* HorizontalSegue.swift */,
 				2723D2011E9052C400193C4E /* FadeSegue.swift */,
+				2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */,
 				27AA8CC91E8F506700EE73EA /* Constants.swift in Sources */,
 				2723D1FC1E9039D000193C4E /* ProcessingScreen.swift in Sources */,
+				2723D2161E90B4C100193C4E /* AutocompleteTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

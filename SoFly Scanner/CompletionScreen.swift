@@ -13,6 +13,7 @@ class CompletionScreen: UIViewController {
     
     var image: UIImage = UIImage() // Store image
     var randomText: String = ""
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var randomLabel: UILabel!
     
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class CompletionScreen: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        label.text = randomText
         print(randomText)
     }
     
