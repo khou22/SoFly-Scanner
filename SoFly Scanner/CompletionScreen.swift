@@ -61,6 +61,8 @@ class CompletionScreen: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == eventNameInput) {
             locationInput.becomeFirstResponder()
+        } else if (textField == locationInput) {
+            dismissKeyboard()
         }
         
         return true // End all
@@ -68,11 +70,11 @@ class CompletionScreen: UIViewController, UITextFieldDelegate {
     
     @IBAction func eventNameEdited(_ sender: AutocompleteTextField) {
         eventNameLabel.text = eventNameInput.text // Update label
-        
-        // If empty, add placeholder text
-        if (eventNameInput.text == "") {
-            eventNameLabel.text = "Add Event Name"
-        }
+        event.name = eventNameInput.text!
+    }
+    
+    @IBAction func locationEdited(_ sender: Any) {
+        event.location = locationInput.text!
     }
     
     @IBAction func restartProcess(_ sender: Any) {
