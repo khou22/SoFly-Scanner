@@ -26,26 +26,29 @@ class CompletionScreen: UIViewController {
     @IBOutlet weak var eventNameInput: AutocompleteTextField!
     @IBOutlet weak var locationInput: AutocompleteTextField!
     
-    override func viewDidLoad() {
-        print("Completion screen loaded")
-    }
-    
     override func viewDidLayoutSubviews() {
         label.text = self.randomText
-        posterImage.image = self.image
+        posterImage.image = self.image // Add poster image
+        
+        // Add border
+        posterImage.layer.borderColor = Colors.lightPurple.cgColor
+        posterImage.layer.borderWidth = 2.0
+        
+        // Add button border
+        self.locationInput.addBottomBorder()
+        self.eventNameInput.addBottomBorder()
+        
+        eventNameInput.nextTextField = locationInput // Setup next responder
+        locationInput.nextTextField = UITextField() // No next
     }
     
-    @IBAction func eventNameChanged(_ sender: Any) {
+    @IBAction func eventNameEdited(_ sender: AutocompleteTextField) {
         eventNameLabel.text = eventNameInput.text // Update label
         
         // If empty, add placeholder text
         if (eventNameInput.text == "") {
             eventNameLabel.text = "Add Event Name"
         }
-    }
-    
-    @IBAction func locationChanged(_ sender: Any) {
-        
     }
     
     @IBAction func restartProcess(_ sender: Any) {

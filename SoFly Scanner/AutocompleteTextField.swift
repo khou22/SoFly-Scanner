@@ -162,7 +162,7 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
         self.autocompleteTableView.dataSource = self
         
         // Register cell
-        self.autocompleteTableView.register(UITableViewCell.self, forCellReuseIdentifier: CellIdentifiers.autcompleteCell)
+        self.autocompleteTableView.register(UITableViewCell.self, forCellReuseIdentifier: CellIdentifiers.autocompleteCell)
         
         // Styling
         self.autocompleteTableView.rowHeight = self.cellHeight // Row height
@@ -182,12 +182,12 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.autocompleteTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.autcompleteCell, for: indexPath)
+        let cell: UITableViewCell = self.autocompleteTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.autocompleteCell, for: indexPath)
         
         // Styling
         cell.textLabel?.font = cell.textLabel?.font.withSize(12.0) // Set font size
-        cell.textLabel?.textColor = Colors.black
-        cell.backgroundColor = Colors.white
+        cell.textLabel?.textColor = UIColor.black
+        cell.backgroundColor = UIColor.white
         
         // Populate information
         cell.textLabel?.text = self.validSuggestions[indexPath.item] // Populate cell label

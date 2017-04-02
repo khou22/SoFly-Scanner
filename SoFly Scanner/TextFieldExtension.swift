@@ -15,7 +15,7 @@ extension UITextField {
     func addBottomBorder() {
         let bottomBorder = CALayer()
         let width = CGFloat(1.0) // Border width
-        bottomBorder.borderColor = Colors.red.cgColor // Border color
+        bottomBorder.borderColor = Colors.lightPurple.cgColor // Border color
         bottomBorder.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height) // Frame
         
         bottomBorder.borderWidth = width // Apply border width

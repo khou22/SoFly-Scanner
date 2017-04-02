@@ -14,6 +14,10 @@ struct Options {
 
 struct Colors {
     // Project colors
+    static let lightPurple                      = UIColor(red: 164/255, green: 142/255, blue: 148/255, alpha: 1.0)
+    static let darkPurple                       = UIColor(red: 80/255, green: 33/255, blue: 47/255, alpha: 1.0)
+    static let lightGrey                    = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+    static let grey                         = UIColor(red: 199.0/255.0, green: 199.0/255.0, blue: 205.0/255.0, alpha: 1.0) // Summary card background
 }
 
 struct Images {
@@ -46,4 +50,8 @@ struct Segues {
     static let cameraToDebug                    = "SegueToDebug"
     static let processingToCompletion           = "SegueProcessingToCompletion"
     static let completeToCamera                 = "CompletionToCamera"
+}
+
+struct CellIdentifiers {
+    static let autocompleteCell                 = "AutocompleteCell"
 }
