@@ -16,6 +16,7 @@
 		2723D2131E909EB100193C4E /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2121E909EB100193C4E /* ImageHelper.swift */; };
 		2723D2161E90B4C100193C4E /* AutocompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */; };
 		2723D2181E90B50000193C4E /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2171E90B50000193C4E /* TextFieldExtension.swift */; };
+		273955C01E90FE3E00D09426 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273955BF1E90FE3E00D09426 /* HideKeyboardExtension.swift */; };
 		2743A52F1E90CFA800C09F6B /* MLModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2743A52E1E90CFA800C09F6B /* MLModule.swift */; };
 		2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */; };
 		2762B0AF1E8F3DBC00203F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0AD1E8F3DBC00203F90 /* Main.storyboard */; };
@@ -100,6 +101,7 @@
 		2723D2121E909EB100193C4E /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutocompleteTextField.swift; sourceTree = "<group>"; };
 		2723D2171E90B50000193C4E /* TextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		273955BF1E90FE3E00D09426 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		2743A52E1E90CFA800C09F6B /* MLModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLModule.swift; sourceTree = "<group>"; };
 		2762B0A61E8F3DBC00203F90 /* SoFly Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoFly Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				2723D2121E909EB100193C4E /* ImageHelper.swift */,
 				2723D2171E90B50000193C4E /* TextFieldExtension.swift */,
+				273955BF1E90FE3E00D09426 /* HideKeyboardExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				2723D2181E90B50000193C4E /* TextFieldExtension.swift in Sources */,
 				2762B0E81E8F45E200203F90 /* ImageProcessing.swift in Sources */,
 				2762B0E91E8F45E200203F90 /* TextProcessing.swift in Sources */,
+				273955C01E90FE3E00D09426 /* HideKeyboardExtension.swift in Sources */,
 				2762B0DC1E8F3F0800203F90 /* CompletionScreen.swift in Sources */,
 				2723D1FE1E9047D600193C4E /* HorizontalSegue.swift in Sources */,
 				2743A52F1E90CFA800C09F6B /* MLModule.swift in Sources */,

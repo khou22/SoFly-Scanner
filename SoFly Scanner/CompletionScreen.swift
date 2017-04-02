@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CompletionScreen: UIViewController {
+class CompletionScreen: UIViewController, UITextFieldDelegate {
     
     var image: UIImage = UIImage() // Store image
     var event: ScannedEvent = ScannedEvent(with: "Event name...", location: "Location...", startDate: Date(), endDate: Date(), preprocessed: "Preprocessed text...") // Empty
@@ -24,15 +24,19 @@ class CompletionScreen: UIViewController {
     @IBOutlet weak var endTimeButton: UIButton!
     
     // Form Elements
-    @IBOutlet weak var eventNameInput: AutocompleteTextField!
-    @IBOutlet weak var locationInput: AutocompleteTextField!
+    @IBOutlet weak var eventNameInput: UITextField!
+    @IBOutlet weak var locationInput: UITextField!
+    
+    override func viewDidLoad() {
+        hideKeyboardOnSwipe()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         posterImage.image = self.image // Add poster image
         
         // Fill in UI
         label.text = event.preprocessed // Add summary
-        eventNameLabel.text = event.name
+        eventNameInput.text = event.name
         eventNameLabel.text = event.name
         locationInput.text = event.location
         
@@ -48,9 +52,14 @@ class CompletionScreen: UIViewController {
         // Add button border
         self.locationInput.addBottomBorder()
         self.eventNameInput.addBottomBorder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField == eventNameInput) {
+            locationInput.becomeFirstResponder()
+        }
         
-        eventNameInput.nextTextField = locationInput // Setup next responder
-        locationInput.nextTextField = UITextField() // No next
+        return true // End all
     }
     
     @IBAction func eventNameEdited(_ sender: AutocompleteTextField) {
