@@ -60,13 +60,13 @@ class NaturalLangProcessing {
     
     static func getTitleEstimate(text: String) -> String {
         var dict: [String: String] = partOfSpeech(text: text)
-        print(dict)
         var a: Int = 0
         var n: String = ""
-        for item in dict.keys {
+        var s: [String] = text.characters.split{$0 == " " || $0 == "\n"}.map(String.init)
+        for item in s {
             if(dict[item] == "Noun" ) {
                 n = n + " " + item
-                a = a + 1
+                a = a+1
             }
             if (a >= 3) {
                 break

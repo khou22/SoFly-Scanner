@@ -199,7 +199,7 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePick
         let scannedImage: UIImage = stillImageFilter.image(byFilteringImage: image) // Make filtered image
         let scanOverlay: UIImageView = UIImageView(frame: view.frame) // Create view
         scanOverlay.image = scannedImage // Set image
-//        scanOverlay.contentMode = .scaleAspectFill // Aspect fill
+        scanOverlay.contentMode = .scaleAspectFill // Aspect fill
         scanOverlay.alpha = 0.0 // Make transparent
         self.cameraPreview.addSubview(scanOverlay) // Add view
         UIView.animate(withDuration: 0.5, animations: {
