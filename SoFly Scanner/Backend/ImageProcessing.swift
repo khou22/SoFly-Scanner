@@ -213,31 +213,32 @@ class ImageProcessing: NSObject {
             
             let monthDay: [String] = date.characters.split{$0 == " "}.map(String.init) // Seperrated by ' '
             
-            print(monthDay)
-            
             let monthValue: Int = self.monthDict[monthDay[0].uppercased()]!
             let dayValue: Int = Int(monthDay[1].trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted))! // Get integer from string
             
-            var format = "MM/DD/yy H:mm"
+            var format = "H:mm"
             if ((time.range(of: "AM")) != nil || time.range(of: "PM") != nil) { // If there's an AM/PM
                 
                 if (time.range(of: ":") != nil) { // If there's a colon
-                    format = "MM/DD/yy H:mm a"
+                    format = "H:mm a"
                 } else {
-                    format = "MM/DD/yy H a"
+                    format = "H a"
                 }
             }
-            
-            var standardString: String = String(monthValue) + "/"
-            standardString += String(dayValue) + "/" + String(year) + " " + String(time)
-            
-            print(standardString)
-            print(format)
             
             let dateFormatter: DateFormatter = DateFormatter()
             dateFormatter.dateFormat = format
             
-            dates.append(dateFormatter.date(from: standardString)!) // Get and add date object
+            let time: Date = dateFormatter.date(from: time)! // Get time
+            
+            var components = DateComponents()
+            components.day = dayValue
+            components.month = monthValue
+            components.year = Int(year)
+            components.hour = Calendar.current.component(.hour, from: time)
+            components.minute = Calendar.current.component(.minute, from: time)
+            
+            dates.append(components.date!) // Get and add date object
         }
         
         // Check if end date exists

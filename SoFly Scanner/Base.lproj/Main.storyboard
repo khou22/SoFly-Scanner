@@ -400,17 +400,66 @@
                                     <constraint firstItem="emw-Ga-hiZ" firstAttribute="leading" secondItem="bKa-1k-kne" secondAttribute="leading" id="nkT-jC-6HP"/>
                                 </constraints>
                             </stackView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VVJ-2c-Uid">
-                                <rect key="frame" x="0.0" y="310" width="375" height="154"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="512801744.97744501">
-                                    <!--2017-04-02 04:55:44 +0000-->
-                                </date>
-                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="P1Q-Dw-62L">
+                                <rect key="frame" x="30" y="318" width="315" height="77"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCN-oD-LLg">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="13"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.42352941179999998" green="0.37254901959999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKZ-7s-xA8">
+                                        <rect key="frame" x="0.0" y="16" width="315" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCi-6O-GIc">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="29"/>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                                <color key="textColor" red="0.42352941179999998" green="0.37254901959999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qab-GM-Mpc">
+                                                <rect key="frame" x="42" y="0.0" width="273" height="29"/>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                                <state key="normal" title="January 1, 2017"/>
+                                                <connections>
+                                                    <action selector="startDatePressed:" destination="iuw-dr-GKq" eventType="touchUpInside" id="2qe-IE-Xgf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eKj-hb-W5V">
+                                        <rect key="frame" x="0.0" y="48" width="315" height="29"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Df-e9-2CZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgg-ok-9XL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32.5" height="29"/>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                                        <color key="textColor" red="0.42352941179999998" green="0.37254901959999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wc4-wd-uXA">
+                                                        <rect key="frame" x="32.5" y="0.0" width="282.5" height="29"/>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                                        <state key="normal" title="January 1, 2017"/>
+                                                        <connections>
+                                                            <action selector="endDatePressed:" destination="iuw-dr-GKq" eventType="touchUpInside" id="Ff0-tv-09D"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0bi-0o-KVo" firstAttribute="top" secondItem="DEG-UK-6LC" secondAttribute="bottom" constant="20" id="3vg-Sz-fNf"/>
+                            <constraint firstItem="P1Q-Dw-62L" firstAttribute="trailing" secondItem="6RH-QG-Ul7" secondAttribute="trailing" id="8p0-Gr-EJI"/>
+                            <constraint firstItem="P1Q-Dw-62L" firstAttribute="top" secondItem="6RH-QG-Ul7" secondAttribute="bottom" constant="25" id="DLj-CI-JFv"/>
                             <constraint firstItem="6RH-QG-Ul7" firstAttribute="leading" secondItem="LpO-a1-Kk5" secondAttribute="leading" id="GVe-o1-cb1"/>
                             <constraint firstItem="Hbo-Hq-qGc" firstAttribute="top" secondItem="DEG-UK-6LC" secondAttribute="bottom" id="Ha6-wv-UG1"/>
                             <constraint firstItem="LpO-a1-Kk5" firstAttribute="trailing" secondItem="0bi-0o-KVo" secondAttribute="trailing" id="L2l-Zx-LcJ"/>
@@ -424,9 +473,11 @@
                             <constraint firstItem="LpO-a1-Kk5" firstAttribute="leading" secondItem="0bi-0o-KVo" secondAttribute="leading" id="npk-35-Wjx"/>
                             <constraint firstItem="LpO-a1-Kk5" firstAttribute="top" secondItem="0bi-0o-KVo" secondAttribute="bottom" constant="25" id="om0-UY-9Zl"/>
                             <constraint firstItem="W93-Lk-xWu" firstAttribute="top" secondItem="bKa-1k-kne" secondAttribute="bottom" constant="16" id="qiL-56-8Zs"/>
+                            <constraint firstItem="P1Q-Dw-62L" firstAttribute="leading" secondItem="6RH-QG-Ul7" secondAttribute="leading" id="rqB-qn-bqr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="endTimeButton" destination="Wc4-wd-uXA" id="YIV-JP-sQi"/>
                         <outlet property="eventDateLabel" destination="jbD-Pd-P7v" id="by8-dZ-td7"/>
                         <outlet property="eventNameInput" destination="k8i-co-KXQ" id="Yky-qo-80n"/>
                         <outlet property="eventNameLabel" destination="wbX-7Z-ec4" id="qDK-E8-fCx"/>
@@ -434,6 +485,7 @@
                         <outlet property="label" destination="emw-Ga-hiZ" id="Hh0-iB-rBP"/>
                         <outlet property="locationInput" destination="8ay-Mw-fg4" id="FbU-0S-ajc"/>
                         <outlet property="posterImage" destination="3at-AB-FLC" id="CHL-sA-aXs"/>
+                        <outlet property="startTimeButton" destination="Qab-GM-Mpc" id="OTp-lV-dDY"/>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="CompletionToCamera" customClass="SegueSlideRightToLeft" customModule="SoFly_Scanner" customModuleProvider="target" id="wcF-nu-YrM"/>
                     </connections>
                 </viewController>

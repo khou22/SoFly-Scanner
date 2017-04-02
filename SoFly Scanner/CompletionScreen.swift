@@ -20,6 +20,8 @@ class CompletionScreen: UIViewController {
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var eventTimeLabel: UILabel!
+    @IBOutlet weak var startTimeButton: UIButton!
+    @IBOutlet weak var endTimeButton: UIButton!
     
     // Form Elements
     @IBOutlet weak var eventNameInput: AutocompleteTextField!
@@ -33,6 +35,10 @@ class CompletionScreen: UIViewController {
         eventNameLabel.text = event.name
         eventNameLabel.text = event.name
         locationInput.text = event.location
+        
+        startTimeButton.titleLabel?.text = stringFrom(date: event.startDate)
+        endTimeButton.titleLabel?.text = stringFrom(date: event.endDate)
+        
         refreshTimeLabel() // Update time labels
         
         // Add border
@@ -58,6 +64,24 @@ class CompletionScreen: UIViewController {
     
     @IBAction func restartProcess(_ sender: Any) {
         performSegue(withIdentifier: Segues.completeToCamera, sender: nil)
+    }
+    
+    // Pressed start date
+    @IBAction func startDatePressed(_ sender: Any) {
+    }
+    
+    
+    // Pressed end date
+    @IBAction func endDatePressed(_ sender: Any) {
+        
+    }
+    
+    func stringFrom(date: Date) -> String {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .medium
+        print(dateFormatter.string(from: date))
+        return dateFormatter.string(from: date)
     }
     
     func refreshTimeLabel() {
