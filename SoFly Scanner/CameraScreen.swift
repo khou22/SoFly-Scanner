@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation // Camera control
+import GPUImage // Color control
 
 class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     
@@ -140,10 +141,22 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     
     // Called when image is grabbed from camera
     func processImage(image: UIImage) {
-        finalImage = image // Set as global
+        self.finalImage = image // Set as global
+        
+        let stillImageFilter: GPUImageAdaptiveThresholdFilter = GPUImageAdaptiveThresholdFilter()
+        stillImageFilter.blurRadiusInPixels = 30.0 // Blur radius of the filter, defaults to 4.0
+        let scannedImage: UIImage = stillImageFilter.image(byFilteringImage: image) // Make filtered image
+        let scanOverlay: UIImageView = UIImageView(frame: view.frame) // Create view
+        scanOverlay.image = scannedImage // Set image
+//        scanOverlay.contentMode = .scaleAspectFill // Aspect fill
+        scanOverlay.alpha = 0.0 // Make transparent
+        self.cameraPreview.addSubview(scanOverlay) // Add view
+        UIView.animate(withDuration: 0.25, animations: {
+            scanOverlay.alpha = 1.0 // Make visible
+        })
         
         // Segue to next screen after delay
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.55, execute: {
             // Go to loading screen
 //            self.performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
             

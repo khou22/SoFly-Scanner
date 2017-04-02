@@ -19,7 +19,7 @@ class ImageProcessing {
         // Initialize our adaptive threshold filter
         let stillImageFilter: GPUImageAdaptiveThresholdFilter = GPUImageAdaptiveThresholdFilter()
         
-        stillImageFilter.blurRadiusInPixels = 8.0 // Blur radius of the filter, defaults to 4.0
+        stillImageFilter.blurRadiusInPixels = 30.0 // Blur radius of the filter, defaults to 4.0
         
         let filteredImage: UIImage = stillImageFilter.image(byFilteringImage: image) // Make filtered image
         
