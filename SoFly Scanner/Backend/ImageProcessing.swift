@@ -193,6 +193,12 @@ class ImageProcessing: NSObject {
         return preprocessed
     }
     
+    static func cleanString(text: String) -> String {
+        let okayChars : Set<Character> =
+            Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-*=(),.:!_".characters)
+        return String(text.characters.filter {okayChars.contains($0) })
+    }
+    
     static func process(image: UIImage) -> ScannedEvent {
         let rawText: String = ImageProcessing.performImageRecognition(image: image)
         let preprocessed: String = NaturalLangProcessing.preprocess(text: rawText)
@@ -220,8 +226,8 @@ class ImageProcessing: NSObject {
             let date: String = allDates[index] // Get current date string
             
             let monthDay: [String] = date.characters.split{$0 == " "}.map(String.init) // Seperrated by ' '
-            
-            let monthValue: Int = self.monthDict[monthDay[0].uppercased()]!
+            print(monthDay)
+            let monthValue: Int = self.monthDict[cleanString(text: monthDay[0].uppercased())]!
             let dayValue: Int = Int(monthDay[1].trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted))! // Get integer from string
             
             var format = "H:mm"

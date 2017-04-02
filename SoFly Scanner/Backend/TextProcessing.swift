@@ -137,7 +137,7 @@ class NaturalLangProcessing {
         if (!f.isEmpty) {
             return f
         } else {
-            return ["SUNDAY JANUARY 01", "SUNDAY JANUARY 02"]
+            return ["JANUARY 01", "JANUARY 02"]
         }
     }
     
