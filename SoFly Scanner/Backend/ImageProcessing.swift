@@ -47,7 +47,31 @@ class ImageProcessing: NSObject, G8TesseractDelegate {
     // Scale the image
     static func prepareImage(image: UIImage) -> UIImage {
         let resetImage: UIImage = ImageHelper.resetImageData(image: image) // Remove extra data
-        return adaptiveThreshold(image: scaleImage(image: resetImage, maxDimension: 640.0))
+        let preppedImage: UIImage = adaptiveThreshold(image: scaleImage(image: resetImage, maxDimension: 640.0))
+        
+        let data = UIImagePNGRepresentation(preppedImage)
+        let finalImage = UIImage(data: data!)!
+        
+        // Create path.
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let filePath = paths[0] + "/Image.png"
+        let url = URL(fileURLWithPath: filePath)
+        
+        // Save image.
+        do {
+            try data?.write(to: url)
+        } catch {
+            print(error)
+        }
+        
+        let fm = FileManager.default
+        let data2 = fm.contents(atPath: filePath)
+        
+        let returnImage: UIImage = UIImage(data: data2!)!
+        
+        print(returnImage.size)
+        
+        return returnImage
     }
     
     static func adaptiveThreshold(image: UIImage) -> UIImage {
@@ -83,11 +107,12 @@ class ImageProcessing: NSObject, G8TesseractDelegate {
         UIGraphicsBeginImageContext(scaledSize)
         image.draw(in: CGRect(x: 0, y: 0, width: scaledSize.width, height: scaledSize.height))
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        let scaledImageData: NSData = UIImageJPEGRepresentation(scaledImage!, 0.5) as! NSData // 50% quality
         UIGraphicsEndImageContext()
         
         // print("New dimensions: \(scaledImage?.size.width), \(scaledImage?.size.height)")
         
-        return scaledImage!
+        return UIImage(data: scaledImageData as! Data)!
     }
 
     // Execute Tesseract API
@@ -120,7 +145,7 @@ class ImageProcessing: NSObject, G8TesseractDelegate {
     
     static func testing(image: UIImage) -> String {
         let str = ImageProcessing.performImageRecognition(image: image)
-//        print(str) // Print raw text
+        print(str) // Print raw text
         
         let preprocessed: String = NaturalLangProcessing.preprocess(text: str)
         let lemmatizedText = NaturalLangProcessing.lemmatize(text: preprocessed)

@@ -28,7 +28,7 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePick
     
     var captureSession = AVCaptureSession()
     var sessionOutput = AVCapturePhotoOutput()
-    var sessionOutputSetting = AVCapturePhotoSettings(format: [AVVideoCodecKey:AVVideoCodecJPEG])
+    var sessionOutputSetting = AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG])
     var previewLayer = AVCaptureVideoPreviewLayer()
     
     override func viewDidLoad() {

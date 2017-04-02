@@ -12,7 +12,10 @@ import AVFoundation
 
 class ImageHelper {
     static func resetImageData(image: UIImage) -> UIImage {
-        let imageData: NSData = ImageHelper.removeExifData(data: UIImagePNGRepresentation(image) as! NSData)!
+        let data = UIImageJPEGRepresentation(image, 0.5)
+        let imagePt = UIImage(data: data!)
+        
+        let imageData: NSData = ImageHelper.removeExifData(data: UIImagePNGRepresentation(imagePt!) as! NSData)!
         return UIImage(data: imageData as Data)!
     }
     

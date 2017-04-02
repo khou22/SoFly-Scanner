@@ -91,13 +91,13 @@
                                     <action selector="captureImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0wN-ds-O3i"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKk-bJ-Gq5">
-                                <rect key="frame" x="305" y="24" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKk-bJ-Gq5">
+                                <rect key="frame" x="315" y="24" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="hF6-RU-jmD"/>
-                                    <constraint firstAttribute="width" constant="50" id="xSc-OZ-2mH"/>
+                                    <constraint firstAttribute="height" constant="40" id="hF6-RU-jmD"/>
+                                    <constraint firstAttribute="width" constant="40" id="xSc-OZ-2mH"/>
                                 </constraints>
-                                <state key="normal" title="Upload"/>
+                                <state key="normal" title="Upload" image="Contact Add"/>
                                 <connections>
                                     <action selector="uploadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nsl-SL-FB7"/>
                                 </connections>
@@ -294,6 +294,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Contact Add" width="27" height="27"/>
         <image name="capture-image-button" width="100" height="50"/>
         <image name="complete-confirmation" width="45" height="45"/>
         <image name="flyer-bounds" width="324" height="484"/>
