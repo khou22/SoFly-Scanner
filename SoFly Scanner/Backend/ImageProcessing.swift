@@ -204,37 +204,50 @@ class ImageProcessing: NSObject {
         // Get date components
         let year: String = NaturalLangProcessing.Year(text: preprocessed)
         let time: String = NaturalLangProcessing.Time(text: preprocessed) // Returns: 00:00, 00 AM
-        let dayMonthDate: [String] = NaturalLangProcessing.PullDate(text: preprocessed).characters.split{$0 == " "}.map(String.init) // Seperrated by ' '
         
-        print(dayMonthDate)
-        
-        let dayOfWeek: Int = self.dayDict[dayMonthDate[0]]!
-        let monthValue: Int = self.monthDict[dayMonthDate[1]]!
-        let dayValue: Int = Int(dayMonthDate[2])! // Get integer from string
-        
-        var format = "MM/DD/yy H:mm"
-        if ((time.range(of: "AM")) != nil || time.range(of: "PM") != nil) { // If there's an AM/PM
+        let allDates: [String] = NaturalLangProcessing.PullDate(text: preprocessed) // Get all dates
+        var dates: [Date] = [] // Empty
+        print(allDates.count)
+        for index in 0..<allDates.count { // Cycle through
+            let date: String = allDates[index] // Get current date string
             
-            if (time.range(of: ":") != nil) { // If there's a colon
-                format = "MM/DD/yy H:mm a"
-            } else {
-                format = "MM/DD/yy H a"
+            let monthDay: [String] = date.characters.split{$0 == " "}.map(String.init) // Seperrated by ' '
+            
+            print(monthDay)
+            
+            let monthValue: Int = self.monthDict[monthDay[0].uppercased()]!
+            let dayValue: Int = Int(monthDay[1].trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted))! // Get integer from string
+            
+            var format = "MM/DD/yy H:mm"
+            if ((time.range(of: "AM")) != nil || time.range(of: "PM") != nil) { // If there's an AM/PM
+                
+                if (time.range(of: ":") != nil) { // If there's a colon
+                    format = "MM/DD/yy H:mm a"
+                } else {
+                    format = "MM/DD/yy H a"
+                }
             }
+            
+            var standardString: String = String(monthValue) + "/"
+            standardString += String(dayValue) + "/" + String(year) + " " + String(time)
+            
+            print(standardString)
+            print(format)
+            
+            let dateFormatter: DateFormatter = DateFormatter()
+            dateFormatter.dateFormat = format
+            
+            dates.append(dateFormatter.date(from: standardString)!) // Get and add date object
         }
         
-        var standardString: String = String(monthValue) + "/"
-        standardString += String(dayValue) + "/" + String(year) + " " + String(time)
-        
-        print(standardString)
-        print(format)
-        
-        let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        
-        let startDate: Date = dateFormatter.date(from: standardString)! // Get date object
+        // Check if end date exists
+        var endDate = Date()
+        if dates.count >= 2 {
+            endDate = dates[1]
+        }
         
         // Put into a date object
-        let eventObj: ScannedEvent = ScannedEvent(with: "Event Name...", location: "Location...", startDate: startDate, endDate: Date(), preprocessed: preprocessed)
+        let eventObj: ScannedEvent = ScannedEvent(with: "Event Name...", location: "Location...", startDate: dates[0], endDate: endDate, preprocessed: preprocessed)
         
         return eventObj // Return object
     }

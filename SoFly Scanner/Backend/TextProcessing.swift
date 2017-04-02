@@ -84,11 +84,11 @@ class NaturalLangProcessing {
     
     // The Date function pulls sections of text that contain the Weekday, the Month, then the Day (aka like the 15th). It returns these in a way that can be split and mapped to numeric 
     // consistent values. JAN, January, JaNuAry all map to 01, this is a [String: Int] dictionary that i will fb chat u
-    static func PullDate(text: String) -> String {
+    static func PullDate(text: String) -> [String] {
         let myString = text as NSString
 //        let regexFullMonths: NSRegularExpression = try! NSRegularExpression(pattern: "?(Mon(\\.|day) |Tues?(\\.|day) |Wed?(\\.|nesday) |Thu?(rs)?(\\.|day) |Fri?(\\.|day) |Sat?(\\.|urday) |Sun?(\\.|day) )?(\\s+)?(Jan(\\.| |uary)|Feb(\\.| |ruary)|Mar(\\.| |ch)|Apr(\\.| |il)|May|Jun(\\.| |e)|Jul(\\.|y| )|Aug(\\.| |ust)|Sep?(t)(\\.|ember| )|Oct(\\.| |ober)|Nov(\\.|ember|)|Dec(\\.| |ember|)?(\\s+)?(on |on the |in )?(?(0)[1-9]|[1-2][0-9]|30|31)?(\\.|-|\\\\| |st|th|nd)", options: .caseInsensitive)
         
-        let regexFullMonths: NSRegularExpression = try! NSRegularExpression(pattern: "(Mon?(\\.|day) |Tues?(\\.|day) |Wed?(\\.|nesday) |Thu?(rs)?(\\.|day) |Fri?(\\.|day) |Sat?(\\.|urday)|Sun?(\\.|day) | )(\\s*)(Jan(\\.| |uary)|Feb(\\.| |ruary)|Mar(\\.| |ch) |Apr(\\.| |il)|May|Jun(\\.| |e)|Jul(\\.|y| )|Aug(\\.| |ust)|Sep?(t)(\\.|ember| )|Oct(\\.| |ober)|Nov(\\.|ember|)|Dec(\\.| |ember|))(\\s*)?([1-9]|(0)[1-9]|[1-2][0-9]|30|31)?(\\.|-|\\\\| |st|th|nd)", options: .caseInsensitive)
+        let regexFullMonths: NSRegularExpression = try! NSRegularExpression(pattern: "(Jan(\\.| |uary)|Feb(\\.| |ruary)|Mar(\\.| |ch)|Apr(\\.| |il)|May|Jun(\\.| |e)|Jul(\\.|y| )|Aug(\\.| |ust)|Sep?(t)(\\.|ember| )|Oct(\\.| |ober)|Nov(\\.|ember|)|Dec(\\.| |ember|))(\\s*)?([1-9]|(0)[1-9]|[1-2][0-9]|30|31)?(\\.|-|\\\\| |st|th|nd)", options: .caseInsensitive)
 
         
         let range: NSRange = NSMakeRange(0, myString.length)
@@ -96,9 +96,9 @@ class NaturalLangProcessing {
         let f: [String] = modString1.map{myString.substring(with: $0.range)}
             
         if (!f.isEmpty) {
-            return f[0]
+            return f
         } else {
-            return "SUNDAY JANUARY 01"
+            return ["SUNDAY JANUARY 01", "SUNDAY JANUARY 02"]
         }
     }
     
