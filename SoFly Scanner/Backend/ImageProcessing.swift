@@ -214,8 +214,13 @@ class ImageProcessing: NSObject {
         
         let standardString: String = monthValue + "/" + dayValue + "/" + year + " " + time
         
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        
+        let startDate: Date = dateFormatter.date(from: standardString) // Get date object
+        
         // Put into a date object
-        let eventObj: ScannedEvent = ScannedEvent(with: "Event Name...", location: "Location...", startDate: Date(), endDate: Date(), preprocessed: preprocessed)
+        let eventObj: ScannedEvent = ScannedEvent(with: "Event Name...", location: "Location...", startDate: startDate, endDate: Date(), preprocessed: preprocessed)
         
         return eventObj // Return object
     }
