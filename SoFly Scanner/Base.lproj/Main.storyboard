@@ -500,7 +500,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WN-JN-nKr">
                                                 <rect key="frame" x="42" y="0.0" width="273" height="30"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                                <state key="normal" title="Share with Friends"/>
+                                                <state key="normal" title="Save and Share with Friends"/>
                                                 <connections>
                                                     <action selector="shareWithFriends:" destination="iuw-dr-GKq" eventType="touchUpInside" id="NkT-y2-YWN"/>
                                                 </connections>

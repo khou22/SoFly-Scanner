@@ -230,22 +230,30 @@ class ImageProcessing: NSObject {
             let monthKey: String = cleanString(text: monthDay[0]).uppercased()
             print(monthKey)
             let monthValue: Int = self.monthDict[monthKey]!
-            let dayValue: Int = Int(monthDay[1].trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted))! // Get integer from string
             
-            var format = "H:mm"
+            var dayValue: Int = 1
+            if monthDay.count >= 2 {
+                dayValue = Int(monthDay[1].trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted))! // Get integer from string
+            }
+            
+            print(time)
+            var format = "h:mm"
             if ((time.range(of: "AM")) != nil || time.range(of: "PM") != nil) { // If there's an AM/PM
                 
                 if (time.range(of: ":") != nil) { // If there's a colon
-                    format = "H:mm a"
+                    format = "h:mm a"
                 } else {
-                    format = "H a"
+                    format = "h a"
                 }
             }
             
             let dateFormatter: DateFormatter = DateFormatter()
             dateFormatter.dateFormat = format
+            print(format)
             
             let timeDate: Date = dateFormatter.date(from: time)! // Get time
+            
+            print(timeDate)
             
             let components = DateComponents(calendar: Calendar.current, timeZone: nil, era: nil, year: year, month: monthValue, day: dayValue, hour: Calendar.current.component(.hour, from: timeDate), minute: Calendar.current.component(.minute, from: timeDate), second: 0, nanosecond: 0, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
             

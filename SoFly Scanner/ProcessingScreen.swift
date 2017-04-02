@@ -16,7 +16,7 @@ class ProcessingScreen: UIViewController {
     var event: ScannedEvent = ScannedEvent(with: "Event name...", location: "Location...", startDate: Date(), endDate: Date(), preprocessed: "Preprocessed text...") // Empty
     
     // Options
-    var loadingTime = 10.0 // Number of seconds on loading screen
+    var loadingTime = 30.0 // Number of seconds on loading screen
     var pauseTime = 1.0 // Time paused after checkmark is shown
     
     // UI Elements
@@ -62,33 +62,33 @@ class ProcessingScreen: UIViewController {
         let originalBarcodeFrame: CGRect = scannerBar.frame // Original frame
         let targetBarcodeFrame: CGRect = CGRect(x: originalBarcodeFrame.minX, y: targetFrame.minY, width: originalBarcodeFrame.width, height: originalBarcodeFrame.height)
         
-        UIView.animate(withDuration: loadingTime - 1.0 - 0.2 - 0.25 - pauseTime, delay: 1.0, options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 3.0, delay: 0.5, options: [.curveEaseInOut, .repeat, .autoreverse], animations: {
             // Set to new frames
             self.iPhoneCropped.frame = targetFrame
             self.scannerBar.frame = targetBarcodeFrame
             
-        }, completion: { completion in
-            // Prepare checkmark for animation
-            self.scanningLabel.isHidden = true
-            self.checkmarkHeightConstraint.constant = 30 // Smaller than normal
-            
-            UIView.animate(withDuration: 0.2, delay: 0.25, options: [.curveEaseInOut], animations: {
-                // Show checkmark
-                self.completeScan.layer.opacity = 1.0 // Make checkmark visible
-                self.scannerBar.layer.opacity = 0.0 // Fade the scanner bar
-                self.checkmarkHeightConstraint.constant = 60 // Original
-                self.view.layoutIfNeeded() // Update frontend
-            }, completion: nil )
-        })
+        }, completion: nil)
         
         // Background thread
         DispatchQueue.global(qos: .background).async {
             self.event = ImageProcessing.process(image: self.image) // Process image
             
             DispatchQueue.main.async { // Back on the main thread
-                print("Fast forwarding")
+                // Prepare checkmark for animation
+                self.scanningLabel.isHidden = true
+                self.checkmarkHeightConstraint.constant = 30 // Smaller than normal
                 
-                self.performSegue(withIdentifier: Segues.processingToCompletion, sender: nil)
+                UIView.animate(withDuration: 0.2, delay: 0.25, options: [.curveEaseInOut], animations: {
+                    // Show checkmark
+                    self.completeScan.layer.opacity = 1.0 // Make checkmark visible
+                    self.checkmarkHeightConstraint.constant = 60 // Original
+                    self.view.layoutIfNeeded() // Update frontend
+                }, completion: { completion in
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.00, execute: {
+                        self.performSegue(withIdentifier: Segues.processingToCompletion, sender: nil)
+                    })
+                })
             }
         }
     }

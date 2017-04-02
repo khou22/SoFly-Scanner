@@ -185,7 +185,7 @@ class NaturalLangProcessing {
     static func Time(text: String) -> String {
         let myString = text as NSString
         let regexColon: NSRegularExpression = try! NSRegularExpression(pattern: "(0[1-9]||[0-9]|1[0-2]):(0[0-9]|[10-59])", options: .caseInsensitive)
-        let regexNumberAMPM: NSRegularExpression = try! NSRegularExpression(pattern: "([1-9]|1[0-2]) (am|pm)", options: .caseInsensitive)
+        let regexNumberAMPM: NSRegularExpression = try! NSRegularExpression(pattern: "([1-9]|1[0-2])(\\s*)(am|pm)", options: .caseInsensitive)
         let regexAMPM: NSRegularExpression = try! NSRegularExpression(pattern: "(am|pm) ", options: .caseInsensitive)
         let range: NSRange = NSMakeRange(0, myString.length)
 
@@ -207,7 +207,7 @@ class NaturalLangProcessing {
             return m[0]
         }
         else {
-            return "12:00 AM"
+            return "12:00 PM"
         }
     }
     
