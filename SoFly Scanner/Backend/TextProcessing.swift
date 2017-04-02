@@ -72,7 +72,7 @@ class NaturalLangProcessing {
                 break
             }
         }
-        return n
+        return n.trimmingCharacters(in: .whitespaces)
     }
     
     static func Location(lemmas: [String: String]) -> String {
