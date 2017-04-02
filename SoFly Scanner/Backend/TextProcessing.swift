@@ -54,9 +54,25 @@ class NaturalLangProcessing {
         return modString
     }
     
+    static func partOfSpeech(text: String) -> [String: String] {
+        return tag(text: text, scheme: NSLinguisticTagSchemeLexicalClass)
+    }
+    
     static func getTitleEstimate(text: String) -> String {
-        var first = text.characters.split{$0 == "\n"}.map(String.init)
-        return first[0]
+        var dict: [String: String] = partOfSpeech(text: text)
+        print(dict)
+        var a: Int = 0
+        var n: String = ""
+        for item in dict.keys {
+            if(dict[item] == "Noun" ) {
+                n = n + " " + item
+                a = a + 1
+            }
+            if (a >= 3) {
+                break
+            }
+        }
+        return n
     }
     
     static func Location(lemmas: [String: String]) -> String {

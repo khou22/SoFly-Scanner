@@ -202,8 +202,17 @@ class ImageProcessing: NSObject {
         print(preprocessed)
         
         // Get date components
-        let year: String = NaturalLangProcessing.Year(text: preprocessed)
+        let yearStr: String = NaturalLangProcessing.Year(text: preprocessed)
+        print(yearStr)
+        var year: Int? = Int(yearStr)
+        if (yearStr.contains("2017")) {
+            year = 2017
+        } else if (yearStr.contains("2016")) {
+            year = 2016
+        }
         let time: String = NaturalLangProcessing.Time(text: preprocessed) // Returns: 00:00, 00 AM
+        
+        print(year)
         
         let allDates: [String] = NaturalLangProcessing.PullDate(text: preprocessed) // Get all dates
         var dates: [Date] = [] // Empty
@@ -230,7 +239,9 @@ class ImageProcessing: NSObject {
             
             let timeDate: Date = dateFormatter.date(from: time)! // Get time
             
-            let components = DateComponents(calendar: Calendar.current, timeZone: nil, era: nil, year: Int(year), month: monthValue, day: dayValue, hour: Calendar.current.component(.hour, from: timeDate), minute: Calendar.current.component(.minute, from: timeDate), second: 0, nanosecond: 0, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+            let components = DateComponents(calendar: Calendar.current, timeZone: nil, era: nil, year: year, month: monthValue, day: dayValue, hour: Calendar.current.component(.hour, from: timeDate), minute: Calendar.current.component(.minute, from: timeDate), second: 0, nanosecond: 0, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+            
+            print(components.year)
             
             dates.append(components.date!) // Get and add date object
         }

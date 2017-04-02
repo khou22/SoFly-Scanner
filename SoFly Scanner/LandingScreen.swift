@@ -17,7 +17,7 @@ class LandingScreen: UIViewController {
     override func viewDidLoad() {
         // Unit testing
         if let testImg = UIImage(named: Images.testPosterFuzzyDice) {
-            let _ = ImageProcessing.process(image: testImg)
+//            let _ = ImageProcessing.process(image: testImg)
         }
     }
     
