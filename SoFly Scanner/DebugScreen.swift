@@ -12,6 +12,7 @@ import UIKit
 class DebugScreen: UIViewController {
     
     var image: UIImage = UIImage()
+    @IBOutlet weak var ocrText: UILabel!
     @IBOutlet weak var testUIImage: UIImageView!
     
     override func viewDidLoad() {
@@ -24,6 +25,14 @@ class DebugScreen: UIViewController {
     
     @IBAction func processData(_ sender: Any) {
         print("Processing")
-        print(ImageProcessing.testing(image: image))
+        ocrText.text = "Processing..."
+        
+        DispatchQueue.global(qos: .background).async {
+            let preprocessed = ImageProcessing.testing(image: self.image) // Testing
+            
+            DispatchQueue.main.async { // Back on the main thread
+                self.ocrText.text = preprocessed // Set text
+            }
+        }
     }
 }

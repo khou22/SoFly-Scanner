@@ -237,6 +237,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ocrText" destination="hWj-Nw-Va7" id="Q96-pr-P7m"/>
                         <outlet property="testUIImage" destination="s3Z-Ex-Iqa" id="mtu-u0-Abh"/>
                     </connections>
                 </viewController>

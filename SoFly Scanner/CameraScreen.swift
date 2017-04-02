@@ -144,7 +144,7 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
         self.finalImage = image // Set as global
         
         let stillImageFilter: GPUImageAdaptiveThresholdFilter = GPUImageAdaptiveThresholdFilter()
-        stillImageFilter.blurRadiusInPixels = 30.0 // Blur radius of the filter, defaults to 4.0
+        stillImageFilter.blurRadiusInPixels = Options.GPUBlurRadius // Blur radius of the filter, defaults to 4.0
         let scannedImage: UIImage = stillImageFilter.image(byFilteringImage: image) // Make filtered image
         let scanOverlay: UIImageView = UIImageView(frame: view.frame) // Create view
         scanOverlay.image = scannedImage // Set image

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import GPUImage
 
-class ImageProcessing {
+class ImageProcessing: NSObject, G8TesseractDelegate {
     
     // Scale the image
     static func prepareImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
@@ -19,9 +19,10 @@ class ImageProcessing {
         // Initialize our adaptive threshold filter
         let stillImageFilter: GPUImageAdaptiveThresholdFilter = GPUImageAdaptiveThresholdFilter()
         
-        stillImageFilter.blurRadiusInPixels = 30.0 // Blur radius of the filter, defaults to 4.0
+        stillImageFilter.blurRadiusInPixels = Options.GPUBlurRadius // Blur radius of the filter, defaults to 4.0
         
-        let filteredImage: UIImage = stillImageFilter.image(byFilteringImage: image) // Make filtered image
+        var filteredImage: UIImage = stillImageFilter.image(byFilteringImage: image) // Make filtered image
+//        filteredImage = image
         
         // Scale image
 //        print("Old dimensions: \(image.size.width), \(image.size.height)")
@@ -54,13 +55,26 @@ class ImageProcessing {
         // Tesseract OCR
         let tesseract = G8Tesseract()
         tesseract.language = "eng"
+        tesseract.delegate = self as! G8TesseractDelegate
         tesseract.engineMode = .tesseractCubeCombined
         tesseract.pageSegmentationMode = .auto
         tesseract.maximumRecognitionTime = 120.0
-        tesseract.image = prepareImage(image: image, maxDimension: 640).g8_blackAndWhite()
+        tesseract.image = image
         tesseract.recognize()
     
         return tesseract.recognizedText // Return text
+    }
+    
+    func preprocessedImage(for tesseract: G8Tesseract!, sourceImage: UIImage!) -> UIImage! {
+        return ImageProcessing.prepareImage(image: sourceImage, maxDimension: 640) // Return processed
+    }
+    
+    func progressImageRecognition(for tesseract: G8Tesseract!) {
+        NSLog("progress: %lu", tesseract.progress)
+    }
+    
+    func shouldCancelImageRecognition(for tesseract: G8Tesseract!) -> Bool {
+        return false
     }
     
     static func testing(image: UIImage) -> String {

@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct Options {
+    static let GPUBlurRadius                    = CGFloat(25.0)
+}
+
 struct Colors {
     // Project colors
 }
