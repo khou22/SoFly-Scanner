@@ -145,10 +145,10 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
         // Segue to next screen after delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             // Go to loading screen
-            self.performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
+//            self.performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
             
             // If debugging image processing
-//            self.performSegue(withIdentifier: Segues.cameraToDebug, sender: nil)
+            self.performSegue(withIdentifier: Segues.cameraToDebug, sender: nil)
         })
     }
     

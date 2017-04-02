@@ -8,11 +8,20 @@
 
 import Foundation
 import UIKit
+import GPUImage
 
 class ImageProcessing {
     
     // Scale the image
     static func prepareImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
+        // Use GPUImage's Adaptaive threshold
+        
+        // Initialize our adaptive threshold filter
+        let stillImageFilter: GPUImageAdaptiveThresholdFilter = GPUImageAdaptiveThresholdFilter()
+        
+        stillImageFilter.blurRadiusInPixels = 8.0 // Blur radius of the filter, defaults to 4.0
+        
+        let filteredImage: UIImage = stillImageFilter.image(byFilteringImage: image) // Make filtered image
         
         // Scale image
 //        print("Old dimensions: \(image.size.width), \(image.size.height)")
@@ -20,18 +29,18 @@ class ImageProcessing {
         var scaledSize = CGSize(width: maxDimension, height: maxDimension)
         var scaleFactor: CGFloat
         
-        if image.size.width > image.size.height {
-            scaleFactor = image.size.height / image.size.width
+        if filteredImage.size.width > filteredImage.size.height {
+            scaleFactor = filteredImage.size.height / filteredImage.size.width
             scaledSize.width = maxDimension
             scaledSize.height = scaledSize.width * scaleFactor
         } else {
-            scaleFactor = image.size.width / image.size.height
+            scaleFactor = filteredImage.size.width / filteredImage.size.height
             scaledSize.height = maxDimension
             scaledSize.width = scaledSize.height * scaleFactor
         }
         
         UIGraphicsBeginImageContext(scaledSize)
-        image.draw(in: CGRect(x: 0, y: 0, width: scaledSize.width, height: scaledSize.height))
+        filteredImage.draw(in: CGRect(x: 0, y: 0, width: scaledSize.width, height: scaledSize.height))
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

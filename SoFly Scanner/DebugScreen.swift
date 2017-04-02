@@ -19,10 +19,11 @@ class DebugScreen: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        testUIImage.image = image // Set image
+        testUIImage.image = ImageProcessing.prepareImage(image: image, maxDimension: 640) // Set image
     }
     
     @IBAction func processData(_ sender: Any) {
-        ImageProcessing.testing(image: image)
+        print("Processing")
+        print(ImageProcessing.testing(image: image))
     }
 }

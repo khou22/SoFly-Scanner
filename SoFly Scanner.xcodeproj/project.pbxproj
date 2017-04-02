@@ -11,6 +11,8 @@
 		2723D1FE1E9047D600193C4E /* HorizontalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D1FD1E9047D600193C4E /* HorizontalSegue.swift */; };
 		2723D2001E90510800193C4E /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D1FF1E90510800193C4E /* LandingScreen.swift */; };
 		2723D2021E9052C400193C4E /* FadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2011E9052C400193C4E /* FadeSegue.swift */; };
+		2723D20F1E907B3C00193C4E /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2723D20C1E90799800193C4E /* GPUImage.framework */; };
+		2723D2111E907BE300193C4E /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2723D20C1E90799800193C4E /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2762B0AA1E8F3DBC00203F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */; };
 		2762B0AF1E8F3DBC00203F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0AD1E8F3DBC00203F90 /* Main.storyboard */; };
 		2762B0B11E8F3DBC00203F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0B01E8F3DBC00203F90 /* Assets.xcassets */; };
@@ -35,6 +37,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2723D2091E90799800193C4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2723D2031E90799800193C4E /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		2723D20B1E90799800193C4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2723D2031E90799800193C4E /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		2723D20D1E9079B800193C4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2723D2031E90799800193C4E /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE209E41943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
 		2762B0BB1E8F3DBC00203F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2762B09E1E8F3DBC00203F90 /* Project object */;
@@ -51,11 +74,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2723D2101E907BCE00193C4E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2723D2111E907BE300193C4E /* GPUImage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2723D1FB1E9039D000193C4E /* ProcessingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingScreen.swift; sourceTree = "<group>"; };
 		2723D1FD1E9047D600193C4E /* HorizontalSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSegue.swift; sourceTree = "<group>"; };
 		2723D1FF1E90510800193C4E /* LandingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingScreen.swift; sourceTree = "<group>"; };
 		2723D2011E9052C400193C4E /* FadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
+		2723D2031E90799800193C4E /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../Downloads/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		2762B0A61E8F3DBC00203F90 /* SoFly Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoFly Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2762B0A91E8F3DBC00203F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2762B0AE1E8F3DBC00203F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2723D20F1E907B3C00193C4E /* GPUImage.framework in Frameworks */,
 				2762B0F21E8F4B3300203F90 /* libstdc++.6.0.9.tbd in Frameworks */,
 				2762B0F41E8F4B3A00203F90 /* CoreImage.framework in Frameworks */,
 				2762B0ED1E8F4AF000203F90 /* TesseractOCR.framework in Frameworks */,
@@ -112,6 +150,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2723D2041E90799800193C4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2723D20A1E90799800193C4E /* libGPUImage.a */,
+				2723D20C1E90799800193C4E /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2762B09D1E8F3DBC00203F90 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +268,7 @@
 		27AA8CCA1E8F506F00EE73EA /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2723D2031E90799800193C4E /* GPUImage.xcodeproj */,
 				2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */,
 			);
 			name = Libraries;
@@ -236,10 +284,12 @@
 				2762B0A21E8F3DBC00203F90 /* Sources */,
 				2762B0A31E8F3DBC00203F90 /* Frameworks */,
 				2762B0A41E8F3DBC00203F90 /* Resources */,
+				2723D2101E907BCE00193C4E /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2723D20E1E9079B800193C4E /* PBXTargetDependency */,
 			);
 			name = "SoFly Scanner";
 			productName = "SoFly Scanner";
@@ -323,6 +373,12 @@
 			mainGroup = 2762B09D1E8F3DBC00203F90;
 			productRefGroup = 2762B0A71E8F3DBC00203F90 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2723D2041E90799800193C4E /* Products */;
+					ProjectRef = 2723D2031E90799800193C4E /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2762B0A51E8F3DBC00203F90 /* SoFly Scanner */,
@@ -331,6 +387,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2723D20A1E90799800193C4E /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 2723D2091E90799800193C4E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2723D20C1E90799800193C4E /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 2723D20B1E90799800193C4E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2762B0A41E8F3DBC00203F90 /* Resources */ = {
@@ -401,6 +474,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2723D20E1E9079B800193C4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImageFramework;
+			targetProxy = 2723D20D1E9079B800193C4E /* PBXContainerItemProxy */;
+		};
 		2762B0BC1E8F3DBC00203F90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2762B0A51E8F3DBC00203F90 /* SoFly Scanner */;
