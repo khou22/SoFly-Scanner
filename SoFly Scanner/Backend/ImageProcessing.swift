@@ -17,9 +17,9 @@ class ImageProcessing: NSObject {
                             "FEBRUARY": 02, "FEB": 02, "02" : 02, "2" :02,
                             "MARCH" : 03, "MAR": 03, "03": 03, "3":03,
                             "APRIL" : 04, "APR": 04, "04": 04, "4":04,
-                            "MAY" : 05, "MAY": 05, "05": 05, "5":05,
-                            "JUNE" : 06, "JUN": 06, "03": 06, "3":06,
-                            "JULY" : 07, "JUL": 07, "07": 07, "3":07,
+                            "MAY" : 05, "05": 05, "5":05,
+                            "JUNE" : 06, "JUN": 06, "06": 06, "6":06,
+                            "JULY" : 07, "JUL": 07, "07": 07, "7":07,
                             "AUGUST" : 08, "AUG":08, "08":08, "8":08,
                             "SEPTEMBER" : 09, "SEP": 09,"SEPT": 09, "09": 09, "9":09,
                             "OCTOBER" : 10, "OCT": 10,  "10":10,
@@ -198,6 +198,9 @@ class ImageProcessing: NSObject {
         let preprocessed: String = NaturalLangProcessing.preprocess(text: rawText)
         let lemmatizedText = NaturalLangProcessing.lemmatize(text: preprocessed)
         
+        print(rawText)
+        print(preprocessed)
+        
         // Get date components
         let year: String = NaturalLangProcessing.Year(text: preprocessed)
         let time: String = NaturalLangProcessing.Time(text: preprocessed) // Returns: 00:00, 00 AM
@@ -210,12 +213,20 @@ class ImageProcessing: NSObject {
         let dayValue: Int = Int(dayMonthDate[2])! // Get integer from string
         
         var format = "MM/DD/yy H:mm"
-        if ((time.range(of: "AM")) != nil) { // If there's an AM
-            format = "MM/DD/yy H a"
+        if ((time.range(of: "AM")) != nil || time.range(of: "PM") != nil) { // If there's an AM/PM
+            
+            if (time.range(of: ":") != nil) { // If there's a colon
+                format = "MM/DD/yy H:mm a"
+            } else {
+                format = "MM/DD/yy H a"
+            }
         }
         
         var standardString: String = String(monthValue) + "/"
         standardString += String(dayValue) + "/" + String(year) + " " + String(time)
+        
+        print(standardString)
+        print(format)
         
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = format

@@ -88,7 +88,7 @@ class NaturalLangProcessing {
         let myString = text as NSString
 //        let regexFullMonths: NSRegularExpression = try! NSRegularExpression(pattern: "?(Mon(\\.|day) |Tues?(\\.|day) |Wed?(\\.|nesday) |Thu?(rs)?(\\.|day) |Fri?(\\.|day) |Sat?(\\.|urday) |Sun?(\\.|day) )?(\\s+)?(Jan(\\.| |uary)|Feb(\\.| |ruary)|Mar(\\.| |ch)|Apr(\\.| |il)|May|Jun(\\.| |e)|Jul(\\.|y| )|Aug(\\.| |ust)|Sep?(t)(\\.|ember| )|Oct(\\.| |ober)|Nov(\\.|ember|)|Dec(\\.| |ember|)?(\\s+)?(on |on the |in )?(?(0)[1-9]|[1-2][0-9]|30|31)?(\\.|-|\\\\| |st|th|nd)", options: .caseInsensitive)
         
-        let regexFullMonths: NSRegularExpression = try! NSRegularExpression(pattern: "(Mon?(\\.|day) |Tues?(\\.|day) |Wed?(\\.|nesday) |Thu?(rs)?(\\.|day) |Fri?(\\.|day) |Sat?(\\.|urday)|Sun?(\\.|day) | )(\\s+)(Jan(\\.| |uary)|Feb(\\.| |ruary)|Mar(\\.| |ch)|Apr(\\.| |il)|May|Jun(\\.| |e)|Jul(\\.|y| )|Aug(\\.| |ust)|Sep?(t)(\\.|ember| )|Oct(\\.| |ober)|Nov(\\.|ember|)|Dec(\\.| |ember|))(\\s+)?([1-9]|(0)[1-9]|[1-2][0-9]|30|31)?(\\.|-|\\\\| |st|th|nd)", options: .caseInsensitive)
+        let regexFullMonths: NSRegularExpression = try! NSRegularExpression(pattern: "(Mon?(\\.|day) |Tues?(\\.|day) |Wed?(\\.|nesday) |Thu?(rs)?(\\.|day) |Fri?(\\.|day) |Sat?(\\.|urday)|Sun?(\\.|day) | )(\\s*)(Jan(\\.| |uary)|Feb(\\.| |ruary)|Mar(\\.| |ch) |Apr(\\.| |il)|May|Jun(\\.| |e)|Jul(\\.|y| )|Aug(\\.| |ust)|Sep?(t)(\\.|ember| )|Oct(\\.| |ober)|Nov(\\.|ember|)|Dec(\\.| |ember|))(\\s*)?([1-9]|(0)[1-9]|[1-2][0-9]|30|31)?(\\.|-|\\\\| |st|th|nd)", options: .caseInsensitive)
 
         
         let range: NSRange = NSMakeRange(0, myString.length)
@@ -98,7 +98,7 @@ class NaturalLangProcessing {
         if (!f.isEmpty) {
             return f[0]
         } else {
-            return "99 99 99"
+            return "SUNDAY JANUARY 01"
         }
     }
     
@@ -168,9 +168,8 @@ class NaturalLangProcessing {
             return m[0]
         }
         else {
-            return "{Unknown}"
+            return "12:00 AM"
         }
-
     }
     
     
