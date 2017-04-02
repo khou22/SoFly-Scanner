@@ -160,7 +160,7 @@ class NaturalLangProcessing {
         let day = "1"
         
         let dateStr = month + " " + day + ", " + year + " " + time
-        print(dateStr)
+//        print(dateStr)
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyy-MM-dd HH:mm:ss" // Input format

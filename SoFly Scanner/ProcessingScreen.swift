@@ -16,8 +16,8 @@ class ProcessingScreen: UIViewController {
     var preprocessedText: String = "NA"
     
     // Options
-    var loadingTime = 10.0 // Number of seconds on loading screen
-    var pauseTime = 1.0 // Time paused after checkmark is shown
+    var loadingTime = 11.0 // Number of seconds on loading screen
+    var pauseTime = 0.5 // Time paused after checkmark is shown
     
     // UI Elements
     @IBOutlet weak var iPhoneFull: UIImageView! // Faded iPhone
@@ -68,8 +68,6 @@ class ProcessingScreen: UIViewController {
             self.scannerBar.frame = targetBarcodeFrame
             
         }, completion: { completion in
-            print("Processing complete")
-            
             // Prepare checkmark for animation
             self.scanningLabel.isHidden = true
             self.checkmarkHeightConstraint.constant = 30 // Smaller than normal

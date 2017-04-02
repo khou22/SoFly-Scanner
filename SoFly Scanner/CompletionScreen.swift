@@ -19,8 +19,7 @@ class CompletionScreen: UIViewController {
         print("Completion screen loaded")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        randomLabel.text = randomText
+    override func viewDidLayoutSubviews() {
         print(randomText)
     }
     

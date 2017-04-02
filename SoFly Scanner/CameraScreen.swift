@@ -101,10 +101,16 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePick
         self.captureSession.stopRunning() // Freeze the camera
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            self.processImage(image: image) // Process picked image
+            self.finalImage = image // Save global
+            
+            // Go to loading screen
+            self.performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
         }
         else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.processImage(image: image) // Process picked image
+            self.finalImage = image // Save global
+            
+            // Go to loading screen
+            self.performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
         } else{
             print("Something went wrong")
         }
@@ -179,8 +185,6 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePick
     
     // Called when image is grabbed from camera
     func processImage(image: UIImage) {
-        print("Processing")
-        
         self.finalImage = image // Set as global
         
         let stillImageFilter: GPUImageAdaptiveThresholdFilter = GPUImageAdaptiveThresholdFilter()
