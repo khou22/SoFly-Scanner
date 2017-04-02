@@ -12,7 +12,9 @@ import UIKit
 class ImageProcessing {
     
     // Scale the image
-    static func scaleImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
+    static func prepareImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
+        
+        // Scale image
 //        print("Old dimensions: \(image.size.width), \(image.size.height)")
         
         var scaledSize = CGSize(width: maxDimension, height: maxDimension)
@@ -46,7 +48,7 @@ class ImageProcessing {
         tesseract.engineMode = .tesseractCubeCombined
         tesseract.pageSegmentationMode = .auto
         tesseract.maximumRecognitionTime = 120.0
-        tesseract.image = scaleImage(image: image, maxDimension: 640).g8_blackAndWhite()
+        tesseract.image = prepareImage(image: image, maxDimension: 640).g8_blackAndWhite()
         tesseract.recognize()
     
         return tesseract.recognizedText // Return text
