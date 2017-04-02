@@ -46,7 +46,8 @@ class ImageProcessing: NSObject, G8TesseractDelegate {
     
     // Scale the image
     static func prepareImage(image: UIImage) -> UIImage {
-        return adaptiveThreshold(image: scaleImage(image: image, maxDimension: 640.0))
+        let resetImage: UIImage = ImageHelper.resetImageData(image: image) // Remove extra data
+        return adaptiveThreshold(image: scaleImage(image: resetImage, maxDimension: 640.0))
     }
     
     static func adaptiveThreshold(image: UIImage) -> UIImage {

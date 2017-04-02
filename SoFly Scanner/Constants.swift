@@ -45,4 +45,5 @@ struct Segues {
     static let cameraToLoading                  = "SegueToLoading"
     static let cameraToDebug                    = "SegueToDebug"
     static let processingToCompletion           = "SegueProcessingToCompletion"
+    static let completeToCamera                 = "CompletionToCamera"
 }

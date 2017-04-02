@@ -23,4 +23,7 @@ class CompletionScreen: UIViewController {
         print(randomText)
     }
     
+    @IBAction func restartProcess(_ sender: Any) {
+        performSegue(withIdentifier: Segues.completeToCamera, sender: nil)
+    }
 }

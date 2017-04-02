@@ -269,8 +269,24 @@
                     <view key="view" contentMode="scaleToFill" id="ctX-SF-fjD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbo-Hq-qGc">
+                                <rect key="frame" x="320" y="28" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="restartProcess:" destination="iuw-dr-GKq" eventType="touchUpInside" id="DbG-oU-SOa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hbo-Hq-qGc" firstAttribute="top" secondItem="DEG-UK-6LC" secondAttribute="bottom" constant="8" id="Ha6-wv-UG1"/>
+                            <constraint firstItem="Hbo-Hq-qGc" firstAttribute="trailing" secondItem="ctX-SF-fjD" secondAttribute="trailingMargin" id="LTF-9i-eo0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="CompletionToCamera" customClass="SegueSlideRightToLeft" customModule="SoFly_Scanner" customModuleProvider="target" id="wcF-nu-YrM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Djy-3R-35e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -288,4 +304,7 @@
         <image name="logo-red-light" width="248" height="154"/>
         <image name="scanner-bar" width="231" height="1"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wcF-nu-YrM"/>
+    </inferredMetricsTieBreakers>
 </document>

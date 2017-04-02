@@ -200,7 +200,7 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePick
         })
         
         // Segue to next screen after delay
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.55, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: {
             // Go to loading screen
             self.performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
             
