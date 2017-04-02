@@ -11,13 +11,14 @@ import UIKit
 import AVFoundation // Camera control
 import GPUImage // Color control
 
-class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
+class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Live camera view
     @IBOutlet weak var cameraPreview: UIView!
     
     // Camera UI Elements
     @IBOutlet weak var captureImageButton: UIButton!
+    let imagePicker = UIImagePickerController() // Initialize an image picker view controller type
     
     // Other UI elements
     var fadeIn: UIView = UIView()
@@ -30,6 +31,10 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     var sessionOutputSetting = AVCapturePhotoSettings(format: [AVVideoCodecKey:AVVideoCodecJPEG])
     var previewLayer = AVCaptureVideoPreviewLayer()
     
+    override func viewDidLoad() {
+        imagePicker.delegate = self
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         // Fade the camera view in
         self.fadeIn = UIView(frame: view.frame) // Fill entire screen
@@ -41,7 +46,6 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         // Fade the screen in
         UIView.animate(withDuration: 1.0, animations: {
             self.fadeIn.backgroundColor = UIColor.clear // Make transparent
@@ -73,6 +77,39 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
         captureImage() // Capture image
     }
     
+    @IBAction func uploadImage(_ sender: Any) {
+        self.pickImage(sourceType: .photoLibrary) // Presents image picker
+    }
+    
+    func pickImage(sourceType: UIImagePickerControllerSourceType) {
+        imagePicker.allowsEditing = false // Prevent editing
+        
+        // Three sources: .PhotoLibrary, .Camera, .SavedPhotosAlbum
+        self.imagePicker.sourceType = sourceType // Type of image selection
+        
+        // Presenting image picker view controller on top of stack
+        self.present(self.imagePicker, animated: true, completion: {
+            print("Opening image picker view controller")
+        })
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+        
+        self.captureSession.stopRunning() // Freeze the camera
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.processImage(image: image) // Process picked image
+        }
+        else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.processImage(image: image) // Process picked image
+        } else{
+            print("Something went wrong")
+        }
+    }
+    
     // Start camera session
     func startCameraSession() {
         // MARK - setup live camera view
@@ -83,6 +120,7 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
                 do {
                     let input = try AVCaptureDeviceInput(device: device) // Try the current input
                     if (captureSession.canAddInput(input)) { // If valid
+                        captureSession.sessionPreset = AVCaptureSessionPreset640x480 // Change to lower resolution
                         captureSession.addInput(input) // Add input to session
                         
                         if (captureSession.canAddOutput(sessionOutput)) { // If can also take pictures
@@ -141,6 +179,8 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
     
     // Called when image is grabbed from camera
     func processImage(image: UIImage) {
+        print("Processing")
+        
         self.finalImage = image // Set as global
         
         let stillImageFilter: GPUImageAdaptiveThresholdFilter = GPUImageAdaptiveThresholdFilter()
@@ -151,17 +191,17 @@ class CameraScreen: UIViewController, AVCapturePhotoCaptureDelegate {
 //        scanOverlay.contentMode = .scaleAspectFill // Aspect fill
         scanOverlay.alpha = 0.0 // Make transparent
         self.cameraPreview.addSubview(scanOverlay) // Add view
-        UIView.animate(withDuration: 0.25, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             scanOverlay.alpha = 1.0 // Make visible
         })
         
         // Segue to next screen after delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.55, execute: {
             // Go to loading screen
-//            self.performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
+            self.performSegue(withIdentifier: Segues.cameraToLoading, sender: nil)
             
             // If debugging image processing
-            self.performSegue(withIdentifier: Segues.cameraToDebug, sender: nil)
+//            self.performSegue(withIdentifier: Segues.cameraToDebug, sender: nil)
         })
     }
     

@@ -78,7 +78,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flyer-bounds" translatesAutoresizingMaskIntoConstraints="NO" id="Wkw-4Z-wa0">
-                                <rect key="frame" x="26" y="40" width="323" height="497"/>
+                                <rect key="frame" x="26" y="60" width="323" height="477"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-Vh-z8A">
                                 <rect key="frame" x="122" y="557" width="130" height="70"/>
@@ -91,15 +91,28 @@
                                     <action selector="captureImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0wN-ds-O3i"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKk-bJ-Gq5">
+                                <rect key="frame" x="305" y="24" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hF6-RU-jmD"/>
+                                    <constraint firstAttribute="width" constant="50" id="xSc-OZ-2mH"/>
+                                </constraints>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nsl-SL-FB7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Wkw-4Z-wa0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="64T-vO-7sf"/>
+                            <constraint firstItem="Wkw-4Z-wa0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="64T-vO-7sf"/>
                             <constraint firstItem="aOh-Vh-z8A" firstAttribute="top" secondItem="Wkw-4Z-wa0" secondAttribute="bottom" constant="20" id="7jb-SR-l3t"/>
                             <constraint firstAttribute="trailing" secondItem="HAH-EU-L1L" secondAttribute="trailing" id="B0a-a8-zMh"/>
                             <constraint firstItem="Wkw-4Z-wa0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="J2b-cK-IlI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wkw-4Z-wa0" secondAttribute="trailing" constant="10" id="ULy-Jn-apd"/>
                             <constraint firstItem="HAH-EU-L1L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W6B-LI-G1B"/>
+                            <constraint firstItem="IKk-bJ-Gq5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="4" id="bUc-bd-pco"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IKk-bJ-Gq5" secondAttribute="trailing" constant="4" id="e9S-r0-Jjh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HAH-EU-L1L" secondAttribute="bottom" id="hwq-Wo-rts"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aOh-Vh-z8A" secondAttribute="bottom" constant="40" id="m5a-Ud-unB"/>
                             <constraint firstItem="HAH-EU-L1L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w0g-qT-z13"/>

@@ -13,10 +13,10 @@ class ProcessingScreen: UIViewController {
     
     // Data
     var image: UIImage = UIImage()
-    var preprocessedText: String = ""
+    var preprocessedText: String = "NA"
     
     // Options
-    var loadingTime = 6.0 // Number of seconds on loading screen
+    var loadingTime = 10.0 // Number of seconds on loading screen
     var pauseTime = 1.0 // Time paused after checkmark is shown
     
     // UI Elements
@@ -88,7 +88,9 @@ class ProcessingScreen: UIViewController {
             let preprocessed = ImageProcessing.testing(image: self.image) // Testing
             
             DispatchQueue.main.async { // Back on the main thread
-                self.preprocessedText = preprocessed
+                if (!preprocessed.characters.isEmpty) {
+                    self.preprocessedText = preprocessed
+                }
             }
         }
     }
@@ -99,7 +101,8 @@ class ProcessingScreen: UIViewController {
         if (segue.identifier == Segues.processingToCompletion) {
             let completionScreen = segue.destination as! CompletionScreen // Get VC
             completionScreen.image = self.image // Pass on image
-            completionScreen.randomText = self.preprocessedText
+            
+            completionScreen.randomText = preprocessedText
         }
     }
     

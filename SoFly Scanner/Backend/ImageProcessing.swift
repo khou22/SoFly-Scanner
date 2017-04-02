@@ -12,6 +12,38 @@ import GPUImage
 
 class ImageProcessing: NSObject, G8TesseractDelegate {
     
+    /*
+    // URL: http://stackoverflow.com/questions/13511102/ios-tesseract-ocr-image-preperation
+    static func prepareCameraImage(image: UIImage) -> UIImage {
+        let d_colorSpace: CGColorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        let d_bytesPerRow: size_t = size_t(image.size.width * 4.0)
+        let imgData: CUnsignedChar = CUnsignedChar(size_t(image.size.height) * d_bytesPerRow)
+        
+        let context = CGContext(data: imgData, width: image.size.width, height: image.size.height, bitsPerComponent: 8, bytesPerRow: d_bytesPerRow, space: d_colorSpace, bitmapInfo: .non)
+        
+        UIGraphicsPushContext(context)
+        
+        // These next two lines 'flip' the drawing so it doesn't appear upside-down.
+        context.translateBy(x: 0.0, y: image.size.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+        
+        // Use UIImage's drawInRect: instead of the CGContextDrawImage function, otherwise you'll have issues when the source image is in portrait orientation.
+        image.draw(in: CGRect(x: CGFloat(0.0), y: CGFloat(0.0), width: CGFloat(image.size.width), height: CGFloat(image.size.height)))
+        UIGraphicsPopContext()
+        /*
+         * At this point, we have the raw ARGB pixel data in the imgData buffer, so
+         * we can perform whatever image processing here.
+         */
+        // After we've processed the raw data, turn it back into a UIImage instance.
+        var new_img: CGImage = context.makeImage()
+        var convertedImage = UIImage(cgImage: new_img)
+        CGContextRelease(context)
+//        free(imgData)
+        return convertedImage
+
+    } */
+    
     // Scale the image
     static func prepareImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
         // Use GPUImage's Adaptaive threshold
@@ -70,7 +102,7 @@ class ImageProcessing: NSObject, G8TesseractDelegate {
     }
     
     func progressImageRecognition(for tesseract: G8Tesseract!) {
-        NSLog("progress: %lu", tesseract.progress)
+        print("progress: %lu", tesseract.progress) // Print progress
     }
     
     func shouldCancelImageRecognition(for tesseract: G8Tesseract!) -> Bool {
