@@ -16,8 +16,8 @@ class ProcessingScreen: UIViewController {
     var event: ScannedEvent = ScannedEvent(with: "Event name...", location: "Location...", startDate: Date(), endDate: Date(), preprocessed: "Preprocessed text...") // Empty
     
     // Options
-    var loadingTime = 30.0 // Number of seconds on loading screen
-    var pauseTime = 0.5 // Time paused after checkmark is shown
+    var loadingTime = 10.0 // Number of seconds on loading screen
+    var pauseTime = 1.0 // Time paused after checkmark is shown
     
     // UI Elements
     @IBOutlet weak var iPhoneFull: UIImageView! // Faded iPhone

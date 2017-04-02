@@ -195,7 +195,7 @@ class ImageProcessing: NSObject {
     
     static func cleanString(text: String) -> String {
         let okayChars : Set<Character> =
-            Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-*=(),.:!_".characters)
+            Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ".characters)
         return String(text.characters.filter {okayChars.contains($0) })
     }
     
@@ -227,7 +227,9 @@ class ImageProcessing: NSObject {
             
             let monthDay: [String] = date.characters.split{$0 == " "}.map(String.init) // Seperrated by ' '
             print(monthDay)
-            let monthValue: Int = self.monthDict[cleanString(text: monthDay[0].uppercased())]!
+            let monthKey: String = cleanString(text: monthDay[0]).uppercased()
+            print(monthKey)
+            let monthValue: Int = self.monthDict[monthKey]!
             let dayValue: Int = Int(monthDay[1].trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted))! // Get integer from string
             
             var format = "H:mm"
@@ -251,7 +253,7 @@ class ImageProcessing: NSObject {
         }
         
         // Check if end date exists
-        var endDate = Date()
+        var endDate = dates[0].addingTimeInterval(2 * 60 * 60) // Default two hours long
         if dates.count >= 2 {
             endDate = dates[1]
         }
