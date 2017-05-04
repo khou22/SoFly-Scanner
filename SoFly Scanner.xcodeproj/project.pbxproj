@@ -11,8 +11,6 @@
 		2723D1FE1E9047D600193C4E /* HorizontalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D1FD1E9047D600193C4E /* HorizontalSegue.swift */; };
 		2723D2001E90510800193C4E /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D1FF1E90510800193C4E /* LandingScreen.swift */; };
 		2723D2021E9052C400193C4E /* FadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2011E9052C400193C4E /* FadeSegue.swift */; };
-		2723D20F1E907B3C00193C4E /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2723D20C1E90799800193C4E /* GPUImage.framework */; };
-		2723D2111E907BE300193C4E /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2723D20C1E90799800193C4E /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2723D2131E909EB100193C4E /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2121E909EB100193C4E /* ImageHelper.swift */; };
 		2723D2161E90B4C100193C4E /* AutocompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */; };
 		2723D2181E90B50000193C4E /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723D2171E90B50000193C4E /* TextFieldExtension.swift */; };
@@ -40,31 +38,12 @@
 		2762B0FC1E8F4DC600203F90 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */; };
 		2762B0FD1E8F4DCB00203F90 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0EE1E8F4B0C00203F90 /* tessdata */; };
 		2762B0FE1E8F4DCC00203F90 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2762B0EE1E8F4B0C00203F90 /* tessdata */; };
+		2769A6E91EBBCA4700AF58A6 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2769A6E41EBBCA2D00AF58A6 /* libGPUImage.a */; };
+		2769A6EA1EBBCA5E00AF58A6 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2769A6E61EBBCA2D00AF58A6 /* GPUImage.framework */; };
 		27AA8CC91E8F506700EE73EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA8CC81E8F506700EE73EA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2723D2091E90799800193C4E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2723D2031E90799800193C4E /* GPUImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
-			remoteInfo = GPUImage;
-		};
-		2723D20B1E90799800193C4E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2723D2031E90799800193C4E /* GPUImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCE209E51943F20C002FEED8;
-			remoteInfo = GPUImageFramework;
-		};
-		2723D20D1E9079B800193C4E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2723D2031E90799800193C4E /* GPUImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCE209E41943F20C002FEED8;
-			remoteInfo = GPUImageFramework;
-		};
 		2762B0BB1E8F3DBC00203F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2762B09E1E8F3DBC00203F90 /* Project object */;
@@ -79,6 +58,27 @@
 			remoteGlobalIDString = 2762B0A51E8F3DBC00203F90;
 			remoteInfo = "SoFly Scanner";
 		};
+		2769A6E31EBBCA2D00AF58A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2769A6DD1EBBCA2D00AF58A6 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		2769A6E51EBBCA2D00AF58A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2769A6DD1EBBCA2D00AF58A6 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		2769A6E71EBBCA3A00AF58A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2769A6DD1EBBCA2D00AF58A6 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE209E41943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,7 +88,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2723D2111E907BE300193C4E /* GPUImage.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +98,6 @@
 		2723D1FD1E9047D600193C4E /* HorizontalSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSegue.swift; sourceTree = "<group>"; };
 		2723D1FF1E90510800193C4E /* LandingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingScreen.swift; sourceTree = "<group>"; };
 		2723D2011E9052C400193C4E /* FadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
-		2723D2031E90799800193C4E /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../Downloads/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		2723D2121E909EB100193C4E /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		2723D2151E90B4C100193C4E /* AutocompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutocompleteTextField.swift; sourceTree = "<group>"; };
 		2723D2171E90B50000193C4E /* TextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -130,6 +128,7 @@
 		2762B0F11E8F4B3300203F90 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		2762B0F31E8F4B3A00203F90 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		2762B0FA1E8F4DA500203F90 /* SoFly Scanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoFly Scanner-Bridging-Header.h"; sourceTree = "<group>"; };
+		2769A6DD1EBBCA2D00AF58A6 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		27AA8CC81E8F506700EE73EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,10 +137,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2723D20F1E907B3C00193C4E /* GPUImage.framework in Frameworks */,
+				2769A6EA1EBBCA5E00AF58A6 /* GPUImage.framework in Frameworks */,
 				2762B0F21E8F4B3300203F90 /* libstdc++.6.0.9.tbd in Frameworks */,
 				2762B0F41E8F4B3A00203F90 /* CoreImage.framework in Frameworks */,
 				2762B0ED1E8F4AF000203F90 /* TesseractOCR.framework in Frameworks */,
+				2769A6E91EBBCA4700AF58A6 /* libGPUImage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,15 +164,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2723D2041E90799800193C4E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2723D20A1E90799800193C4E /* libGPUImage.a */,
-				2723D20C1E90799800193C4E /* GPUImage.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2723D2141E909EB400193C4E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,10 +285,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2769A6DE1EBBCA2D00AF58A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2769A6E41EBBCA2D00AF58A6 /* libGPUImage.a */,
+				2769A6E61EBBCA2D00AF58A6 /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		27AA8CCA1E8F506F00EE73EA /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				2723D2031E90799800193C4E /* GPUImage.xcodeproj */,
+				2769A6DD1EBBCA2D00AF58A6 /* GPUImage.xcodeproj */,
 				2762B0EC1E8F4AF000203F90 /* TesseractOCR.framework */,
 			);
 			name = Libraries;
@@ -318,7 +318,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2723D20E1E9079B800193C4E /* PBXTargetDependency */,
+				2769A6E81EBBCA3A00AF58A6 /* PBXTargetDependency */,
 			);
 			name = "SoFly Scanner";
 			productName = "SoFly Scanner";
@@ -373,6 +373,7 @@
 				TargetAttributes = {
 					2762B0A51E8F3DBC00203F90 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 2C266GZ596;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -403,8 +404,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 2723D2041E90799800193C4E /* Products */;
-					ProjectRef = 2723D2031E90799800193C4E /* GPUImage.xcodeproj */;
+					ProductGroup = 2769A6DE1EBBCA2D00AF58A6 /* Products */;
+					ProjectRef = 2769A6DD1EBBCA2D00AF58A6 /* GPUImage.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -417,18 +418,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2723D20A1E90799800193C4E /* libGPUImage.a */ = {
+		2769A6E41EBBCA2D00AF58A6 /* libGPUImage.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libGPUImage.a;
-			remoteRef = 2723D2091E90799800193C4E /* PBXContainerItemProxy */;
+			remoteRef = 2769A6E31EBBCA2D00AF58A6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2723D20C1E90799800193C4E /* GPUImage.framework */ = {
+		2769A6E61EBBCA2D00AF58A6 /* GPUImage.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = GPUImage.framework;
-			remoteRef = 2723D20B1E90799800193C4E /* PBXContainerItemProxy */;
+			remoteRef = 2769A6E51EBBCA2D00AF58A6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -509,11 +510,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2723D20E1E9079B800193C4E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GPUImageFramework;
-			targetProxy = 2723D20D1E9079B800193C4E /* PBXContainerItemProxy */;
-		};
 		2762B0BC1E8F3DBC00203F90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2762B0A51E8F3DBC00203F90 /* SoFly Scanner */;
@@ -523,6 +519,11 @@
 			isa = PBXTargetDependency;
 			target = 2762B0A51E8F3DBC00203F90 /* SoFly Scanner */;
 			targetProxy = 2762B0C61E8F3DBC00203F90 /* PBXContainerItemProxy */;
+		};
+		2769A6E81EBBCA3A00AF58A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImageFramework;
+			targetProxy = 2769A6E71EBBCA3A00AF58A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -648,7 +649,7 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2C266GZ596;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -677,7 +678,7 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2C266GZ596;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
