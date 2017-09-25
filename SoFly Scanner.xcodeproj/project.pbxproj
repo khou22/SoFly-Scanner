@@ -373,7 +373,7 @@
 				TargetAttributes = {
 					2762B0A51E8F3DBC00203F90 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 2C266GZ596;
+						DevelopmentTeam = 577CD9XYE2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -649,7 +649,7 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2C266GZ596;
+				DEVELOPMENT_TEAM = 577CD9XYE2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -678,7 +678,7 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2C266GZ596;
+				DEVELOPMENT_TEAM = 577CD9XYE2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
