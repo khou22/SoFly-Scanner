@@ -1,3 +1,11 @@
+<img src="./cover.png" width="100%" />
+
+### HackPrinceton Spring 2017 - 2nd Place for Best Princeton App
+
+### Video Demo:
+<iframe src="https://player.vimeo.com/video/211174699" width="100%" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/211174699">SoFly Scanner - Demo</a> from <a href="https://vimeo.com/user40150632">Kevin Hou</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
 ## Inspiration
 The motivation for our application came when we realized how much our college uses flyers to advertise events. From dance recitals, to scientific talks, events are neatly summarized and hung on campus in visible areas. A huge part of our sense of community comes from these events, and as excursions into Princeton township have shown us, events planned in non-centralized communities rely on flyers and other written media to communicate activities to others.
 Both of us have fond memories attending community events growing up, and we think (through some surveying of our student body) that a cause of decreased attendance at such events is due to a few factors. (1) People forget. Its not a flyer they can always take with them, and so what they think is instantaneously exciting soon fades from their memory. (2) It is not digital – in a world where everything else is.
