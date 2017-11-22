@@ -3,8 +3,7 @@
 ### HackPrinceton Spring 2017 - 2nd Place for Best Princeton App
 
 ### Video Demo:
-<iframe src="https://player.vimeo.com/video/211174699" width="100%" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/211174699">SoFly Scanner - Demo</a> from <a href="https://vimeo.com/user40150632">Kevin Hou</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p><a href="https://vimeo.com/211174699">SoFly Scanner - Demo</a> from <a href="https://vimeo.com/user40150632">Kevin Hou</a> on <a href="https://vimeo.com/211174699">Vimeo</a>.</p>
 
 ## Inspiration
 The motivation for our application came when we realized how much our college uses flyers to advertise events. From dance recitals, to scientific talks, events are neatly summarized and hung on campus in visible areas. A huge part of our sense of community comes from these events, and as excursions into Princeton township have shown us, events planned in non-centralized communities rely on flyers and other written media to communicate activities to others.
